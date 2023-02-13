@@ -1,0 +1,24 @@
+id: productImageGallery
+name: Product Image Gallery
+icon: >-
+  https://res.cloudinary.com/uniformdev/image/upload/v1675425369/vNext%20Demos/Baseline/canvas-preview/Product_Image_Gallery_igmpxn.png
+parameters:
+  - id: imagesPosition
+    name: Images Position
+    type: select
+    helpText: Position of the images preview block
+    typeConfig:
+      options:
+        - text: Left
+          value: left
+        - text: Right
+          value: right
+        - text: Top
+          value: top
+        - text: Bottom
+          value: bottom
+useTeamPermissions: true
+slots: []
+canBeComposition: false
+created: '2023-01-26T07:29:07.903224+00:00'
+updated: '2023-02-03T11:56:22.968887+00:00'

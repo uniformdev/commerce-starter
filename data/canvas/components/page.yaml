@@ -1,0 +1,37 @@
+id: page
+name: Page
+icon: file-document
+parameters:
+  - id: pageMetaTitle
+    name: Page Meta Title
+    type: text
+    helpText: ''
+    typeConfig:
+      required: true
+  - id: pageMetaDescription
+    name: Page Meta Description
+    type: text
+    helpText: ''
+    typeConfig:
+      required: false
+      multiline: true
+useTeamPermissions: true
+slots:
+  - id: content
+    name: Content
+    allowedComponents:
+      - hero
+      - $personalization
+      - callToAction
+      - $test
+      - sectionTwoColumns
+      - featuredProducts
+      - container
+      - addToCart
+      - productDescription
+      - relatedProducts
+      - productCatalog
+    inheritAllowedComponents: false
+canBeComposition: true
+created: '2023-01-24T08:12:29.473632+00:00'
+updated: '2023-01-31T09:00:01.949474+00:00'

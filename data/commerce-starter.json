@@ -1,0 +1,1143 @@
+{
+  "components": [
+    {
+      "id": "addToCart",
+      "name": "Add to cart",
+      "icon": "https://res.cloudinary.com/uniformdev/image/upload/v1675425439/vNext%20Demos/Baseline/canvas-preview/Add_to_cart_maddaz.png",
+      "parameters": [],
+      "useTeamPermissions": true,
+      "slots": [],
+      "canBeComposition": false,
+      "created": "2023-01-26T08:15:16.99034+00:00",
+      "updated": "2023-02-03T11:57:28.477793+00:00"
+    },
+    {
+      "id": "callToAction",
+      "name": "Call to Action",
+      "icon": "https://res.cloudinary.com/uniformdev/image/upload/v1675163156/vNext%20Demos/Baseline/canvas-preview/Call_to_Action_xfbvd7.png",
+      "parameters": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": {
+            "required": true
+          }
+        },
+        {
+          "id": "text",
+          "name": "Text",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": {
+            "required": true,
+            "multiline": true,
+            "linesCount": "10"
+          }
+        },
+        {
+          "id": "buttonCopy",
+          "name": "Button Copy",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": null
+        },
+        {
+          "id": "buttonLink",
+          "name": "Button Link",
+          "type": "project_map_link",
+          "helpText": "",
+          "typeConfig": null
+        }
+      ],
+      "useTeamPermissions": true,
+      "slots": [],
+      "titleParameter": "title",
+      "canBeComposition": false,
+      "created": "2023-01-24T08:12:29.485923+00:00",
+      "updated": "2023-02-07T14:30:41.25967+00:00"
+    },
+    {
+      "id": "container",
+      "name": "Container",
+      "icon": "rectangle-rounded",
+      "parameters": [
+        {
+          "id": "backgroundType",
+          "name": "Background Type",
+          "type": "select",
+          "helpText": "",
+          "typeConfig": {
+            "options": [
+              {
+                "text": "White",
+                "value": "White"
+              },
+              {
+                "text": "Dark",
+                "value": "Dark"
+              },
+              {
+                "text": "Light Gray",
+                "value": "LightGray"
+              }
+            ],
+            "required": true
+          }
+        },
+        {
+          "id": "paddingTop",
+          "name": "Padding Top",
+          "type": "select",
+          "helpText": "",
+          "typeConfig": {
+            "options": [
+              {
+                "text": "Small",
+                "value": "Small"
+              },
+              {
+                "text": "Medium",
+                "value": "Medium"
+              },
+              {
+                "text": "Large",
+                "value": "Large"
+              },
+              {
+                "text": "None",
+                "value": "None"
+              }
+            ]
+          }
+        },
+        {
+          "id": "paddingBottom",
+          "name": "Padding Bottom",
+          "type": "select",
+          "helpText": "",
+          "typeConfig": {
+            "options": [
+              {
+                "text": "Small",
+                "value": "Small"
+              },
+              {
+                "text": "Medium",
+                "value": "Medium"
+              },
+              {
+                "text": "Large",
+                "value": "Large"
+              },
+              {
+                "text": "None",
+                "value": "None"
+              }
+            ]
+          }
+        }
+      ],
+      "useTeamPermissions": true,
+      "slots": [
+        {
+          "id": "content",
+          "name": "Content",
+          "allowedComponents": [],
+          "inheritAllowedComponents": true
+        }
+      ],
+      "canBeComposition": false,
+      "created": "2023-01-26T07:36:58.717441+00:00",
+      "updated": "2023-01-26T07:37:17.429525+00:00"
+    },
+    {
+      "id": "featuredProducts",
+      "name": "Featured Products",
+      "icon": "https://res.cloudinary.com/uniformdev/image/upload/v1675425024/vNext%20Demos/Baseline/canvas-preview/Featured_Products_eh6zef.png",
+      "parameters": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": {
+            "required": true
+          }
+        },
+        {
+          "id": "subTitle",
+          "name": "Sub Title",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": {
+            "multiline": true
+          }
+        },
+        {
+          "id": "buttonCopy",
+          "name": "Button Copy",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": null
+        },
+        {
+          "id": "buttonLink",
+          "name": "Button Link",
+          "type": "project_map_link",
+          "helpText": "",
+          "typeConfig": null
+        },
+        {
+          "id": "products",
+          "name": "Products",
+          "type": "fake-commerce-product-selector",
+          "helpText": "",
+          "typeConfig": {
+            "required": true,
+            "multiSelect": true,
+            "allowedCategories": {
+              "21": {
+                "id": "21",
+                "name": "French Press"
+              },
+              "22": {
+                "id": "22",
+                "name": "Turkish"
+              },
+              "23": {
+                "id": "23",
+                "name": "Coffee Makers"
+              },
+              "24": {
+                "id": "24",
+                "name": "Espresso"
+              },
+              "25": {
+                "id": "25",
+                "name": "Percolators"
+              },
+              "26": {
+                "id": "26",
+                "name": "Pour-Over"
+              },
+              "27": {
+                "id": "27",
+                "name": "Beans"
+              },
+              "28": {
+                "id": "28",
+                "name": "Arabica"
+              },
+              "29": {
+                "id": "29",
+                "name": "Robusta"
+              },
+              "30": {
+                "id": "30",
+                "name": "Liberica"
+              }
+            }
+          }
+        },
+        {
+          "id": "showAddToCart",
+          "name": "Show Add to Cart",
+          "type": "checkbox",
+          "helpText": "",
+          "typeConfig": null
+        }
+      ],
+      "useTeamPermissions": true,
+      "slots": [],
+      "titleParameter": "title",
+      "canBeComposition": false,
+      "created": "2023-01-24T11:47:21.648452+00:00",
+      "updated": "2023-02-09T12:09:08.736729+00:00",
+      "variants": [
+        {
+          "id": "dark",
+          "name": "Dark"
+        }
+      ]
+    },
+    {
+      "id": "hero",
+      "name": "Hero",
+      "icon": "https://res.cloudinary.com/uniformdev/image/upload/v1675163013/vNext%20Demos/Baseline/canvas-preview/Hero_z6ssj7.png",
+      "parameters": [
+        {
+          "id": "backgroundImage",
+          "name": "Background Image",
+          "type": "select",
+          "helpText": "",
+          "typeConfig": {
+            "options": [
+              {
+                "text": "hero-beans",
+                "value": "res.cloudinary.com/uniformdev/image/upload/v1675862473/vNext%20Demos/Fake%20Commerce/hero-beans_q7qtiv.webp"
+              },
+              {
+                "text": "hero-coffee-makers",
+                "value": "res.cloudinary.com/uniformdev/image/upload/v1675862788/vNext%20Demos/Fake%20Commerce/hero-coffee-makers_ixoaim.webp"
+              },
+              {
+                "text": "hero-default",
+                "value": "res.cloudinary.com/uniformdev/image/upload/v1675862472/vNext%20Demos/Fake%20Commerce/hero-default_nhdw2h.webp"
+              }
+            ],
+            "required": true
+          }
+        },
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": {
+            "required": true
+          }
+        },
+        {
+          "id": "subtitle",
+          "name": "Subtitle",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": {
+            "required": false
+          }
+        },
+        {
+          "id": "buttonCopy",
+          "name": "Button Copy",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": null
+        },
+        {
+          "id": "buttonLink",
+          "name": "Button Link",
+          "type": "project_map_link",
+          "helpText": "",
+          "typeConfig": null
+        }
+      ],
+      "useTeamPermissions": true,
+      "slots": [],
+      "titleParameter": "title",
+      "canBeComposition": false,
+      "created": "2023-01-24T08:12:28.998631+00:00",
+      "updated": "2023-02-08T13:34:35.571042+00:00",
+      "variants": [
+        {
+          "id": "centered",
+          "name": "Centered"
+        }
+      ]
+    },
+    {
+      "id": "page",
+      "name": "Page",
+      "icon": "file-document",
+      "parameters": [
+        {
+          "id": "pageMetaTitle",
+          "name": "Page Meta Title",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": {
+            "required": true
+          }
+        },
+        {
+          "id": "pageMetaDescription",
+          "name": "Page Meta Description",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": {
+            "required": false,
+            "multiline": true
+          }
+        }
+      ],
+      "useTeamPermissions": true,
+      "slots": [
+        {
+          "id": "content",
+          "name": "Content",
+          "allowedComponents": [
+            "hero",
+            "$personalization",
+            "callToAction",
+            "$test",
+            "sectionTwoColumns",
+            "featuredProducts",
+            "container",
+            "addToCart",
+            "productDescription",
+            "relatedProducts",
+            "productCatalog"
+          ],
+          "inheritAllowedComponents": false
+        }
+      ],
+      "canBeComposition": true,
+      "created": "2023-01-24T08:12:29.473632+00:00",
+      "updated": "2023-01-31T09:00:01.949474+00:00"
+    },
+    {
+      "id": "productCatalog",
+      "name": "Product Catalog",
+      "icon": "https://res.cloudinary.com/uniformdev/image/upload/v1675425099/vNext%20Demos/Baseline/canvas-preview/Product_Catalog_tb50gi.png",
+      "parameters": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": {
+            "required": true
+          }
+        }
+      ],
+      "useTeamPermissions": true,
+      "slots": [],
+      "titleParameter": "title",
+      "canBeComposition": false,
+      "created": "2023-01-26T14:43:22.152773+00:00",
+      "updated": "2023-02-03T11:51:52.369054+00:00"
+    },
+    {
+      "id": "productDescription",
+      "name": "Product Description",
+      "icon": "https://res.cloudinary.com/uniformdev/image/upload/v1675425225/vNext%20Demos/Baseline/canvas-preview/Product_Description_sena9b.png",
+      "parameters": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": {
+            "required": true
+          }
+        }
+      ],
+      "useTeamPermissions": true,
+      "slots": [],
+      "titleParameter": "title",
+      "canBeComposition": false,
+      "created": "2023-01-26T08:16:15.590779+00:00",
+      "updated": "2023-02-03T11:53:56.909326+00:00"
+    },
+    {
+      "id": "productImageGallery",
+      "name": "Product Image Gallery",
+      "icon": "https://res.cloudinary.com/uniformdev/image/upload/v1675425369/vNext%20Demos/Baseline/canvas-preview/Product_Image_Gallery_igmpxn.png",
+      "parameters": [
+        {
+          "id": "imagesPosition",
+          "name": "Images Position",
+          "type": "select",
+          "helpText": "Position of the images preview block",
+          "typeConfig": {
+            "options": [
+              {
+                "text": "Left",
+                "value": "left"
+              },
+              {
+                "text": "Right",
+                "value": "right"
+              },
+              {
+                "text": "Top",
+                "value": "top"
+              },
+              {
+                "text": "Bottom",
+                "value": "bottom"
+              }
+            ]
+          }
+        }
+      ],
+      "useTeamPermissions": true,
+      "slots": [],
+      "canBeComposition": false,
+      "created": "2023-01-26T07:29:07.903224+00:00",
+      "updated": "2023-02-03T11:56:22.968887+00:00"
+    },
+    {
+      "id": "productInfo",
+      "name": "Product Info",
+      "icon": "https://res.cloudinary.com/uniformdev/image/upload/v1675425303/vNext%20Demos/Baseline/canvas-preview/Product_Info_e527mp.png",
+      "parameters": [],
+      "useTeamPermissions": true,
+      "slots": [],
+      "canBeComposition": false,
+      "created": "2023-01-25T12:38:07.698748+00:00",
+      "updated": "2023-02-03T11:55:38.84764+00:00"
+    },
+    {
+      "id": "relatedProducts",
+      "name": "Related Products",
+      "icon": "https://res.cloudinary.com/uniformdev/image/upload/v1675425482/vNext%20Demos/Baseline/canvas-preview/Related_Products_e3na3e.png",
+      "parameters": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": {
+            "required": true
+          }
+        }
+      ],
+      "useTeamPermissions": true,
+      "slots": [],
+      "titleParameter": "title",
+      "canBeComposition": false,
+      "created": "2023-01-26T08:18:47.628218+00:00",
+      "updated": "2023-02-08T09:48:37.421705+00:00"
+    },
+    {
+      "id": "sectionTwoColumns",
+      "name": "Section - Two columns",
+      "icon": "layout-grid",
+      "parameters": [
+        {
+          "id": "leftContentColumns",
+          "name": "Left Content Columns",
+          "type": "select",
+          "helpText": "Controlling how elements are sized and placed across left column. See details: https://tailwindcss.com/docs/grid-column ",
+          "typeConfig": {
+            "options": [
+              {
+                "text": "3",
+                "value": "3"
+              },
+              {
+                "text": "4",
+                "value": "4"
+              },
+              {
+                "text": "5",
+                "value": "5"
+              },
+              {
+                "text": "6",
+                "value": "6"
+              },
+              {
+                "text": "7",
+                "value": "7"
+              },
+              {
+                "text": "8",
+                "value": "8"
+              },
+              {
+                "text": "9",
+                "value": "9"
+              }
+            ],
+            "required": true
+          }
+        },
+        {
+          "id": "rightContentColumns",
+          "name": "Right Content Columns",
+          "type": "select",
+          "helpText": "Controlling how elements are sized and placed across right column. See details: https://tailwindcss.com/docs/grid-column ",
+          "typeConfig": {
+            "options": [
+              {
+                "text": "3",
+                "value": "3"
+              },
+              {
+                "text": "4",
+                "value": "4"
+              },
+              {
+                "text": "5",
+                "value": "5"
+              },
+              {
+                "text": "6",
+                "value": "6"
+              },
+              {
+                "text": "7",
+                "value": "7"
+              },
+              {
+                "text": "8",
+                "value": "8"
+              },
+              {
+                "text": "9",
+                "value": "9"
+              }
+            ],
+            "required": true
+          }
+        },
+        {
+          "id": "verticalAlignment",
+          "name": "Vertical Alignment",
+          "type": "select",
+          "helpText": "How would you like to align your item? ",
+          "typeConfig": {
+            "options": [
+              {
+                "text": "Top",
+                "value": "items-start"
+              },
+              {
+                "text": "Middle",
+                "value": "items-center"
+              },
+              {
+                "text": "Bottom",
+                "value": "items-end"
+              }
+            ],
+            "required": true
+          }
+        },
+        {
+          "id": "mobileItemsOrder",
+          "name": "Mobile Items Order",
+          "type": "select",
+          "helpText": "Order of items for small sized screens. (left column first or right column first)",
+          "typeConfig": {
+            "options": [
+              {
+                "text": "First",
+                "value": "order-first"
+              },
+              {
+                "text": "Last",
+                "value": "order-last"
+              }
+            ]
+          }
+        },
+        {
+          "id": "hasBottomBorder",
+          "name": "Has Bottom Border",
+          "type": "checkbox",
+          "helpText": "Should section has border at the bottom of container",
+          "typeConfig": null
+        }
+      ],
+      "useTeamPermissions": true,
+      "slots": [
+        {
+          "id": "leftContent",
+          "name": "Left Content",
+          "allowedComponents": [
+            "productInfo"
+          ],
+          "inheritAllowedComponents": false
+        },
+        {
+          "id": "rightContent",
+          "name": "Right Content",
+          "allowedComponents": [
+            "productImageGallery"
+          ],
+          "inheritAllowedComponents": false
+        }
+      ],
+      "canBeComposition": false,
+      "created": "2023-01-24T08:12:29.689017+00:00",
+      "updated": "2023-01-26T08:53:33.375117+00:00"
+    }
+  ],
+  "compositions": [
+    {
+      "composition": {
+        "_name": "Beans",
+        "_id": "ade8dd7a-f5ea-424b-bae1-22ae0a587017",
+        "_slug": "/shop/beans",
+        "type": "page",
+        "parameters": {
+          "pageMetaTitle": {
+            "type": "text",
+            "value": "Buy Coffee Beans"
+          },
+          "pageMetaDescription": {
+            "type": "text",
+            "value": "Buy Coffee Beans"
+          }
+        },
+        "slots": {
+          "content": [
+            {
+              "_id": "2cd76a7c-8e34-40f5-8e67-2e490564a24a",
+              "type": "hero",
+              "variant": "centered",
+              "parameters": {
+                "title": {
+                  "type": "text",
+                  "value": "Beans for all your brewing needs"
+                },
+                "backgroundImage": {
+                  "type": "select",
+                  "value": "res.cloudinary.com/uniformdev/image/upload/v1675862473/vNext%20Demos/Fake%20Commerce/hero-beans_q7qtiv.webp"
+                }
+              }
+            },
+            {
+              "_id": "d5f6ea45-2ace-4035-af2b-96b35576b8a4",
+              "type": "productCatalog",
+              "parameters": {
+                "title": {
+                  "type": "text",
+                  "value": "Beans"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "created": "2023-01-27T09:27:48.98841+00:00",
+      "modified": "2023-02-08T13:35:02.926059+00:00",
+      "pattern": false
+    },
+    {
+      "composition": {
+        "_name": "Product Detail",
+        "_id": "c2c62ac5-72c1-4e00-907d-2e4299c5a791",
+        "_slug": "/product-detail",
+        "type": "page",
+        "parameters": {
+          "pageMetaTitle": {
+            "type": "text",
+            "value": "Product Detail"
+          },
+          "pageMetaDescription": {
+            "type": "text",
+            "value": "Fake Commerce Product Detail"
+          }
+        },
+        "slots": {
+          "content": [
+            {
+              "_id": "45fa2141-03cd-4b85-93ab-490199eec92c",
+              "type": "container",
+              "slots": {
+                "content": [
+                  {
+                    "_id": "dca5e9c0-35a0-4f1c-9566-d1d7a82e131d",
+                    "type": "sectionTwoColumns",
+                    "slots": {
+                      "leftContent": [
+                        {
+                          "_id": "e6b588da-f653-4eb1-b779-d853a6067fbe",
+                          "type": "productInfo"
+                        }
+                      ],
+                      "rightContent": [
+                        {
+                          "_id": "2def5ec5-c44b-44ce-8c46-5ef249208e5a",
+                          "type": "productImageGallery",
+                          "parameters": {
+                            "imagesPosition": {
+                              "type": "select",
+                              "value": "bottom"
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "parameters": {
+                      "hasBottomBorder": {
+                        "type": "checkbox",
+                        "value": true
+                      },
+                      "verticalAlignment": {
+                        "type": "select",
+                        "value": "items-start"
+                      },
+                      "leftContentColumns": {
+                        "type": "select",
+                        "value": "4"
+                      },
+                      "rightContentColumns": {
+                        "type": "select",
+                        "value": "7"
+                      }
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "backgroundType": {
+                  "type": "select",
+                  "value": "White"
+                }
+              }
+            },
+            {
+              "_id": "f65c4dc7-da70-4b02-a284-2f2946fca51a",
+              "type": "addToCart"
+            },
+            {
+              "_id": "c0181a43-c418-41e9-a3ab-73a110eed815",
+              "type": "productDescription",
+              "parameters": {
+                "title": {
+                  "type": "text",
+                  "value": "About this product"
+                }
+              }
+            },
+            {
+              "_id": "5f694d47-dcbc-4bd1-a720-9551f7e66baf",
+              "type": "relatedProducts",
+              "parameters": {
+                "title": {
+                  "type": "text",
+                  "value": "Explore related products"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "created": "2023-01-24T14:26:59.060788+00:00",
+      "modified": "2023-01-26T08:53:56.641438+00:00",
+      "pattern": false
+    },
+    {
+      "composition": {
+        "_name": "Home",
+        "_id": "c7831905-e8b8-4002-b127-1281326079c4",
+        "_slug": "/",
+        "type": "page",
+        "parameters": {
+          "pageMetaTitle": {
+            "type": "text",
+            "value": "Home Page"
+          },
+          "pageMetaDescription": {
+            "type": "text",
+            "value": "Fake Commerce Home Page"
+          }
+        },
+        "slots": {
+          "content": [
+            {
+              "_id": "8dd20094-a895-49e9-b956-ccdba68a4cb3",
+              "type": "$personalization",
+              "slots": {
+                "pz": [
+                  {
+                    "_id": "67d3e69b-8e3c-4a64-92b3-f873843e9523",
+                    "type": "hero",
+                    "parameters": {
+                      "title": {
+                        "type": "text",
+                        "value": "See our new beans"
+                      },
+                      "$pzCrit": {
+                        "type": "$pzCrit",
+                        "value": {
+                          "crit": [
+                            {
+                              "l": "beans",
+                              "op": "+"
+                            }
+                          ],
+                          "name": "Hero: See our new beans"
+                        }
+                      },
+                      "buttonCopy": {
+                        "type": "text",
+                        "value": "See new beans"
+                      },
+                      "buttonLink": {
+                        "type": "project_map_link",
+                        "value": {
+                          "path": "/shop/beans",
+                          "nodeId": "8cfa6e61-1c65-477f-8b9a-fc3b1c57930b",
+                          "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+                        }
+                      },
+                      "backgroundImage": {
+                        "type": "select",
+                        "value": "res.cloudinary.com/uniformdev/image/upload/v1675862473/vNext%20Demos/Fake%20Commerce/hero-beans_q7qtiv.webp"
+                      }
+                    }
+                  },
+                  {
+                    "_id": "ff573aa1-3d29-4d28-a607-8397c34bf4b3",
+                    "type": "hero",
+                    "parameters": {
+                      "title": {
+                        "type": "text",
+                        "value": "See our new coffee makers"
+                      },
+                      "buttonCopy": {
+                        "type": "text",
+                        "value": "See our coffee makers"
+                      },
+                      "buttonLink": {
+                        "type": "project_map_link",
+                        "value": {
+                          "path": "/shop/coffee-makers",
+                          "nodeId": "0065505a-37c8-4a77-a66d-3ae7d414af6f",
+                          "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+                        }
+                      },
+                      "backgroundImage": {
+                        "type": "select",
+                        "value": "res.cloudinary.com/uniformdev/image/upload/v1675862472/vNext%20Demos/Fake%20Commerce/hero-default_nhdw2h.webp"
+                      }
+                    }
+                  }
+                ]
+              },
+              "parameters": {
+                "trackingEventName": {
+                  "type": "text",
+                  "value": "home-page-hero"
+                }
+              }
+            },
+            {
+              "_id": "fdaed343-768d-466d-8f63-821e92375a94",
+              "type": "callToAction",
+              "parameters": {
+                "text": {
+                  "type": "text",
+                  "value": "Welcome to JavaDrip. We are a boutique coffee company obsessed with the perfect cup of coffee. We believe that the perfect cup starts with the perfect bean and that those beans require the perfect brewing method. This means that we offer both high quality beans and products to meet any occasion and mood. Have a look around and let us know if you have any questions."
+                },
+                "title": {
+                  "type": "text",
+                  "value": "The home of coffee obsessives"
+                }
+              }
+            },
+            {
+              "_id": "5e8e36e3-894a-407a-b944-be9c5334743d",
+              "type": "featuredProducts",
+              "parameters": {
+                "title": {
+                  "type": "text",
+                  "value": "Our amazing coffee machines"
+                },
+                "products": {
+                  "type": "fake-commerce-product-selector",
+                  "value": {
+                    "productIds": [
+                      "118",
+                      "117",
+                      "120",
+                      "115"
+                    ]
+                  }
+                },
+                "subTitle": {
+                  "type": "text",
+                  "value": "Coffee machines that learn to optimize for your taste buds."
+                },
+                "buttonCopy": {
+                  "type": "text",
+                  "value": "See Coffee Makers"
+                },
+                "buttonLink": {
+                  "type": "project_map_link",
+                  "value": {
+                    "path": "/",
+                    "nodeId": "511adbd1-e683-4f17-bd49-52857a962db1",
+                    "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+                  }
+                }
+              }
+            },
+            {
+              "_id": "fc79a0c4-a154-4225-83a9-85f42123443e",
+              "type": "featuredProducts",
+              "variant": "dark",
+              "parameters": {
+                "title": {
+                  "type": "text",
+                  "value": "Giving it some beans!"
+                },
+                "products": {
+                  "type": "fake-commerce-product-selector",
+                  "value": {
+                    "productIds": [
+                      "113",
+                      "81",
+                      "80"
+                    ]
+                  }
+                },
+                "subTitle": {
+                  "type": "text",
+                  "value": "Coffee beans from the best parts of the world."
+                },
+                "buttonCopy": {
+                  "type": "text",
+                  "value": "See Coffee Beans"
+                },
+                "buttonLink": {
+                  "type": "project_map_link",
+                  "value": {
+                    "path": "/",
+                    "nodeId": "511adbd1-e683-4f17-bd49-52857a962db1",
+                    "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+                  }
+                },
+                "showAddToCart": {
+                  "type": "checkbox",
+                  "value": true
+                }
+              }
+            }
+          ]
+        }
+      },
+      "created": "2023-01-24T08:12:33.269439+00:00",
+      "modified": "2023-02-12T19:50:02.15707+00:00",
+      "pattern": false
+    },
+    {
+      "composition": {
+        "_name": "Coffee Makers",
+        "_id": "f798db7c-ad3c-4689-89d1-f1f9c13655d3",
+        "_slug": "/shop/coffee-makers",
+        "type": "page",
+        "parameters": {
+          "pageMetaTitle": {
+            "type": "text",
+            "value": "Buy Coffee Maker"
+          },
+          "pageMetaDescription": {
+            "type": "text",
+            "value": "Buy Coffee Maker"
+          }
+        },
+        "slots": {
+          "content": [
+            {
+              "_id": "bdc15c68-3360-49a5-9088-bb5e03c2e617",
+              "type": "hero",
+              "variant": "centered",
+              "parameters": {
+                "title": {
+                  "type": "text",
+                  "value": "Coffee makers for all your brewing needs"
+                },
+                "backgroundImage": {
+                  "type": "select",
+                  "value": "res.cloudinary.com/uniformdev/image/upload/v1675862788/vNext%20Demos/Fake%20Commerce/hero-coffee-makers_ixoaim.webp"
+                }
+              }
+            },
+            {
+              "_id": "57217e13-86c7-41b4-a8b1-e8aad640bd74",
+              "type": "productCatalog",
+              "parameters": {
+                "title": {
+                  "type": "text",
+                  "value": "Coffee Makers"
+                }
+              }
+            }
+          ]
+        }
+      },
+      "created": "2023-01-26T09:51:09.783812+00:00",
+      "modified": "2023-02-08T13:34:39.596547+00:00",
+      "pattern": false
+    }
+  ],
+  "signals": [
+    {
+      "id": "beans",
+      "name": "Beans",
+      "cap": 100,
+      "crit": {
+        "op": "&",
+        "type": "G",
+        "clauses": [
+          {
+            "type": "QS",
+            "match": {
+              "cs": false,
+              "op": "=",
+              "rhs": "beans"
+            },
+            "queryName": "utm_campaign"
+          }
+        ]
+      },
+      "dur": "p",
+      "description": "",
+      "str": 50
+    }
+  ],
+  "projectMaps": [
+    {
+      "id": "89a0d435-3096-4e77-84f1-eda9ea8bc677",
+      "name": "Website Map",
+      "default": true
+    }
+  ],
+  "projectMapNodes": [
+    {
+      "id": "0065505a-37c8-4a77-a66d-3ae7d414af6f",
+      "name": "Coffee Makers",
+      "type": "composition",
+      "data": {},
+      "order": 500,
+      "path": "/shop/coffee-makers",
+      "compositionId": "f798db7c-ad3c-4689-89d1-f1f9c13655d3",
+      "pathSegment": "coffee-makers",
+      "compositionData": {},
+      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+    },
+    {
+      "id": "0e320b16-f9ea-442f-8ad4-d679b75b49ca",
+      "name": "Shop",
+      "type": "placeholder",
+      "data": {},
+      "order": 500,
+      "path": "/shop",
+      "pathSegment": "shop",
+      "compositionData": {},
+      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+    },
+    {
+      "id": "511adbd1-e683-4f17-bd49-52857a962db1",
+      "name": "Home",
+      "type": "composition",
+      "data": {},
+      "order": 500,
+      "path": "/",
+      "compositionId": "c7831905-e8b8-4002-b127-1281326079c4",
+      "pathSegment": "",
+      "compositionData": {},
+      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+    },
+    {
+      "id": "8cfa6e61-1c65-477f-8b9a-fc3b1c57930b",
+      "name": "Beans",
+      "type": "composition",
+      "data": {},
+      "order": 600,
+      "path": "/shop/beans",
+      "compositionId": "ade8dd7a-f5ea-424b-bae1-22ae0a587017",
+      "pathSegment": "beans",
+      "compositionData": {},
+      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+    }
+  ]
+}

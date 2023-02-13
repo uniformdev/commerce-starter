@@ -1,0 +1,16 @@
+id: beans
+name: Beans
+cap: 100
+crit:
+  op: '&'
+  type: G
+  clauses:
+    - type: QS
+      match:
+        cs: false
+        op: '='
+        rhs: beans
+      queryName: utm_campaign
+dur: p
+description: ''
+str: 50

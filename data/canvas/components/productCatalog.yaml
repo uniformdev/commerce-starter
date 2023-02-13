@@ -1,0 +1,17 @@
+id: productCatalog
+name: Product Catalog
+icon: >-
+  https://res.cloudinary.com/uniformdev/image/upload/v1675425099/vNext%20Demos/Baseline/canvas-preview/Product_Catalog_tb50gi.png
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig:
+      required: true
+useTeamPermissions: true
+slots: []
+titleParameter: title
+canBeComposition: false
+created: '2023-01-26T14:43:22.152773+00:00'
+updated: '2023-02-03T11:51:52.369054+00:00'

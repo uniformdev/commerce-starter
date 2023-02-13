@@ -1,0 +1,34 @@
+composition:
+  _name: Coffee Makers
+  _id: f798db7c-ad3c-4689-89d1-f1f9c13655d3
+  _slug: /shop/coffee-makers
+  type: page
+  parameters:
+    pageMetaTitle:
+      type: text
+      value: Buy Coffee Maker
+    pageMetaDescription:
+      type: text
+      value: Buy Coffee Maker
+  slots:
+    content:
+      - _id: bdc15c68-3360-49a5-9088-bb5e03c2e617
+        type: hero
+        variant: centered
+        parameters:
+          title:
+            type: text
+            value: Coffee makers for all your brewing needs
+          backgroundImage:
+            type: select
+            value: >-
+              res.cloudinary.com/uniformdev/image/upload/v1675862788/vNext%20Demos/Fake%20Commerce/hero-coffee-makers_ixoaim.webp
+      - _id: 57217e13-86c7-41b4-a8b1-e8aad640bd74
+        type: productCatalog
+        parameters:
+          title:
+            type: text
+            value: Coffee Makers
+created: '2023-01-26T09:51:09.783812+00:00'
+modified: '2023-02-08T13:34:39.596547+00:00'
+pattern: false
