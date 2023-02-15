@@ -1,49 +1,26 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { BaseContainer } from '@/components-library/Container';
 
-const Announcement: React.FC<Type.AnnouncementProps> = ({ title, link, linkText }) => {
-  const { push } = useRouter();
-  const [announcementShown, setAnnouncementShown] = useState(false);
+const Announcement: React.FC = () => {
+  const [isOpened, setIsOpened] = useState(true);
 
-  const handleScroll = useCallback(() => setAnnouncementShown(true), [setAnnouncementShown]);
+  const handleCloseButtonClick = useCallback(() => setIsOpened(false), [setIsOpened]);
 
-  useEffect(() => {
-    if (!announcementShown || !title) return;
-    // clear listener when scroll handled
-    window.removeEventListener('scroll', handleScroll);
-  }, [announcementShown, title, handleScroll]);
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    // clear listener on component unmount
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [handleScroll]);
-
-  const handleCloseButtonClick = useCallback(() => {
-    setAnnouncementShown(false);
-  }, [setAnnouncementShown]);
-
-  const handleLinkButtonClick = useCallback(() => {
-    if (!link) return;
-    handleCloseButtonClick();
-    push(link);
-  }, [link, handleCloseButtonClick, push]);
-
-  if (!announcementShown || !title) return null;
+  if (!isOpened) return null;
   return (
     <div className="bg-black animate-pop-in-announcement sticky top-0 py-3.5 z-50">
       <BaseContainer className="!px-4 md:!px-8">
         <div className="relative">
           <p className="text-white flex items-center lg:justify-center w-full pr-12 lg:px-32 text-sm lg:text-base">
-            <span className="truncate block">{title}</span>
+            <span className="truncate block">
+              Uniform starter to reduce the time it takes to create digital experiences.
+            </span>
             <Link
               className="text-teal-400 ml-2 shrink-0 underline hover:no-underline cursor-pointer"
-              onClick={handleLinkButtonClick}
-              href={link}
+              href="https://docs.uniform.app/getting-started/starters"
             >
-              {linkText}
+              Read docs
             </Link>
           </p>
           <button

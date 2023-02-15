@@ -12,16 +12,10 @@ import 'tailwindcss/tailwind.css';
 
 const clientContext = createUniformContext();
 
-const announcementOptions = {
-  title: 'Uniform starter to reduce the time it takes to create digital experiences.',
-  linkText: 'Read docs',
-  link: 'https://docs.uniform.app/getting-started/starters',
-};
-
 export const App: NextPage<UniformAppProps> = ({ Component, pageProps }) => (
   <UniformContext context={clientContext}>
     <CartContextProvider>
-      <Announcement {...announcementOptions} />
+      <Announcement />
       <Header />
       <Component {...pageProps} />
       <ShoppingCartModal />
