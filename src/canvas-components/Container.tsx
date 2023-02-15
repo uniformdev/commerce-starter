@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { UniformSlot, ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import BaseContainer, { Props as BaseContainerProps } from '@/components/Container';
+import BaseContainer, { Props as BaseContainerProps } from '@/components-library/Container';
 
 const Container: FC<ComponentProps<BaseContainerProps>> = props => (
   <BaseContainer {...props}>

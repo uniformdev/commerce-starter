@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import Container from '@/components/Container';
+import Container from '@/components-library/Container';
 
 type Props = ComponentProps<{
   title: string;

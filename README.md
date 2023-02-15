@@ -19,7 +19,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 3. In field `API URL` input your api url, by default:
 
 ```
-http:localhost:3000
+http://localhost:3000
 ```
 
 4. Click on `Save` button.
@@ -40,7 +40,7 @@ npm i
 
 2. In your code editor and rename `.env.example` to `.env` file and add your `UNIFORM_API_KEY` and `UNIFORM_PROJECT_ID` variables
    > ⚠️ For the initial setup, this API key needs the Developer role assigned to it.
-3. This command pushes all configurations to your new Uniform project. (check [Uniform npm scripts](https://github.com/uniformdev/commerce-starter#uniform-npm-scripts) section first)
+3. This command pushes all configurations to your new Uniform project. (please add [Uniform npm scripts](https://github.com/uniformdev/commerce-starter#uniform-npm-scripts) to package.json first or use [Uniform CLI](https://docs.uniform.app/getting-started/cli-setup))
 
 ```bash
 npm run push

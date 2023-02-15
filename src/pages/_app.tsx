@@ -4,8 +4,8 @@ import { UniformContext } from '@uniformdev/context-react';
 import { UniformAppProps } from '@uniformdev/context-next';
 import createUniformContext from '@/context/createUniformContext';
 import CartContextProvider from '@/context/CartProvider';
-import { Header, NavigationFooter, ShoppingCartModal } from '@/components';
-import '@/canvas';
+import { Header, NavigationFooter, ShoppingCartModal } from '@/components-library';
+import '@/canvas-components';
 
 import '@/styles/globals.scss';
 import 'tailwindcss/tailwind.css';

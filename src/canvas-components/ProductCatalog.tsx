@@ -4,10 +4,10 @@ import { useRouter } from 'next/router';
 import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
 import debounce from 'lodash.debounce';
 import { buildSubCategoryUrl, getProductSearchResult } from '@/utilities/products';
-import Container, { PaddingSize } from '@/components/Container';
-import Dropdown from '@/components/Dropdown';
-import ProductCatalogFilterList from '@/components/ProductCatalogFilterList';
-import ProductCatalogSearchResult from '@/components/ProductCatalogSearchResult';
+import Container, { PaddingSize } from '@/components-library/Container';
+import Dropdown from '@/components-library/Dropdown';
+import ProductCatalogFilterList from '@/components-library/ProductCatalogFilterList';
+import ProductCatalogSearchResult from '@/components-library/ProductCatalogSearchResult';
 
 const SortOptions = [
   { label: 'Price: Low to High', value: 'asc' },

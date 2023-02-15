@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import CurrencyFormatter from '@/components/CurrencyFormatter';
+import CurrencyFormatter from '@/components-library/CurrencyFormatter';
 
 type Props = ComponentProps<{
   product: Type.Product;

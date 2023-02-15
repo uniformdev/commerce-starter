@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import Image from 'next/image';
 import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import Container, { PaddingSize } from '@/components/Container';
-import ButtonLink from '@/components/ButtonLink';
+import Container, { PaddingSize } from '@/components-library/Container';
+import ButtonLink from '@/components-library/ButtonLink';
 import { getFormattedLink } from '@/utilities';
 
 export enum HeroVariants {
