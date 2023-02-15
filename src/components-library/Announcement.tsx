@@ -1,10 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { BaseContainer } from '@/components-library/Container';
-
-const closeIconSrc = 'https://res.cloudinary.com/uniformdev/image/upload/v1637331044/uniformdev/icons/close_otaeka.svg';
 
 const Announcement: React.FC<Type.AnnouncementProps> = ({ title, link, linkText }) => {
   const { push } = useRouter();
@@ -55,7 +52,6 @@ const Announcement: React.FC<Type.AnnouncementProps> = ({ title, link, linkText 
             className="group cursor-pointer flex flex-row gap-2 items-center absolute right-0 top-1/2 -translate-y-1/2"
           >
             <p className="hidden lg:block text-white group-hover:text-teal-400">Dismiss</p>
-            <Image width={12} height={12} src={closeIconSrc} alt={`close announcement`} unoptimized />
           </button>
         </div>
       </BaseContainer>

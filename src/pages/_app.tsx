@@ -13,8 +13,8 @@ import 'tailwindcss/tailwind.css';
 const clientContext = createUniformContext();
 
 const announcementOptions = {
-  title: 'You can see the future of digital experiences and Uniform’s new features.',
-  linkText: 'Catch up now',
+  title: 'Uniform starter to reduce the time it takes to create digital experiences.',
+  linkText: 'Read docs',
   link: 'https://docs.uniform.app/getting-started/starters',
 };
 
