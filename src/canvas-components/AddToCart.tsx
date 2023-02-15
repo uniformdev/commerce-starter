@@ -1,8 +1,8 @@
 import { FC, useCallback, useEffect, useState } from 'react';
 import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import Container, { PaddingSize } from '@/components/Container';
-import ProductQuantityItem from '@/components/ProductQuantityItem';
-import ProductAddToCartButton from '@/components/ProductAddToCartButton';
+import Container, { PaddingSize } from '@/components-library/Container';
+import ProductQuantityItem from '@/components-library/ProductQuantityItem';
+import ProductAddToCartButton from '@/components-library/ProductAddToCartButton';
 
 type Props = ComponentProps<{
   product: Type.Product;

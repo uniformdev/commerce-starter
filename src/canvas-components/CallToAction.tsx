@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import Container, { PaddingSize } from '@/components/Container';
-import ButtonLink from '@/components/ButtonLink';
+import Container, { PaddingSize } from '@/components-library/Container';
+import ButtonLink from '@/components-library/ButtonLink';
 
 type CallToActionProps = ComponentProps<{
   title: string;

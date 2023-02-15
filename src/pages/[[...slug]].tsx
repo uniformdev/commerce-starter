@@ -1,6 +1,6 @@
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { getFakeCommerceEnhancers } from '@/enhancers/commerce';
-import { CommonContainer } from '@/components';
+import { CommonContainer } from '@/components-library';
 import { getFormattedSlug } from '@/utilities';
 import { getCompositionBySlug, getPathsFromProjectMap } from '@/utilities/canvas';
 import { AppPages, ProductPagesPrefixes } from '@/constants';

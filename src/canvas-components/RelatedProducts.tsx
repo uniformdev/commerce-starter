@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import Container, { BackgroundTypes } from '@/components/Container';
-import Carousel from '@/components/Carousel';
-import ProductItem from '@/components/ProductItem';
+import Container, { BackgroundTypes } from '@/components-library/Container';
+import Carousel from '@/components-library/Carousel';
+import ProductItem from '@/components-library/ProductItem';
 
 type Props = ComponentProps<{
   title: string;

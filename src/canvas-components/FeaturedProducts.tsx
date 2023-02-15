@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
-import Container, { BackgroundTypes } from '@/components/Container';
-import Carousel from '@/components/Carousel';
-import ButtonLink from '@/components/ButtonLink';
-import ProductItem from '@/components/ProductItem';
+import Container, { BackgroundTypes } from '@/components-library/Container';
+import Carousel from '@/components-library/Carousel';
+import ButtonLink from '@/components-library/ButtonLink';
+import ProductItem from '@/components-library/ProductItem';
 
 type FeaturedProductsProps = ComponentProps<{
   title: string;
