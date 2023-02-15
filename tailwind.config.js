@@ -24,12 +24,17 @@ module.exports = {
           '0%': { transform: 'translateY(100%)' },
           '100%': { transform: 'translateY(-100%)' },
         },
+        'pop-in-announcement': {
+          '0%': { transform: 'translateY(-100%);' },
+          '100%': { transform: 'none' },
+        },
       },
       animation: {
         one: 'animate-one 1s linear infinite',
         two: 'animate-two 1s linear infinite',
         three: 'animate-three 1s linear infinite',
         four: 'animate-four 1s linear infinite',
+        'pop-in-announcement': 'pop-in-announcement 0.6s ease-out',
       },
       colors: {
         gray: {

@@ -6,3 +6,4 @@ export { default as ShoppingCartModal } from './ShoppingCartModal';
 export { default as CommonContainer } from './CommonContainer';
 export { default as ShoppingCartIcon } from './ShoppingCartIcon';
 export { default as ShoppingCart } from './ShoppingCart';
+export { default as Announcement } from './Announcement';

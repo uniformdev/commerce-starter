@@ -32,4 +32,10 @@ declare namespace Type {
     sortField?: 'price';
     sortDirection?: string;
   }
+
+  interface AnnouncementProps {
+    title: string;
+    link: string;
+    linkText: string;
+  }
 }
