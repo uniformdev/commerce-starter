@@ -1,0 +1,54 @@
+id: container
+name: Container
+icon: rectangle-rounded
+parameters:
+  - id: backgroundType
+    name: Background Type
+    type: select
+    helpText: ''
+    typeConfig:
+      options:
+        - text: White
+          value: White
+        - text: Dark
+          value: Dark
+        - text: Light Gray
+          value: LightGray
+      required: true
+  - id: paddingTop
+    name: Padding Top
+    type: select
+    helpText: ''
+    typeConfig:
+      options:
+        - text: Small
+          value: Small
+        - text: Medium
+          value: Medium
+        - text: Large
+          value: Large
+        - text: None
+          value: None
+  - id: paddingBottom
+    name: Padding Bottom
+    type: select
+    helpText: ''
+    typeConfig:
+      options:
+        - text: Small
+          value: Small
+        - text: Medium
+          value: Medium
+        - text: Large
+          value: Large
+        - text: None
+          value: None
+useTeamPermissions: true
+slots:
+  - id: content
+    name: Content
+    allowedComponents: []
+    inheritAllowedComponents: true
+canBeComposition: false
+created: '2023-01-26T07:36:58.717441+00:00'
+updated: '2023-01-26T07:37:17.429525+00:00'

@@ -1,0 +1,17 @@
+id: productDescription
+name: Product Description
+icon: >-
+  https://res.cloudinary.com/uniformdev/image/upload/v1675425225/vNext%20Demos/Baseline/canvas-preview/Product_Description_sena9b.png
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: ''
+    typeConfig:
+      required: true
+useTeamPermissions: true
+slots: []
+titleParameter: title
+canBeComposition: false
+created: '2023-01-26T08:16:15.590779+00:00'
+updated: '2023-02-03T11:53:56.909326+00:00'

@@ -1,0 +1,10 @@
+id: productInfo
+name: Product Info
+icon: >-
+  https://res.cloudinary.com/uniformdev/image/upload/v1675425303/vNext%20Demos/Baseline/canvas-preview/Product_Info_e527mp.png
+parameters: []
+useTeamPermissions: true
+slots: []
+canBeComposition: false
+created: '2023-01-25T12:38:07.698748+00:00'
+updated: '2023-02-03T11:55:38.84764+00:00'

@@ -1,0 +1,34 @@
+composition:
+  _name: Beans
+  _id: ade8dd7a-f5ea-424b-bae1-22ae0a587017
+  _slug: /shop/beans
+  type: page
+  parameters:
+    pageMetaTitle:
+      type: text
+      value: Buy Coffee Beans
+    pageMetaDescription:
+      type: text
+      value: Buy Coffee Beans
+  slots:
+    content:
+      - _id: 2cd76a7c-8e34-40f5-8e67-2e490564a24a
+        type: hero
+        variant: centered
+        parameters:
+          title:
+            type: text
+            value: Beans for all your brewing needs
+          backgroundImage:
+            type: select
+            value: >-
+              res.cloudinary.com/uniformdev/image/upload/v1675862473/vNext%20Demos/Fake%20Commerce/hero-beans_q7qtiv.webp
+      - _id: d5f6ea45-2ace-4035-af2b-96b35576b8a4
+        type: productCatalog
+        parameters:
+          title:
+            type: text
+            value: Beans
+created: '2023-01-27T09:27:48.98841+00:00'
+modified: '2023-02-08T13:35:02.926059+00:00'
+pattern: false

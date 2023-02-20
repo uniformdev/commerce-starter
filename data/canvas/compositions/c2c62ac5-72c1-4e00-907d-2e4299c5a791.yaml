@@ -1,0 +1,65 @@
+composition:
+  _name: Product Detail
+  _id: c2c62ac5-72c1-4e00-907d-2e4299c5a791
+  _slug: /product-detail
+  type: page
+  parameters:
+    pageMetaTitle:
+      type: text
+      value: Product Detail
+    pageMetaDescription:
+      type: text
+      value: Fake Commerce Product Detail
+  slots:
+    content:
+      - _id: 45fa2141-03cd-4b85-93ab-490199eec92c
+        type: container
+        slots:
+          content:
+            - _id: dca5e9c0-35a0-4f1c-9566-d1d7a82e131d
+              type: sectionTwoColumns
+              slots:
+                leftContent:
+                  - _id: e6b588da-f653-4eb1-b779-d853a6067fbe
+                    type: productInfo
+                rightContent:
+                  - _id: 2def5ec5-c44b-44ce-8c46-5ef249208e5a
+                    type: productImageGallery
+                    parameters:
+                      imagesPosition:
+                        type: select
+                        value: bottom
+              parameters:
+                hasBottomBorder:
+                  type: checkbox
+                  value: true
+                verticalAlignment:
+                  type: select
+                  value: items-start
+                leftContentColumns:
+                  type: select
+                  value: '4'
+                rightContentColumns:
+                  type: select
+                  value: '7'
+        parameters:
+          backgroundType:
+            type: select
+            value: White
+      - _id: f65c4dc7-da70-4b02-a284-2f2946fca51a
+        type: addToCart
+      - _id: c0181a43-c418-41e9-a3ab-73a110eed815
+        type: productDescription
+        parameters:
+          title:
+            type: text
+            value: About this product
+      - _id: 5f694d47-dcbc-4bd1-a720-9551f7e66baf
+        type: relatedProducts
+        parameters:
+          title:
+            type: text
+            value: Explore related products
+created: '2023-01-24T14:26:59.060788+00:00'
+modified: '2023-01-26T08:53:56.641438+00:00'
+pattern: false

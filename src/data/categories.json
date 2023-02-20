@@ -1,0 +1,12 @@
+[
+  { "id": "21", "name": "French Press", "url": "french-press", "parentId": "23" },
+  { "id": "22", "name": "Turkish", "url": "turkish", "parentId": "23" },
+  { "id": "23", "name": "Coffee Makers", "url": "coffee-makers", "parentId": "0" },
+  { "id": "24", "name": "Espresso", "url": "espresso", "parentId": "23" },
+  { "id": "25", "name": "Percolators", "url": "percolators", "parentId": "23" },
+  { "id": "26", "name": "Pour-Over", "url": "pour-over", "parentId": "23" },
+  { "id": "27", "name": "Beans", "url": "beans", "parentId": "0" },
+  { "id": "28", "name": "Arabica", "url": "arabica", "parentId": "27" },
+  { "id": "29", "name": "Robusta", "url": "robusta", "parentId": "27" },
+  { "id": "30", "name": "Liberica", "url": "liberica", "parentId": "27" }
+]

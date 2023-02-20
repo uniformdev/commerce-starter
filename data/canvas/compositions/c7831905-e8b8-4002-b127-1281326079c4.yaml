@@ -1,0 +1,140 @@
+composition:
+  _name: Home
+  _id: c7831905-e8b8-4002-b127-1281326079c4
+  _slug: /
+  type: page
+  parameters:
+    pageMetaTitle:
+      type: text
+      value: Home Page
+    pageMetaDescription:
+      type: text
+      value: Fake Commerce Home Page
+  slots:
+    content:
+      - _id: 8dd20094-a895-49e9-b956-ccdba68a4cb3
+        type: $personalization
+        slots:
+          pz:
+            - _id: 67d3e69b-8e3c-4a64-92b3-f873843e9523
+              type: hero
+              parameters:
+                title:
+                  type: text
+                  value: See our new beans
+                $pzCrit:
+                  type: $pzCrit
+                  value:
+                    crit:
+                      - l: beans
+                        op: +
+                    name: 'Hero: See our new beans'
+                buttonCopy:
+                  type: text
+                  value: See new beans
+                buttonLink:
+                  type: project_map_link
+                  value:
+                    path: /shop/beans
+                    nodeId: 8cfa6e61-1c65-477f-8b9a-fc3b1c57930b
+                    projectMapId: 89a0d435-3096-4e77-84f1-eda9ea8bc677
+                backgroundImage:
+                  type: select
+                  value: >-
+                    res.cloudinary.com/uniformdev/image/upload/v1675862473/vNext%20Demos/Fake%20Commerce/hero-beans_q7qtiv.webp
+            - _id: ff573aa1-3d29-4d28-a607-8397c34bf4b3
+              type: hero
+              parameters:
+                title:
+                  type: text
+                  value: See our new coffee makers
+                buttonCopy:
+                  type: text
+                  value: See our coffee makers
+                buttonLink:
+                  type: project_map_link
+                  value:
+                    path: /shop/coffee-makers
+                    nodeId: 0065505a-37c8-4a77-a66d-3ae7d414af6f
+                    projectMapId: 89a0d435-3096-4e77-84f1-eda9ea8bc677
+                backgroundImage:
+                  type: select
+                  value: >-
+                    res.cloudinary.com/uniformdev/image/upload/v1675862472/vNext%20Demos/Fake%20Commerce/hero-default_nhdw2h.webp
+        parameters:
+          trackingEventName:
+            type: text
+            value: home-page-hero
+      - _id: fdaed343-768d-466d-8f63-821e92375a94
+        type: callToAction
+        parameters:
+          text:
+            type: text
+            value: >-
+              Welcome to JavaDrip. We are a boutique coffee company obsessed
+              with the perfect cup of coffee. We believe that the perfect cup
+              starts with the perfect bean and that those beans require the
+              perfect brewing method. This means that we offer both high quality
+              beans and products to meet any occasion and mood. Have a look
+              around and let us know if you have any questions.
+          title:
+            type: text
+            value: The home of coffee obsessives
+      - _id: 5e8e36e3-894a-407a-b944-be9c5334743d
+        type: featuredProducts
+        parameters:
+          title:
+            type: text
+            value: Our amazing coffee machines
+          products:
+            type: fake-commerce-product-selector
+            value:
+              productIds:
+                - '118'
+                - '117'
+                - '120'
+                - '115'
+          subTitle:
+            type: text
+            value: Coffee machines that learn to optimize for your taste buds.
+          buttonCopy:
+            type: text
+            value: See Coffee Makers
+          buttonLink:
+            type: project_map_link
+            value:
+              path: /
+              nodeId: 511adbd1-e683-4f17-bd49-52857a962db1
+              projectMapId: 89a0d435-3096-4e77-84f1-eda9ea8bc677
+      - _id: fc79a0c4-a154-4225-83a9-85f42123443e
+        type: featuredProducts
+        variant: dark
+        parameters:
+          title:
+            type: text
+            value: Giving it some beans!
+          products:
+            type: fake-commerce-product-selector
+            value:
+              productIds:
+                - '113'
+                - '81'
+                - '80'
+          subTitle:
+            type: text
+            value: Coffee beans from the best parts of the world.
+          buttonCopy:
+            type: text
+            value: See Coffee Beans
+          buttonLink:
+            type: project_map_link
+            value:
+              path: /
+              nodeId: 511adbd1-e683-4f17-bd49-52857a962db1
+              projectMapId: 89a0d435-3096-4e77-84f1-eda9ea8bc677
+          showAddToCart:
+            type: checkbox
+            value: true
+created: '2023-01-24T08:12:33.269439+00:00'
+modified: '2023-02-12T19:50:02.15707+00:00'
+pattern: false
