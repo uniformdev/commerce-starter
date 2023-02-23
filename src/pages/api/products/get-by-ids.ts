@@ -15,7 +15,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     productIds = id.split(',').map(e => e.trim());
   }
 
-  console.log({ productIds });
   const products = getProductsByIds(productsHashCache, productIds);
 
   return res.status(200).json(products);
