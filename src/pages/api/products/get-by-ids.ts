@@ -9,6 +9,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   const { id = [] } = req.query;
   const ids: string[] = Array.isArray(id) ? id : [id];
+  console.log({ ids });
   const products = getProductsByIds(productsHashCache, ids);
 
   return res.status(200).json(products);
