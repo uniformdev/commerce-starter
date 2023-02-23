@@ -31,30 +31,25 @@ Alternatively, you can start with this repository then push the content to your 
 
 ### Start local development
 
+1. In your code editor and rename `.env.example` to `.env` file and add your `UNIFORM_API_KEY` and `UNIFORM_PROJECT_ID` environment variables. The values must correspond to your Uniform project connection details. If you don't have the API key created, head over to your team security section and create one. ⚠️ For this initial setup, this API key needs the Developer role assigned to it.
+
 1. In your terminal, from the project root, install all dependencies with the following command:
 
-```bash
-npm i
-```
+    ```bash
+    npm install
+    ```
 
-2. In your code editor and rename `.env.example` to `.env` file and add your `UNIFORM_API_KEY` and `UNIFORM_PROJECT_ID` environment variables.
-3. This command pushes all configurations to your new Uniform project. (please add [Uniform npm scripts](https://github.com/uniformdev/commerce-starter#uniform-npm-scripts) to package.json first or use [Uniform CLI](https://docs.uniform.app/getting-started/cli-setup))
+1. Run this to push all local content from `./data` to your new Uniform project.
 
-```bash
-npm run push
-```
+    ```bash
+    npm run push
+    ```
 
-5. Run the production server:
+1. Run the dev  server:
 
-```bash
-npm run build && npm run start
-```
-
-or development server:
-
-```bash
-npm run dev
-```
+    ```bash
+    npm run dev
+    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 The project is connected to your Uniform project. Changes you make an publish on Uniform will reflect in this local project.
