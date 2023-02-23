@@ -1,6 +1,9 @@
 ## Uniform Commerce Starter
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It's a Starter repository containing a personalized Uniform-powered e-commerce store. 
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It's a Starter repository containing a personalized Uniform-powered e-commerce store.
+
+- [Demo](https://uniformcommercestarter.netlify.app/)
+- [Docs](https://docs.uniform.app/getting-started/starters#javadrip)
 
 On Uniform, install the Commerce Starter after creating an account then follow the instructions to connect this repository. 
 Alternatively, you can start with this repository then push the content to your Uniform project. See the instructions below.
