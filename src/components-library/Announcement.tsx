@@ -16,7 +16,7 @@ const Announcement: React.FC = () => {
             <span className="truncate hidden sm:block mr-2">Continue building your project.</span>
             <Link
               className="text-teal-400 shrink-0 underline hover:no-underline cursor-pointer"
-              href="https://docs.uniform.app/getting-started/starters#commerce---javadrip"
+              href="https://docs.uniform.app/getting-started/starters#javadrip"
               target="_blank"
             >
               Learn about what do next with this Starter
