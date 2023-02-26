@@ -22,7 +22,7 @@ export const AppNavigation = [
   },
   {
     link: AppPages.CoffeeMakers,
-    title: 'Coffee Makes',
+    title: 'Coffee Makers',
   },
   {
     link: AppPages.Beans,
