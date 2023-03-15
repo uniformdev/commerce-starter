@@ -30,14 +30,16 @@ const Announcement: React.FC = () => {
           <BaseContainer>
             <div className="relative">
               <p className="text-white text-sm flex items-center md:justify-center w-full pr-16 md:pr-0">
-                <span className="truncate hidden sm:block mr-2">This is a Uniform-deploy preview.</span>
+                This preview is powered by a pre-deployed site. Click&nbsp;
                 <Link
                   className="text-teal-400 shrink-0 underline hover:no-underline cursor-pointer"
+                  data-is-rendered-by-uniform
                   href="https://docs.uniform.app/getting-started/starters"
                   target="_blank"
                 >
-                  Click here to learn how switch to your own!
+                  here
                 </Link>
+                &nbsp;to learn how to set up your own.
               </p>
             </div>
           </BaseContainer>
