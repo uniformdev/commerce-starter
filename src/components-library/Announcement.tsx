@@ -56,7 +56,7 @@ const Announcement: React.FC = () => {
                   href="https://docs.uniform.app/getting-started/starters#javadrip"
                   target="_blank"
                 >
-                  Learn about what do next with this Starter
+                  Learn about what to do next with this Starter
                 </Link>
               </p>
               <button
