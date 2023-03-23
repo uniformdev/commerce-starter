@@ -24,7 +24,7 @@
     "uniform:pull:map:def": "uniform prm definition pull ./data/commerce-starter.json",
     "uniform:pull:map:nodes": "uniform prm node pull ./data/commerce-starter.json",
     "uniform:pull:map": "run-s uniform:pull:map:def uniform:pull:map:nodes",
-    "uniform:push": "run-s uniform:push:context uniform:publish:context uniform:push:map push:canvas",
+    "uniform:push": "run-s uniform:push:context uniform:publish:context uniform:push:map uniform:push:canvas",
     "uniform:push:context": "npm run uniform:push:context:signals",
     "uniform:push:context:signals": "uniform context signal push ./data/commerce-starter.json",
     "uniform:publish:context": "uniform context manifest publish",
