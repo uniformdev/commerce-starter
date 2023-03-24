@@ -28,10 +28,10 @@
     "uniform:push:context": "npm run uniform:push:context:signals",
     "uniform:push:context:signals": "uniform context signal push ./data/commerce-starter.json",
     "uniform:publish:context": "uniform context manifest publish",
-    "uniform:push:canvas": "run-s uniform:push:components uniform:push:compositions uniform:push:compositions:publish",
+    "uniform:push:canvas": "run-s uniform:push:components uniform:push:compositions uniform:publish",
     "uniform:push:components": "uniform canvas component push ./data/commerce-starter.json",
     "uniform:push:compositions": "uniform canvas composition push ./data/commerce-starter.json",
-    "uniform:push:compositions:publish": "uniform canvas composition push ./data/commerce-starter.json --state published",
+    "uniform:publish": "uniform canvas composition push ./data/commerce-starter.json --state published",
     "uniform:push:map:def": "uniform prm definition push ./data/commerce-starter.json",
     "uniform:push:map:nodes": "uniform prm node push ./data/commerce-starter.json",
     "uniform:push:map": "run-s uniform:push:map:def uniform:push:map:nodes"
