@@ -19,7 +19,7 @@ const Announcement: React.FC = () => {
     if (isOpenedByInContextEditor) {
       setDeployedBannerShown(Boolean(isOpenedByInContextEditor && process.env.NEXT_PUBLIC_SHOW_DEPLOYED_BANNER));
     }
-  }, []);
+  }, [isOpenedByInContextEditor]);
 
   if (!isAnnouncementOpened && !isDeployedBannerShown) return null;
 
