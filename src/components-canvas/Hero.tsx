@@ -77,4 +77,10 @@ registerUniformComponent({
   component: transformData(Hero),
 });
 
+registerUniformComponent({
+  type: 'hero',
+  component: transformData(HeroCentered),
+  variantId: 'centered',
+});
+
 export default Hero;
