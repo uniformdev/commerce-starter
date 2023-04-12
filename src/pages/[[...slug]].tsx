@@ -20,7 +20,10 @@ export const getStaticProps: GetStaticProps<{ preview?: boolean }> = async conte
         revalidate: Number.MAX_SAFE_INTEGER,
       },
     }))
-    .catch(() => ({ notFound: true }));
+    .catch(e => {
+      console.error('Error fetching composition; returning 404', e);
+      return { notFound: true };
+    });
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
