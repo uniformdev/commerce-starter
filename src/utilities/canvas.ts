@@ -9,13 +9,14 @@ import {
 } from '@uniformdev/canvas';
 import { ProjectMapClient, ProjectMapNodeGetRequest, ProjectMapSubtree } from '@uniformdev/project-map';
 
-const { uniformApiKey, uniformProjectId, uniformCliBaseUrl } = getConfig().serverRuntimeConfig;
+const { uniformApiKey, uniformProjectId, uniformCliBaseUrl, uniformCliBaseEdgeUrl } = getConfig().serverRuntimeConfig;
 
 const { canvasClient, projectMapClient } = (() => {
   if (!uniformApiKey || !uniformProjectId || !uniformCliBaseUrl) throw Error('Uniform credentials must be specified');
   const clientOptions = {
     apiKey: uniformApiKey,
     apiHost: uniformCliBaseUrl,
+    edgeApiHost: uniformCliBaseEdgeUrl,
     projectId: uniformProjectId,
   };
   return { canvasClient: new CanvasClient(clientOptions), projectMapClient: new ProjectMapClient(clientOptions) };

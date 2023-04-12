@@ -4,7 +4,8 @@ const nextConfig = {
   serverRuntimeConfig: {
     uniformProjectId: process.env.UNIFORM_PROJECT_ID,
     uniformApiKey: process.env.UNIFORM_API_KEY,
-    uniformCliBaseUrl: process.env.UNIFORM_CLI_BASE_URL || 'https://uniform.app',
+    uniformCliBaseUrl: process.env.UNIFORM_CLI_BASE_URL,
+    uniformCliBaseEdgeUrl: process.env.UNIFORM_CLI_BASE_EDGE_URL,
     uniformPreviewSecret: process.env.UNIFORM_PREVIEW_SECRET || 'javadrip',
   },
   publicRuntimeConfig: {
