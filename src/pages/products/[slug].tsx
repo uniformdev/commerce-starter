@@ -34,7 +34,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     ? products.map((product: Type.Product) => `${ProductPagesPrefixes.ProductDetailsPage}/${product.slug}`)
     : [];
 
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 };
 
 export default CommonContainer;

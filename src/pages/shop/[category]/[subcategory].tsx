@@ -39,7 +39,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     path: ProductPagesPrefixes.ProductListPage,
   });
   const paths = getAvailableSubCategoriesPaths(baseCategoriesPaths, categories);
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 };
 
 export default CommonContainer;
