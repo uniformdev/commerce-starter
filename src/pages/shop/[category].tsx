@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps<{ preview?: boolean }> = async conte
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = await getPathsFromProjectMap({ path: ProductPagesPrefixes.ProductListPage });
-  return { paths, fallback: false };
+  return { paths, fallback: true };
 };
 
 export default CommonContainer;
