@@ -7,5 +7,15 @@
   "search.exclude": {
     "node_modules": true
   },
-  "cSpell.words": ["Gtag", "nextjs", "tailwindcss", "uniformdev", "unoptimized"]
+  "cSpell.words": [
+    "bigcommerce",
+    "cloudinary",
+    "ctfassets",
+    "Gtag",
+    "javadrip",
+    "nextjs",
+    "tailwindcss",
+    "uniformdev",
+    "unoptimized"
+  ]
 }
