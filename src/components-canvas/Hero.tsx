@@ -27,7 +27,7 @@ type ExtendedHeroProps = Omit<HeroProps, 'buttonLink'> & {
     | string;
 };
 
-const HeroDefault: FC<HeroProps> = ({ title, subtitle, buttonCopy = '', buttonLink = '', backgroundImage }) => (
+const HeroDefault: FC<HeroProps> = ({ buttonLink = '', backgroundImage }) => (
   <div className="relative">
     {Boolean(backgroundImage) && (
       <Image className="absolute w-full h-full object-cover" src={backgroundImage} fill alt="hero-image" priority />
