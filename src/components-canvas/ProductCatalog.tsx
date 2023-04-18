@@ -1,7 +1,7 @@
 import { FC, ChangeEvent, useState, useMemo, useCallback } from 'react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
+import { ComponentProps, registerUniformComponent, UniformText } from '@uniformdev/canvas-react';
 import debounce from 'lodash.debounce';
 import { buildSubCategoryUrl, getProductSearchResult } from '@/utilities/products';
 import Container, { PaddingSize } from '@/components-library/Container';
@@ -24,7 +24,7 @@ type Props = ComponentProps<{
   title?: string;
 }>;
 
-const ProductCatalog: FC<Props> = ({ categories, activeCategory, prefetchedSearchResult, title = '' }) => {
+const ProductCatalog: FC<Props> = ({ categories, activeCategory, prefetchedSearchResult }) => {
   const router = useRouter();
   const [keyword, setKeyword] = useState('');
   const [sortDirection, setSortDirection] = useState<string | undefined>(undefined);
@@ -102,7 +102,12 @@ const ProductCatalog: FC<Props> = ({ categories, activeCategory, prefetchedSearc
   return (
     <Container paddingBottom={PaddingSize.None}>
       <div className="flex flex-col md:flex-row justify-between md:items-center">
-        <p className="text-2xl lg:text-3xl font-bold mb-4 pl-3 sm:mb-0 min-w-[18%]">{title}</p>
+        <UniformText
+          parameterId="title"
+          as="p"
+          className="text-2xl lg:text-3xl font-bold mb-4 pl-3 sm:mb-0 min-w-[18%]"
+        />
+
         <div className="flex flex-1 flex-col items-center md:flex-row justify-between">
           <div className="lg:w-[70%] w-full flex justify-start md:pl-2 pb-8 md:pb-0">
             <div className="relative bg-gray-50 flex lg:ml-4 w-full md:w-[70%] h-[50px] direction-row border-gray-300 index-1">

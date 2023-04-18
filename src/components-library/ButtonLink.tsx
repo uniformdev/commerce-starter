@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 interface Props {
   href: string;
-  text: string;
+  text: React.ReactNode;
   styleType?: 'primary' | 'secondary' | 'static';
   target?: string;
   rel?: string;

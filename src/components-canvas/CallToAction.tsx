@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
+import { ComponentProps, registerUniformComponent, UniformText } from '@uniformdev/canvas-react';
 import Container, { PaddingSize } from '@/components-library/Container';
 import ButtonLink from '@/components-library/ButtonLink';
 
@@ -20,12 +20,15 @@ type ExtendedCallToActionProps = Omit<CallToActionProps, 'buttonLink'> & {
     | string;
 };
 
-const CallToAction: FC<CallToActionProps> = ({ title, text, buttonCopy, buttonLink }) => (
+const CallToAction: FC<CallToActionProps> = ({ buttonLink }) => (
   <Container paddingTop={PaddingSize.Large} paddingBottom={PaddingSize.Large}>
     <div className="md:w-9/12 m-auto">
-      {title && <p className="md:text-center font-bold text-4xl">{title}</p>}
-      <p className="md:text-center mt-6">{text}</p>
-      {buttonCopy && buttonLink && <ButtonLink text={buttonCopy} href={buttonLink} className="mt-8 px-4" />}
+      <UniformText parameterId="title" as="p" className="md:text-center font-bold text-4xl" />
+      <UniformText parameterId="text" as="p" isMultiline className="md:text-center mt-6" />
+
+      {buttonLink && (
+        <ButtonLink href={buttonLink} text={<UniformText parameterId="buttonCopy" />} className="mt-8 px-4" />
+      )}
     </div>
   </Container>
 );

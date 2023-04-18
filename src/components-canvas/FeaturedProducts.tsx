@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ComponentProps, registerUniformComponent } from '@uniformdev/canvas-react';
+import { ComponentProps, registerUniformComponent, UniformText } from '@uniformdev/canvas-react';
 import Container, { BackgroundTypes } from '@/components-library/Container';
 import Carousel from '@/components-library/Carousel';
 import ButtonLink from '@/components-library/ButtonLink';
@@ -24,15 +24,7 @@ type ExtendedFeaturedProductsProps = Omit<FeaturedProductsProps, 'buttonLink'> &
     | string;
 };
 
-const FeaturedProducts: FC<FeaturedProductsProps> = ({
-  title,
-  subTitle,
-  products,
-  buttonCopy,
-  buttonLink,
-  showAddToCart,
-  component,
-}) => {
+const FeaturedProducts: FC<FeaturedProductsProps> = ({ products, buttonLink, showAddToCart, component }) => {
   const isDark = component.variant === BackgroundTypes.Dark.toLowerCase();
 
   if (!products.length) return null;
@@ -41,11 +33,15 @@ const FeaturedProducts: FC<FeaturedProductsProps> = ({
     <Container backgroundType={isDark ? BackgroundTypes.Dark : BackgroundTypes.LightGray}>
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 md:mb-10">
         <div className="mb-6 md:mb-0 basis-2/3 xl:basis-auto">
-          <p className="font-acumin font-extrabold text-3xl">{title}</p>
-          {subTitle && <p className="sm:pr-8">{subTitle}</p>}
+          <UniformText as="p" parameterId="title" className="font-acumin font-extrabold text-3xl" />
+          <UniformText as="p" parameterId="subTitle" className="sm:pr-8" />
         </div>
-        {buttonCopy && buttonLink && (
-          <ButtonLink href={buttonLink} text={buttonCopy} styleType={isDark ? 'secondary' : 'primary'} />
+        {buttonLink && (
+          <ButtonLink
+            href={buttonLink}
+            text={<UniformText parameterId="buttonCopy" />}
+            styleType={isDark ? 'secondary' : 'primary'}
+          />
         )}
       </div>
       <Carousel isDark={isDark} itemClass="px-2.5 my-px" containerClass="-mx-2.5">
