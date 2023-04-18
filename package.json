@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "run-s uniform:pull:manifest dev:next",
-    "dev:next": "next dev --port 3002",
+    "dev:next": "next dev --port 3000",
     "build": "run-s uniform:pull:manifest build:next",
     "build:next": "next build",
     "start": "next start",
