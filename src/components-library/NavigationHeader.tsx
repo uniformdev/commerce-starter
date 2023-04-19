@@ -21,6 +21,7 @@ const AppLogo = () => (
       src="https://res.cloudinary.com/uniformdev/image/upload/v1675765515/vNext%20Demos/icons/icon-header-logo_vjm8yy.svg"
       alt="header logo"
       priority
+      data-test-id="logo-image"
     />
   </Link>
 );
@@ -45,7 +46,7 @@ const NavigationHeader: FC<Props> = ({ children, cartIcon }) => {
   }, [router?.events, handleRouteChangeStart]);
 
   return (
-    <header className="relative border-b" role="navigation" aria-label="main-navigation">
+    <header className="relative border-b" role="navigation" aria-label="main-navigation" data-test-id="header">
       <BaseContainer className="w-full hidden lg:flex lg:flex-row lg:items-center lg:place-content-between lg:py-4">
         <div className={classNames('flex justify-between', { 'w-full': Boolean(cartIcon) })}>
           <div className="min-w-[400px]">
