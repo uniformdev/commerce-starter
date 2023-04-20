@@ -5,7 +5,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [Demo](https://uniformcommercestarter.netlify.app/)
 - [Docs](https://docs.uniform.app/getting-started/starters#javadrip)
 
-On Uniform, install the Commerce Starter after creating an account then follow the instructions to connect this repository. 
+On Uniform, install the Commerce Starter after creating an account then follow the instructions to connect this repository.
 Alternatively, you can start with this repository then push the content to your Uniform project. See the instructions below.
 
 ### Uniform Project Setup
@@ -38,21 +38,21 @@ Alternatively, you can start with this repository then push the content to your 
 
 1. In your terminal, from the project root, install all dependencies with the following command:
 
-    ```bash
-    npm install
-    ```
+   ```bash
+   npm install
+   ```
 
 1. Run this to push all local content from `./data` to your new Uniform project.
 
-    ```bash
-    npm run push
-    ```
+   ```bash
+   npm run push
+   ```
 
-1. Run the dev  server:
+1. Run the dev server:
 
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 The project is connected to your Uniform project. Changes you make an publish on Uniform will reflect in this local project.
@@ -88,7 +88,7 @@ The project is connected to your Uniform project. Changes you make an publish on
 
 - Home page
   - hardcoded top navigation menu
-  - hero personalised component
+  - hero personalized component
   - call to action
   - featured products (default variant)
   - featured products (dark variant)
