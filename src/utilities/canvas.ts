@@ -22,7 +22,8 @@ const { canvasClient, projectMapClient } = (() => {
   return { canvasClient: new CanvasClient(clientOptions), projectMapClient: new ProjectMapClient(clientOptions) };
 })();
 
-const getState = (preview: boolean | undefined) => (preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE);
+const getState = (preview: boolean | undefined) =>
+  process.env.NODE_ENV === 'development' || preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE;
 
 export const getCompositionBySlug = async (
   slug: string,
