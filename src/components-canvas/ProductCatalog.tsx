@@ -101,7 +101,10 @@ const ProductCatalog: FC<Props> = ({ categories, activeCategory, prefetchedSearc
 
   return (
     <Container paddingBottom={PaddingSize.None}>
-      <div className="flex flex-col md:flex-row justify-between md:items-center">
+      <div
+        className="flex flex-col md:flex-row justify-between md:items-center"
+        data-test-id="container-product-catalog"
+      >
         <p className="text-2xl lg:text-3xl font-bold mb-4 pl-3 sm:mb-0 min-w-[18%]">{title}</p>
         <div className="flex flex-1 flex-col items-center md:flex-row justify-between">
           <div className="lg:w-[70%] w-full flex justify-start md:pl-2 pb-8 md:pb-0">
