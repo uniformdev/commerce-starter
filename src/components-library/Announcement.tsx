@@ -4,7 +4,7 @@ import { IN_CONTEXT_EDITOR_QUERY_STRING_PARAM } from '@uniformdev/canvas';
 import { BaseContainer } from '@/components-library/Container';
 
 const Announcement: React.FC = () => {
-  const [isAnnouncementOpened, setIsAnnouncementOpened] = useState(true);
+  const [isAnnouncementOpened, setIsAnnouncementOpened] = useState(false);
   const [isDeployedBannerShown, setDeployedBannerShown] = useState(false);
 
   const handleCloseButtonClick = useCallback(() => setIsAnnouncementOpened(false), [setIsAnnouncementOpened]);

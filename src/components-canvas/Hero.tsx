@@ -14,7 +14,12 @@ type HeroProps = ComponentProps<{
   subtitle?: string;
   buttonCopy?: string;
   buttonLink?: string;
-  backgroundImage: string;
+  backgroundImage: any;
+  bgImage: {
+    url: string;
+    width: string;
+    height: string;
+  };
 }>;
 
 type ExtendedHeroProps = Omit<HeroProps, 'buttonLink'> & {
@@ -27,31 +32,33 @@ type ExtendedHeroProps = Omit<HeroProps, 'buttonLink'> & {
     | string;
 };
 
-const HeroDefault: FC<HeroProps> = ({ buttonLink = '', backgroundImage }) => (
-  <div className="relative">
-    {Boolean(backgroundImage) && (
-      <Image className="absolute w-full h-full object-cover" src={backgroundImage} fill alt="hero-image" priority />
-    )}
-    <Container paddingTop={PaddingSize.None} paddingBottom={PaddingSize.None} backgroundClassName="pt-40">
-      <div className="bg-neutral-800 md:bg-orange-900 relative md:-bottom-11 ml-auto w-full md:max-w-[658px] p-12 md:pl-24 md:pr-7 md:py-20 z-10">
-        <UniformText as="p" parameterId="title" className="font-bold text-3xl md:text-4xl lg:text-5xl text-white" />
-        <UniformText as="p" parameterId="subtitle" className="mt-7 font-extrabold text-white" />
-        {buttonLink && (
-          <ButtonLink
-            href={buttonLink}
-            text={<UniformText parameterId="buttonCopy" />}
-            className="lg:w-1/2 mt-9 text-sm max-w-full"
-          />
-        )}
-      </div>
-    </Container>
-  </div>
-);
+const HeroDefault: FC<HeroProps> = ({ buttonLink = '', bgImage }) => {
+  return (
+    <div className="relative">
+      {Boolean(bgImage.url) && (
+        <Image className="absolute w-full h-full object-cover" src={bgImage.url} fill alt="hero-image" priority />
+      )}
+      <Container paddingTop={PaddingSize.None} paddingBottom={PaddingSize.None} backgroundClassName="pt-40">
+        <div className="bg-neutral-800 md:bg-orange-900 relative md:-bottom-11 ml-auto w-full md:max-w-[658px] p-12 md:pl-24 md:pr-7 md:py-20 z-10">
+          <UniformText as="p" parameterId="title" className="font-bold text-3xl md:text-4xl lg:text-5xl text-white" />
+          <UniformText as="p" parameterId="subtitle" className="mt-7 font-extrabold text-white" />
+          {buttonLink && (
+            <ButtonLink
+              href={buttonLink}
+              text={<UniformText parameterId="buttonCopy" />}
+              className="lg:w-1/2 mt-9 text-sm max-w-full"
+            />
+          )}
+        </div>
+      </Container>
+    </div>
+  );
+};
 
-const HeroCentered: FC<HeroProps> = ({ title, subtitle, buttonCopy = '', buttonLink = '', backgroundImage }) => (
+const HeroCentered: FC<HeroProps> = ({ title, subtitle, buttonCopy = '', buttonLink = '', bgImage }) => (
   <div className="relative">
-    {Boolean(backgroundImage) && (
-      <Image className="absolute w-full h-full object-cover" src={backgroundImage} fill alt="hero-image" priority />
+    {Boolean(bgImage.url) && (
+      <Image className="absolute w-full h-full object-cover" src={bgImage.url} fill alt="hero-image" priority />
     )}
     <div className="relative flex items-center flex-col px-4 py-56 z-30">
       <UniformText
@@ -73,10 +80,14 @@ const HeroCentered: FC<HeroProps> = ({ title, subtitle, buttonCopy = '', buttonL
 
 const transformData = (BaseComponent: FC<HeroProps>): FC<HeroProps> =>
   function wrapper({ buttonLink, backgroundImage, ...props }: ExtendedHeroProps) {
+    console.log({ backgroundImage });
+
+    const bgImage = backgroundImage && backgroundImage.length > 0 ? getFormattedLink(backgroundImage)[0] : {};
+
     const transformedProps: HeroProps = {
       ...props,
       buttonLink: typeof buttonLink === 'string' ? buttonLink : buttonLink?.path,
-      backgroundImage: getFormattedLink(backgroundImage),
+      bgImage,
     };
     return <BaseComponent {...transformedProps} />;
   };
