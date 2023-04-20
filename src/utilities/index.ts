@@ -21,6 +21,8 @@ export const togglePageScroll = (isHiddenManual?: boolean): void => {
 };
 
 export const getFormattedLink = (link: string): string => {
-  if (!link) return '';
-  return link?.startsWith('http') ? link : `https://${link}`;
+  if (link && typeof link === 'string') {
+    return link?.startsWith('http') ? link : `https://${link}`;
+  }
+  return link;
 };
