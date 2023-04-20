@@ -33,9 +33,18 @@ const HeroDefault: FC<HeroProps> = ({ title, subtitle, buttonCopy = '', buttonLi
       <Image className="absolute w-full h-full object-cover" src={backgroundImage} fill alt="hero-image" priority />
     )}
     <Container paddingTop={PaddingSize.None} paddingBottom={PaddingSize.None} backgroundClassName="pt-40">
-      <div className="bg-neutral-800 md:bg-orange-900 relative md:-bottom-11 ml-auto w-full md:max-w-[658px] p-12 md:pl-24 md:pr-7 md:py-20 z-10">
-        <p className="font-bold text-3xl md:text-4xl lg:text-5xl text-white">{title}</p>
-        {Boolean(subtitle) && <p className="mt-7 font-extrabold text-white">{subtitle}</p>}
+      <div
+        className="bg-neutral-800 md:bg-orange-900 relative md:-bottom-11 ml-auto w-full md:max-w-[658px] p-12 md:pl-24 md:pr-7 md:py-20 z-10"
+        data-test-id="hero-container"
+      >
+        <p className="font-bold text-3xl md:text-4xl lg:text-5xl text-white" data-test-id="hero-title">
+          {title}
+        </p>
+        {Boolean(subtitle) && (
+          <p className="mt-7 font-extrabold text-white" data-test-id="hero-subtitle">
+            {subtitle}
+          </p>
+        )}
         {buttonCopy && buttonLink && (
           <ButtonLink text={buttonCopy} href={buttonLink} className="lg:w-1/2 mt-9 text-sm max-w-full" />
         )}
