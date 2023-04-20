@@ -15,11 +15,7 @@ type HeroProps = ComponentProps<{
   buttonCopy?: string;
   buttonLink?: string;
   backgroundImage: any;
-  bgImage: {
-    url: string;
-    width: string;
-    height: string;
-  };
+  bgImage?: any;
 }>;
 
 type ExtendedHeroProps = Omit<HeroProps, 'buttonLink'> & {
@@ -35,8 +31,8 @@ type ExtendedHeroProps = Omit<HeroProps, 'buttonLink'> & {
 const HeroDefault: FC<HeroProps> = ({ buttonLink = '', bgImage }) => {
   return (
     <div className="relative">
-      {Boolean(bgImage.url) && (
-        <Image className="absolute w-full h-full object-cover" src={bgImage.url} fill alt="hero-image" priority />
+      {Boolean(bgImage?.url) && (
+        <Image className="absolute w-full h-full object-cover" src={bgImage?.url} fill alt="hero-image" priority />
       )}
       <Container paddingTop={PaddingSize.None} paddingBottom={PaddingSize.None} backgroundClassName="pt-40">
         <div className="bg-neutral-800 md:bg-orange-900 relative md:-bottom-11 ml-auto w-full md:max-w-[658px] p-12 md:pl-24 md:pr-7 md:py-20 z-10">
@@ -55,10 +51,10 @@ const HeroDefault: FC<HeroProps> = ({ buttonLink = '', bgImage }) => {
   );
 };
 
-const HeroCentered: FC<HeroProps> = ({ title, subtitle, buttonCopy = '', buttonLink = '', bgImage }) => (
+const HeroCentered: FC<HeroProps> = ({ buttonCopy = '', buttonLink = '', bgImage }) => (
   <div className="relative">
-    {Boolean(bgImage.url) && (
-      <Image className="absolute w-full h-full object-cover" src={bgImage.url} fill alt="hero-image" priority />
+    {Boolean(bgImage?.url) && (
+      <Image className="absolute w-full h-full object-cover" src={bgImage?.url} fill alt="hero-image" priority />
     )}
     <div className="relative flex items-center flex-col px-4 py-56 z-30">
       <UniformText
@@ -80,11 +76,9 @@ const HeroCentered: FC<HeroProps> = ({ title, subtitle, buttonCopy = '', buttonL
 
 const transformData = (BaseComponent: FC<HeroProps>): FC<HeroProps> =>
   function wrapper({ buttonLink, backgroundImage, ...props }: ExtendedHeroProps) {
-    console.log({ backgroundImage });
-
     const bgImage = backgroundImage && backgroundImage.length > 0 ? getFormattedLink(backgroundImage)[0] : {};
 
-    const transformedProps: HeroProps = {
+    const transformedProps: any = {
       ...props,
       buttonLink: typeof buttonLink === 'string' ? buttonLink : buttonLink?.path,
       bgImage,
