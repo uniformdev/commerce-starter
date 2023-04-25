@@ -11,6 +11,10 @@ declare namespace Type {
     url: string;
   }
 
+  interface FeaturedProductImage {
+    images: Array<{ link: string; title: string }>;
+  }
+
   interface Product {
     id: string;
     slug: string;
@@ -20,6 +24,7 @@ declare namespace Type {
     categories: string[];
     thumbnailId: string;
     images: ProductImage[];
+    imageGroups: FeaturedProductImage[];
   }
 
   type ProductsHashCache = Record<string, Product>;

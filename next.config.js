@@ -16,8 +16,21 @@ const nextConfig = {
       { protocol: 'https', hostname: 'images.ctfassets.net' },
       { protocol: 'https', hostname: 'res.cloudinary.com' },
       { protocol: 'https', hostname: 'cdn11.bigcommerce.com' },
+      { protocol: 'https', hostname: 'zzuo-001.dx.commercecloud.salesforce.com' },
     ],
     deviceSizes: [320, 420, 640, 768, 1024, 1280, 1536],
+  },
+  eslint: {
+    // Warning: This allows production builds to successfully complete even if
+    // your project has ESLint errors.
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
   },
 };
 

@@ -3,7 +3,7 @@ import { ComponentProps, registerUniformComponent, UniformText } from '@uniformd
 import Container, { BackgroundTypes } from '@/components-library/Container';
 import Carousel from '@/components-library/Carousel';
 import ButtonLink from '@/components-library/ButtonLink';
-import ProductItem from '@/components-library/ProductItem';
+import FeaturedProductItem from '@/components-library/FeaturedProductItem';
 
 type FeaturedProductsProps = ComponentProps<{
   title: string;
@@ -45,7 +45,7 @@ const FeaturedProducts: FC<FeaturedProductsProps> = ({ products, buttonLink, sho
         <Carousel isDark={isDark} itemClass="px-2.5 my-px" containerClass="-mx-2.5">
           {Array.isArray(products) &&
             products?.map(item => (
-              <ProductItem key={`featured-product-${item.id}`} product={item} showAddToCart={showAddToCart} />
+              <FeaturedProductItem key={`featured-product-${item.id}`} product={item} showAddToCart={showAddToCart} />
             ))}
         </Carousel>
       ) : null}

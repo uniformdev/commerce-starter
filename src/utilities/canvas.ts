@@ -40,14 +40,12 @@ export const getCompositionBySlug = async (
     .getCompositionBySlug({
       slug,
       state: getState(preview),
-      unstable_resolveData: true,
     })
     .catch(e => {
       if (e.statusCode !== 404) throw e;
       return canvasClient.getCompositionBySlug({
         slug: slugHasLeadingSlash ? slug.replace('/', '') : `/${slug}`,
         state: getState(preview),
-        unstable_resolveData: true,
       });
     });
 
