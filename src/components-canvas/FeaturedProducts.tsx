@@ -43,9 +43,10 @@ const FeaturedProducts: FC<FeaturedProductsProps> = ({ products, buttonLink, sho
       </div>
       {products ? (
         <Carousel isDark={isDark} itemClass="px-2.5 my-px" containerClass="-mx-2.5">
-          {products.map(item => (
-            <ProductItem key={`featured-product-${item.id}`} product={item} showAddToCart={showAddToCart} />
-          ))}
+          {Array.isArray(products) &&
+            products?.map(item => (
+              <ProductItem key={`featured-product-${item.id}`} product={item} showAddToCart={showAddToCart} />
+            ))}
         </Carousel>
       ) : null}
     </Container>
