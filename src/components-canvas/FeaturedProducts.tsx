@@ -26,9 +26,6 @@ type ExtendedFeaturedProductsProps = Omit<FeaturedProductsProps, 'buttonLink'> &
 
 const FeaturedProducts: FC<FeaturedProductsProps> = ({ products, buttonLink, showAddToCart, component }) => {
   const isDark = component.variant === BackgroundTypes.Dark.toLowerCase();
-
-  if (!products.length) return null;
-
   return (
     <Container backgroundType={isDark ? BackgroundTypes.Dark : BackgroundTypes.LightGray}>
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 md:mb-10">
@@ -44,11 +41,13 @@ const FeaturedProducts: FC<FeaturedProductsProps> = ({ products, buttonLink, sho
           />
         )}
       </div>
-      <Carousel isDark={isDark} itemClass="px-2.5 my-px" containerClass="-mx-2.5">
-        {products.map(item => (
-          <ProductItem key={`featured-product-${item.id}`} product={item} showAddToCart={showAddToCart} />
-        ))}
-      </Carousel>
+      {products ? (
+        <Carousel isDark={isDark} itemClass="px-2.5 my-px" containerClass="-mx-2.5">
+          {products.map(item => (
+            <ProductItem key={`featured-product-${item.id}`} product={item} showAddToCart={showAddToCart} />
+          ))}
+        </Carousel>
+      ) : null}
     </Container>
   );
 };
