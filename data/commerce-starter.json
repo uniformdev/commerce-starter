@@ -8,8 +8,8 @@
       "useTeamPermissions": true,
       "slots": [],
       "canBeComposition": false,
-      "created": "2023-01-26T08:15:16.99034+00:00",
-      "updated": "2023-02-03T11:57:28.477793+00:00"
+      "created": "2023-04-18T22:40:59.148508+00:00",
+      "updated": "2023-04-18T22:40:59.148508+00:00"
     },
     {
       "id": "callToAction",
@@ -46,7 +46,7 @@
         {
           "id": "buttonLink",
           "name": "Button Link",
-          "type": "project_map_link",
+          "type": "link",
           "helpText": "",
           "typeConfig": null
         }
@@ -55,8 +55,8 @@
       "slots": [],
       "titleParameter": "title",
       "canBeComposition": false,
-      "created": "2023-01-24T08:12:29.485923+00:00",
-      "updated": "2023-02-07T14:30:41.25967+00:00"
+      "created": "2023-04-18T22:41:00.783438+00:00",
+      "updated": "2023-04-18T22:41:00.783438+00:00"
     },
     {
       "id": "container",
@@ -149,14 +149,21 @@
         }
       ],
       "canBeComposition": false,
-      "created": "2023-01-26T07:36:58.717441+00:00",
-      "updated": "2023-01-26T07:37:17.429525+00:00"
+      "created": "2023-04-18T22:41:00.451947+00:00",
+      "updated": "2023-04-18T22:41:00.451947+00:00"
     },
     {
       "id": "featuredProducts",
       "name": "Featured Products",
       "icon": "https://res.cloudinary.com/uniformdev/image/upload/v1675425024/vNext%20Demos/Baseline/canvas-preview/Featured_Products_eh6zef.png",
       "parameters": [
+        {
+          "id": "products",
+          "name": "Products",
+          "type": "json",
+          "helpText": "",
+          "typeConfig": {}
+        },
         {
           "id": "title",
           "name": "Title",
@@ -185,61 +192,9 @@
         {
           "id": "buttonLink",
           "name": "Button Link",
-          "type": "project_map_link",
+          "type": "link",
           "helpText": "",
           "typeConfig": null
-        },
-        {
-          "id": "products",
-          "name": "Products",
-          "type": "fake-commerce-product-selector",
-          "helpText": "",
-          "typeConfig": {
-            "required": true,
-            "multiSelect": true,
-            "allowedCategories": {
-              "21": {
-                "id": "21",
-                "name": "French Press"
-              },
-              "22": {
-                "id": "22",
-                "name": "Turkish"
-              },
-              "23": {
-                "id": "23",
-                "name": "Coffee Makers"
-              },
-              "24": {
-                "id": "24",
-                "name": "Espresso"
-              },
-              "25": {
-                "id": "25",
-                "name": "Percolators"
-              },
-              "26": {
-                "id": "26",
-                "name": "Pour-Over"
-              },
-              "27": {
-                "id": "27",
-                "name": "Beans"
-              },
-              "28": {
-                "id": "28",
-                "name": "Arabica"
-              },
-              "29": {
-                "id": "29",
-                "name": "Robusta"
-              },
-              "30": {
-                "id": "30",
-                "name": "Liberica"
-              }
-            }
-          }
         },
         {
           "id": "showAddToCart",
@@ -253,8 +208,8 @@
       "slots": [],
       "titleParameter": "title",
       "canBeComposition": false,
-      "created": "2023-01-24T11:47:21.648452+00:00",
-      "updated": "2023-02-09T12:09:08.736729+00:00",
+      "created": "2023-04-18T22:40:58.969182+00:00",
+      "updated": "2023-04-25T03:43:56.272769+00:00",
       "variants": [
         {
           "id": "dark",
@@ -267,29 +222,6 @@
       "name": "Hero",
       "icon": "https://res.cloudinary.com/uniformdev/image/upload/v1675163013/vNext%20Demos/Baseline/canvas-preview/Hero_z6ssj7.png",
       "parameters": [
-        {
-          "id": "backgroundImage",
-          "name": "Background Image",
-          "type": "select",
-          "helpText": "",
-          "typeConfig": {
-            "options": [
-              {
-                "text": "hero-beans",
-                "value": "res.cloudinary.com/uniformdev/image/upload/v1675862473/vNext%20Demos/Fake%20Commerce/hero-beans_q7qtiv.webp"
-              },
-              {
-                "text": "hero-coffee-makers",
-                "value": "res.cloudinary.com/uniformdev/image/upload/v1675862788/vNext%20Demos/Fake%20Commerce/hero-coffee-makers_ixoaim.webp"
-              },
-              {
-                "text": "hero-default",
-                "value": "res.cloudinary.com/uniformdev/image/upload/v1675862472/vNext%20Demos/Fake%20Commerce/hero-default_nhdw2h.webp"
-              }
-            ],
-            "required": true
-          }
-        },
         {
           "id": "title",
           "name": "Title",
@@ -318,17 +250,27 @@
         {
           "id": "buttonLink",
           "name": "Button Link",
-          "type": "project_map_link",
+          "type": "link",
           "helpText": "",
           "typeConfig": null
+        },
+        {
+          "id": "backgroundImage",
+          "name": "Background Image",
+          "type": "cloudinary-image",
+          "helpText": "",
+          "typeConfig": {
+            "required": false,
+            "targetFolder": "JavaDrip/heros"
+          }
         }
       ],
       "useTeamPermissions": true,
       "slots": [],
       "titleParameter": "title",
       "canBeComposition": false,
-      "created": "2023-01-24T08:12:28.998631+00:00",
-      "updated": "2023-02-08T13:34:35.571042+00:00",
+      "created": "2023-04-18T22:40:59.170412+00:00",
+      "updated": "2023-04-20T19:37:09.023493+00:00",
       "variants": [
         {
           "id": "centered",
@@ -369,22 +311,25 @@
           "allowedComponents": [
             "hero",
             "$personalization",
-            "callToAction",
             "$test",
             "sectionTwoColumns",
-            "featuredProducts",
             "container",
-            "addToCart",
             "productDescription",
             "relatedProducts",
-            "productCatalog"
+            "productCatalog",
+            "$p:e4845bf4-b30b-470e-bd63-02554970bf57",
+            "$p:e2569713-5e5d-4fde-ad55-6d2a2625c05e",
+            "$p:089246c7-2e4b-48be-a2c3-a95b225ecb34",
+            "$p:35a4f6d8-4ec3-4e8e-96f4-1b4528741377"
           ],
-          "inheritAllowedComponents": false
+          "allowAllComponents": false,
+          "inheritAllowedComponents": false,
+          "patternsInAllowedComponents": true
         }
       ],
       "canBeComposition": true,
-      "created": "2023-01-24T08:12:29.473632+00:00",
-      "updated": "2023-01-31T09:00:01.949474+00:00"
+      "created": "2023-04-18T22:40:58.856709+00:00",
+      "updated": "2023-04-25T04:21:51.546401+00:00"
     },
     {
       "id": "productCatalog",
@@ -405,8 +350,8 @@
       "slots": [],
       "titleParameter": "title",
       "canBeComposition": false,
-      "created": "2023-01-26T14:43:22.152773+00:00",
-      "updated": "2023-02-03T11:51:52.369054+00:00"
+      "created": "2023-04-18T22:40:59.043398+00:00",
+      "updated": "2023-04-18T22:40:59.043398+00:00"
     },
     {
       "id": "productDescription",
@@ -427,8 +372,8 @@
       "slots": [],
       "titleParameter": "title",
       "canBeComposition": false,
-      "created": "2023-01-26T08:16:15.590779+00:00",
-      "updated": "2023-02-03T11:53:56.909326+00:00"
+      "created": "2023-04-18T22:41:00.48882+00:00",
+      "updated": "2023-04-18T22:41:00.48882+00:00"
     },
     {
       "id": "productImageGallery",
@@ -465,8 +410,8 @@
       "useTeamPermissions": true,
       "slots": [],
       "canBeComposition": false,
-      "created": "2023-01-26T07:29:07.903224+00:00",
-      "updated": "2023-02-03T11:56:22.968887+00:00"
+      "created": "2023-04-18T22:41:00.528084+00:00",
+      "updated": "2023-04-18T22:41:00.528084+00:00"
     },
     {
       "id": "productInfo",
@@ -476,8 +421,8 @@
       "useTeamPermissions": true,
       "slots": [],
       "canBeComposition": false,
-      "created": "2023-01-25T12:38:07.698748+00:00",
-      "updated": "2023-02-03T11:55:38.84764+00:00"
+      "created": "2023-04-18T22:40:59.679873+00:00",
+      "updated": "2023-04-18T22:40:59.679873+00:00"
     },
     {
       "id": "relatedProducts",
@@ -498,8 +443,8 @@
       "slots": [],
       "titleParameter": "title",
       "canBeComposition": false,
-      "created": "2023-01-26T08:18:47.628218+00:00",
-      "updated": "2023-02-08T09:48:37.421705+00:00"
+      "created": "2023-04-18T22:41:00.769793+00:00",
+      "updated": "2023-04-18T22:41:00.769793+00:00"
     },
     {
       "id": "sectionTwoColumns",
@@ -653,11 +598,213 @@
         }
       ],
       "canBeComposition": false,
-      "created": "2023-01-24T08:12:29.689017+00:00",
-      "updated": "2023-01-26T08:53:33.375117+00:00"
+      "created": "2023-04-18T22:40:59.682405+00:00",
+      "updated": "2023-04-18T22:40:59.682405+00:00"
     }
   ],
   "compositions": [
+    {
+      "composition": {
+        "_name": "Featured Products (recommendations)",
+        "_id": "089246c7-2e4b-48be-a2c3-a95b225ecb34",
+        "type": "featuredProducts",
+        "parameters": {
+          "title": {
+            "type": "text",
+            "value": "Recommended products"
+          },
+          "products": {
+            "type": "json",
+            "value": "unresolved",
+            "connectedData": {
+              "syntax": "jptr",
+              "pointer": "/Target Product/products"
+            }
+          },
+          "subTitle": {
+            "type": "text",
+            "value": "some description of recommended products"
+          }
+        },
+        "_dataResources": {
+          "Target Product": {
+            "type": "productRecommendations",
+            "variables": {
+              "recommender": "pdp-similar-items",
+              "contextProductIds": "115"
+            },
+            "isPatternParameter": true,
+            "ignorePatternParameterDefault": true
+          }
+        },
+        "_overridability": {
+          "variants": true,
+          "parameters": {
+            "title": "yes",
+            "products": "yes",
+            "subTitle": "yes",
+            "buttonCopy": "yes",
+            "buttonLink": "yes",
+            "showAddToCart": "yes"
+          }
+        }
+      },
+      "created": "2023-04-25T04:17:31.448029+00:00",
+      "modified": "2023-04-25T04:18:50.252389+00:00",
+      "pattern": true
+    },
+    {
+      "composition": {
+        "_name": "Featured Products (curated)",
+        "_id": "35a4f6d8-4ec3-4e8e-96f4-1b4528741377",
+        "type": "featuredProducts",
+        "variant": "dark",
+        "parameters": {
+          "title": {
+            "type": "text",
+            "value": "Curated product list"
+          },
+          "products": {
+            "type": "json",
+            "value": "unresolved",
+            "connectedData": {
+              "syntax": "jptr",
+              "pointer": "/Product collection/products"
+            }
+          },
+          "subTitle": {
+            "type": "text",
+            "value": "just for you"
+          },
+          "buttonCopy": {
+            "type": "text",
+            "value": "See more"
+          },
+          "buttonLink": {
+            "type": "link",
+            "value": {
+              "path": "/shop",
+              "type": "projectMapNode",
+              "nodeId": "0e320b16-f9ea-442f-8ad4-d679b75b49ca",
+              "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+            }
+          },
+          "showAddToCart": {
+            "type": "checkbox",
+            "value": true
+          }
+        },
+        "_dataResources": {
+          "Product collection": {
+            "type": "multiProduct",
+            "variables": {
+              "ids": "117,120,140,114"
+            },
+            "isPatternParameter": true,
+            "ignorePatternParameterDefault": true
+          }
+        },
+        "_overridability": {
+          "variants": true,
+          "parameters": {
+            "title": "yes",
+            "products": "yes",
+            "subTitle": "yes",
+            "buttonCopy": "yes",
+            "buttonLink": "yes",
+            "showAddToCart": "yes"
+          }
+        }
+      },
+      "created": "2023-04-25T04:19:26.362508+00:00",
+      "modified": "2023-04-25T04:20:23.208611+00:00",
+      "pattern": true
+    },
+    {
+      "composition": {
+        "_name": "Test",
+        "_id": "4e18de00-3768-476f-aad9-6462636e8ea8",
+        "_slug": "/test",
+        "type": "page",
+        "parameters": {
+          "pageMetaTitle": {
+            "type": "text",
+            "value": "test"
+          }
+        },
+        "slots": {
+          "content": [
+            {
+              "_id": "28f13e76-8f66-4d1a-909d-6d5132c82ada",
+              "type": "callToAction",
+              "parameters": {
+                "text": {
+                  "type": "text",
+                  "value": "unresolved",
+                  "connectedData": {
+                    "syntax": "jptr",
+                    "pointer": "/CTA Content/items/0/fields/text"
+                  }
+                },
+                "title": {
+                  "type": "text",
+                  "value": "unresolved",
+                  "connectedData": {
+                    "syntax": "jptr",
+                    "pointer": "/CTA Content/items/0/fields/title"
+                  }
+                },
+                "buttonCopy": {
+                  "type": "text",
+                  "value": "unresolved",
+                  "connectedData": {
+                    "syntax": "jptr",
+                    "pointer": "/CTA Content/items/0/fields/callToActionTitle"
+                  }
+                }
+              },
+              "_overridability": {
+                "parameters": {
+                  "text": "yes",
+                  "title": "yes",
+                  "buttonCopy": "yes",
+                  "buttonLink": "yes"
+                }
+              }
+            }
+          ]
+        },
+        "_dataResources": {
+          "CTA Content": {
+            "type": "cta",
+            "variables": {
+              "entryIds": "4DtirdFZHKg7tdgAnzVSMZ",
+              "contentTypeId": "callToAction"
+            }
+          }
+        }
+      },
+      "created": "2023-04-20T20:48:58.12991+00:00",
+      "modified": "2023-04-20T21:03:36.318678+00:00",
+      "pattern": false
+    },
+    {
+      "composition": {
+        "_name": "Demo",
+        "_id": "5e43c385-2316-4d32-8392-82f20496619c",
+        "_slug": "demo",
+        "type": "page",
+        "parameters": {
+          "pageMetaTitle": {
+            "type": "text",
+            "value": "Demo Page"
+          }
+        }
+      },
+      "created": "2023-04-20T20:54:59.186864+00:00",
+      "modified": "2023-04-20T20:55:09.511382+00:00",
+      "pattern": false
+    },
     {
       "composition": {
         "_name": "Beans",
@@ -686,8 +833,24 @@
                   "value": "Beans for all your brewing needs"
                 },
                 "backgroundImage": {
-                  "type": "select",
-                  "value": "res.cloudinary.com/uniformdev/image/upload/v1675862473/vNext%20Demos/Fake%20Commerce/hero-beans_q7qtiv.webp"
+                  "type": "cloudinary-image",
+                  "value": [
+                    {
+                      "alt": "",
+                      "url": "https://res.cloudinary.com/uniformdev/image/upload/v1662484929/JavaDrip/heros/Home%20Page/Beans.webp",
+                      "uuid": "a967438b-bcd9-4f15-afd6-66c78899d2b4",
+                      "width": "2600",
+                      "format": "webp",
+                      "height": "1300",
+                      "caption": "",
+                      "version": 1662484929,
+                      "publicId": "JavaDrip/heros/Home Page/Beans",
+                      "createdAt": "2022-09-06T17:22:09Z",
+                      "previewUrl": "https://res.cloudinary.com/uniformdev/image/upload/q_auto,f_auto,w_150/JavaDrip/heros/Home%20Page/Beans.webp",
+                      "resourceType": "image",
+                      "transformation": ""
+                    }
+                  ]
                 }
               }
             },
@@ -704,8 +867,8 @@
           ]
         }
       },
-      "created": "2023-01-27T09:27:48.98841+00:00",
-      "modified": "2023-02-08T13:35:02.926059+00:00",
+      "created": "2023-04-18T22:41:01.010963+00:00",
+      "modified": "2023-04-20T19:50:22.29329+00:00",
       "pattern": false
     },
     {
@@ -826,7 +989,7 @@
           },
           "pageMetaDescription": {
             "type": "text",
-            "value": "Fake Commerce Home Page"
+            "value": "JavaDrip demo"
           }
         },
         "slots": {
@@ -839,10 +1002,11 @@
                   {
                     "_id": "67d3e69b-8e3c-4a64-92b3-f873843e9523",
                     "type": "hero",
+                    "variant": "centered",
                     "parameters": {
                       "title": {
                         "type": "text",
-                        "value": "See our new beans"
+                        "value": "Best beans and best machines"
                       },
                       "$pzCrit": {
                         "type": "$pzCrit",
@@ -856,47 +1020,90 @@
                           "name": "Hero: See our new beans"
                         }
                       },
+                      "subtitle": {
+                        "type": "text",
+                        "value": "for real."
+                      },
                       "buttonCopy": {
                         "type": "text",
-                        "value": "See new beans"
+                        "value": "SEE OUR MACHINES"
                       },
                       "buttonLink": {
-                        "type": "project_map_link",
+                        "type": "link",
                         "value": {
-                          "path": "/shop/beans",
-                          "nodeId": "8cfa6e61-1c65-477f-8b9a-fc3b1c57930b",
+                          "path": "/shop/coffee-makers",
+                          "type": "projectMapNode",
+                          "nodeId": "0065505a-37c8-4a77-a66d-3ae7d414af6f",
                           "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
                         }
                       },
                       "backgroundImage": {
-                        "type": "select",
-                        "value": "res.cloudinary.com/uniformdev/image/upload/v1675862473/vNext%20Demos/Fake%20Commerce/hero-beans_q7qtiv.webp"
+                        "type": "cloudinary-image",
+                        "value": [
+                          {
+                            "alt": "",
+                            "url": "https://res.cloudinary.com/uniformdev/image/upload/v1662994673/JavaDrip/heros/Home%20Page/hero_alt5_s6gsox_dtjffb.webp",
+                            "uuid": "76ffff14-46b1-40df-9140-0f1192bfd755",
+                            "width": "2600",
+                            "format": "webp",
+                            "height": "1300",
+                            "caption": "",
+                            "version": 1662994673,
+                            "publicId": "JavaDrip/heros/Home Page/hero_alt5_s6gsox_dtjffb",
+                            "createdAt": "2022-09-12T14:57:53Z",
+                            "previewUrl": "https://res.cloudinary.com/uniformdev/image/upload/q_auto,f_auto,w_150/JavaDrip/heros/Home%20Page/hero_alt5_s6gsox_dtjffb.webp",
+                            "resourceType": "image",
+                            "transformation": ""
+                          }
+                        ]
                       }
                     }
                   },
                   {
                     "_id": "ff573aa1-3d29-4d28-a607-8397c34bf4b3",
                     "type": "hero",
+                    "variant": "",
                     "parameters": {
                       "title": {
                         "type": "text",
-                        "value": "See our new coffee makers"
+                        "value": "Beans for you"
+                      },
+                      "subtitle": {
+                        "type": "text",
+                        "value": "Coffee, beans and machines"
                       },
                       "buttonCopy": {
                         "type": "text",
-                        "value": "See our coffee makers"
+                        "value": "See our beans"
                       },
                       "buttonLink": {
-                        "type": "project_map_link",
+                        "type": "link",
                         "value": {
-                          "path": "/shop/coffee-makers",
-                          "nodeId": "0065505a-37c8-4a77-a66d-3ae7d414af6f",
+                          "path": "/shop/beans",
+                          "type": "projectMapNode",
+                          "nodeId": "8cfa6e61-1c65-477f-8b9a-fc3b1c57930b",
                           "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
                         }
                       },
                       "backgroundImage": {
-                        "type": "select",
-                        "value": "res.cloudinary.com/uniformdev/image/upload/v1675862472/vNext%20Demos/Fake%20Commerce/hero-default_nhdw2h.webp"
+                        "type": "cloudinary-image",
+                        "value": [
+                          {
+                            "alt": "",
+                            "url": "https://res.cloudinary.com/uniformdev/image/upload/v1656672429/JavaDrip/heros/Home%20Page/Default.webp",
+                            "uuid": "da014c30-4aad-43ed-9fc7-2279931288c8",
+                            "width": "1440",
+                            "format": "webp",
+                            "height": "589",
+                            "caption": "",
+                            "version": 1656672429,
+                            "publicId": "JavaDrip/heros/Home Page/Default",
+                            "createdAt": "2022-07-01T10:47:09Z",
+                            "previewUrl": "https://res.cloudinary.com/uniformdev/image/upload/q_auto,f_auto,w_150/JavaDrip/heros/Home%20Page/Default.webp",
+                            "resourceType": "image",
+                            "transformation": ""
+                          }
+                        ]
                       }
                     }
                   }
@@ -910,103 +1117,246 @@
               }
             },
             {
-              "_id": "fdaed343-768d-466d-8f63-821e92375a94",
-              "type": "callToAction",
-              "parameters": {
-                "text": {
-                  "type": "text",
-                  "value": "Welcome to JavaDrip. We are a boutique coffee company obsessed with the perfect cup of coffee. We believe that the perfect cup starts with the perfect bean and that those beans require the perfect brewing method. This means that we offer both high quality beans and products to meet any occasion and mood. Have a look around and let us know if you have any questions."
-                },
-                "title": {
-                  "type": "text",
-                  "value": "The home of coffee obsessives"
-                }
-              }
-            },
-            {
-              "_id": "5e8e36e3-894a-407a-b944-be9c5334743d",
+              "_id": "161ac302-52bf-4a12-90a8-f977b99d74e3",
               "type": "featuredProducts",
-              "parameters": {
-                "title": {
-                  "type": "text",
-                  "value": "Our amazing coffee machines"
-                },
-                "products": {
-                  "type": "fake-commerce-product-selector",
-                  "value": {
-                    "productIds": [
-                      "118",
-                      "117",
-                      "120",
-                      "115"
-                    ]
-                  }
-                },
-                "subTitle": {
-                  "type": "text",
-                  "value": "Coffee machines that learn to optimize for your taste buds."
-                },
-                "buttonCopy": {
-                  "type": "text",
-                  "value": "See Coffee Makers"
-                },
-                "buttonLink": {
-                  "type": "project_map_link",
-                  "value": {
-                    "path": "/",
-                    "nodeId": "511adbd1-e683-4f17-bd49-52857a962db1",
-                    "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+              "_pattern": "35a4f6d8-4ec3-4e8e-96f4-1b4528741377",
+              "_dataResources": {
+                "Product collection": {
+                  "type": "multiProduct",
+                  "variables": {
+                    "ids": "117,140,142"
                   }
                 }
               }
             },
             {
-              "_id": "fc79a0c4-a154-4225-83a9-85f42123443e",
+              "_id": "7c7ac817-a4b2-4c6f-b5c4-7d3a353b8066",
               "type": "featuredProducts",
-              "variant": "dark",
-              "parameters": {
-                "title": {
-                  "type": "text",
-                  "value": "Giving it some beans!"
-                },
-                "products": {
-                  "type": "fake-commerce-product-selector",
-                  "value": {
-                    "productIds": [
-                      "113",
-                      "81",
-                      "80"
-                    ]
+              "_pattern": "e2569713-5e5d-4fde-ad55-6d2a2625c05e",
+              "_dataResources": {
+                "Dynamic product list": {
+                  "type": "productQuery",
+                  "variables": {
+                    "sort": "top-sellers",
+                    "count": "3",
+                    "keyword": "",
+                    "category": "beans"
                   }
-                },
-                "subTitle": {
-                  "type": "text",
-                  "value": "Coffee beans from the best parts of the world."
-                },
-                "buttonCopy": {
-                  "type": "text",
-                  "value": "See Coffee Beans"
-                },
-                "buttonLink": {
-                  "type": "project_map_link",
-                  "value": {
-                    "path": "/",
-                    "nodeId": "511adbd1-e683-4f17-bd49-52857a962db1",
-                    "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+                }
+              }
+            },
+            {
+              "_id": "29dff765-095e-40a9-b2d2-4081c17b09d6",
+              "type": "featuredProducts",
+              "_pattern": "089246c7-2e4b-48be-a2c3-a95b225ecb34",
+              "_dataResources": {
+                "Target Product": {
+                  "type": "productRecommendations",
+                  "variables": {
+                    "recommender": "products-in-all-categories",
+                    "contextProductIds": "womens-jewelry-bundleM"
                   }
-                },
-                "showAddToCart": {
-                  "type": "checkbox",
-                  "value": true
                 }
               }
             }
           ]
+        },
+        "_dataResources": {
+          "CTA Content": {
+            "type": "cta",
+            "variables": {
+              "entryIds": "4DtirdFZHKg7tdgAnzVSMZ",
+              "contentTypeId": "callToAction"
+            }
+          },
+          "Kosmic top sellers": {
+            "type": "productQuery",
+            "variables": {
+              "sort": "top-sellers",
+              "count": "3",
+              "keyword": "Kosmic",
+              "category": "coffee-makers"
+            }
+          },
+          "Product collection": {
+            "type": "multiProduct",
+            "variables": {
+              "ids": "115,120,116"
+            }
+          },
+          "Call to Action Content": {
+            "type": "callToAction",
+            "variables": {
+              "entryIds": "4DtirdFZHKg7tdgAnzVSMZ",
+              "contentTypeId": "callToAction"
+            }
+          }
+        },
+        "_overrides": {
+          "161ac302-52bf-4a12-90a8-f977b99d74e3": {
+            "variant": "",
+            "parameters": {
+              "title": {
+                "type": "text",
+                "value": "Our staff picks"
+              },
+              "subTitle": {
+                "type": "text",
+                "value": "This April we crave these products"
+              }
+            }
+          },
+          "29dff765-095e-40a9-b2d2-4081c17b09d6": {
+            "variant": "",
+            "parameters": {
+              "title": {
+                "type": "text",
+                "value": "Recommended products"
+              },
+              "subTitle": {
+                "type": "text",
+                "value": "We think you might be interested in these products"
+              },
+              "showAddToCart": {
+                "type": "checkbox",
+                "value": null
+              }
+            }
+          },
+          "7c7ac817-a4b2-4c6f-b5c4-7d3a353b8066": {
+            "variant": "dark",
+            "parameters": {
+              "title": {
+                "type": "text",
+                "value": "It's all about the beans"
+              },
+              "subTitle": {
+                "type": "text",
+                "value": "Explore our top sellers"
+              },
+              "showAddToCart": {
+                "type": "checkbox",
+                "value": null
+              }
+            }
+          }
         }
       },
-      "created": "2023-01-24T08:12:33.269439+00:00",
-      "modified": "2023-02-12T19:50:02.15707+00:00",
+      "created": "2023-04-18T22:41:02.620208+00:00",
+      "modified": "2023-04-25T10:31:26.281362+00:00",
       "pattern": false
+    },
+    {
+      "composition": {
+        "_name": "Featured Products (dynamic)",
+        "_id": "e2569713-5e5d-4fde-ad55-6d2a2625c05e",
+        "type": "featuredProducts",
+        "parameters": {
+          "title": {
+            "type": "text",
+            "value": "Catchy title for featured products"
+          },
+          "products": {
+            "type": "json",
+            "value": "unresolved",
+            "connectedData": {
+              "syntax": "jptr",
+              "pointer": "/Dynamic product list/products"
+            }
+          },
+          "subTitle": {
+            "type": "text",
+            "value": "and some subtitle"
+          },
+          "buttonCopy": {
+            "type": "text",
+            "value": "Learn more"
+          },
+          "buttonLink": {
+            "type": "link",
+            "value": {
+              "path": "/shop",
+              "type": "projectMapNode",
+              "nodeId": "0e320b16-f9ea-442f-8ad4-d679b75b49ca",
+              "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+            }
+          }
+        },
+        "_dataResources": {
+          "Dynamic product list": {
+            "type": "productQuery",
+            "variables": {
+              "sort": "top-sellers",
+              "count": "3",
+              "keyword": "",
+              "category": "coffee-makers"
+            },
+            "isPatternParameter": true,
+            "ignorePatternParameterDefault": true
+          }
+        },
+        "_overridability": {
+          "variants": true,
+          "parameters": {
+            "title": "yes",
+            "products": "yes",
+            "subTitle": "yes",
+            "buttonCopy": "yes",
+            "buttonLink": "yes",
+            "showAddToCart": "yes"
+          }
+        }
+      },
+      "created": "2023-04-25T04:12:03.530794+00:00",
+      "modified": "2023-04-25T04:21:35.487324+00:00",
+      "pattern": true
+    },
+    {
+      "composition": {
+        "_name": "Call to Action Pattern",
+        "_id": "e4845bf4-b30b-470e-bd63-02554970bf57",
+        "type": "callToAction",
+        "parameters": {
+          "text": {
+            "type": "text",
+            "value": "unresolved",
+            "connectedData": {
+              "syntax": "jptr",
+              "pointer": "/Call to Action Content/fields/text"
+            }
+          },
+          "title": {
+            "type": "text",
+            "value": "unresolved",
+            "connectedData": {
+              "syntax": "jptr",
+              "pointer": "/Call to Action Content/fields/title"
+            }
+          }
+        },
+        "_dataResources": {
+          "Call to Action Content": {
+            "type": "callToAction",
+            "variables": {
+              "entryIds": "4DtirdFZHKg7tdgAnzVSMZ",
+              "contentTypeId": "callToAction"
+            },
+            "isPatternParameter": true,
+            "ignorePatternParameterDefault": true
+          }
+        },
+        "_overridability": {
+          "parameters": {
+            "text": "yes",
+            "title": "yes",
+            "buttonCopy": "yes",
+            "buttonLink": "yes"
+          }
+        }
+      },
+      "created": "2023-04-21T13:14:15.324506+00:00",
+      "modified": "2023-04-25T04:16:20.164128+00:00",
+      "pattern": true
     },
     {
       "composition": {
@@ -1036,8 +1386,24 @@
                   "value": "Coffee makers for all your brewing needs"
                 },
                 "backgroundImage": {
-                  "type": "select",
-                  "value": "res.cloudinary.com/uniformdev/image/upload/v1675862788/vNext%20Demos/Fake%20Commerce/hero-coffee-makers_ixoaim.webp"
+                  "type": "cloudinary-image",
+                  "value": [
+                    {
+                      "alt": "",
+                      "url": "https://res.cloudinary.com/uniformdev/image/upload/v1662994592/JavaDrip/heros/Home%20Page/hero_alt4_iuvgjz_sld3xs.webp",
+                      "uuid": "48097e9e-2c3d-47d2-ac76-542eed29b3aa",
+                      "width": "2600",
+                      "format": "webp",
+                      "height": "1300",
+                      "caption": "",
+                      "version": 1662994592,
+                      "publicId": "JavaDrip/heros/Home Page/hero_alt4_iuvgjz_sld3xs",
+                      "createdAt": "2022-09-12T14:56:32Z",
+                      "previewUrl": "https://res.cloudinary.com/uniformdev/image/upload/q_auto,f_auto,w_150/JavaDrip/heros/Home%20Page/hero_alt4_iuvgjz_sld3xs.webp",
+                      "resourceType": "image",
+                      "transformation": ""
+                    }
+                  ]
                 }
               }
             },
@@ -1054,8 +1420,8 @@
           ]
         }
       },
-      "created": "2023-01-26T09:51:09.783812+00:00",
-      "modified": "2023-02-08T13:34:39.596547+00:00",
+      "created": "2023-04-18T22:41:02.533627+00:00",
+      "modified": "2023-04-20T19:49:48.510623+00:00",
       "pattern": false
     }
   ],
@@ -1074,6 +1440,29 @@
               "cs": false,
               "op": "=",
               "rhs": "beans"
+            },
+            "queryName": "utm_campaign"
+          }
+        ]
+      },
+      "dur": "p",
+      "description": "",
+      "str": 50
+    },
+    {
+      "id": "coffeeMakers",
+      "name": "Coffee makers",
+      "cap": 100,
+      "crit": {
+        "op": "&",
+        "type": "G",
+        "clauses": [
+          {
+            "type": "QS",
+            "match": {
+              "cs": false,
+              "op": "=",
+              "rhs": "coffeemakers"
             },
             "queryName": "utm_campaign"
           }
