@@ -1,4 +1,99 @@
 {
+  "projectMaps": [
+    {
+      "id": "89a0d435-3096-4e77-84f1-eda9ea8bc677",
+      "name": "Website Map",
+      "default": true
+    }
+  ],
+  "projectMapNodes": [
+    {
+      "id": "511adbd1-e683-4f17-bd49-52857a962db1",
+      "name": "Home",
+      "type": "composition",
+      "data": {},
+      "order": 500,
+      "path": "/",
+      "compositionId": "c7831905-e8b8-4002-b127-1281326079c4",
+      "pathSegment": "",
+      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+    },
+    {
+      "id": "0e320b16-f9ea-442f-8ad4-d679b75b49ca",
+      "name": "Shop",
+      "type": "placeholder",
+      "data": {},
+      "order": 500,
+      "path": "/shop",
+      "pathSegment": "shop",
+      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+    },
+    {
+      "id": "8cfa6e61-1c65-477f-8b9a-fc3b1c57930b",
+      "name": "Beans",
+      "type": "composition",
+      "data": {},
+      "order": 600,
+      "path": "/shop/beans",
+      "compositionId": "ade8dd7a-f5ea-424b-bae1-22ae0a587017",
+      "pathSegment": "beans",
+      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+    },
+    {
+      "id": "0065505a-37c8-4a77-a66d-3ae7d414af6f",
+      "name": "Coffee Makers",
+      "type": "composition",
+      "data": {},
+      "order": 500,
+      "path": "/shop/coffee-makers",
+      "compositionId": "f798db7c-ad3c-4689-89d1-f1f9c13655d3",
+      "pathSegment": "coffee-makers",
+      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+    },
+    {
+      "id": "0065505a-37c8-4a77-a66d-3ae7d414af6f",
+      "name": "Coffee Makers",
+      "type": "composition",
+      "data": {},
+      "order": 500,
+      "path": "/shop/coffee-makers",
+      "compositionId": "f798db7c-ad3c-4689-89d1-f1f9c13655d3",
+      "pathSegment": "coffee-makers",
+      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+    },
+    {
+      "id": "0e320b16-f9ea-442f-8ad4-d679b75b49ca",
+      "name": "Shop",
+      "type": "placeholder",
+      "data": {},
+      "order": 500,
+      "path": "/shop",
+      "pathSegment": "shop",
+      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+    },
+    {
+      "id": "511adbd1-e683-4f17-bd49-52857a962db1",
+      "name": "Home",
+      "type": "composition",
+      "data": {},
+      "order": 500,
+      "path": "/",
+      "compositionId": "c7831905-e8b8-4002-b127-1281326079c4",
+      "pathSegment": "",
+      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+    },
+    {
+      "id": "8cfa6e61-1c65-477f-8b9a-fc3b1c57930b",
+      "name": "Beans",
+      "type": "composition",
+      "data": {},
+      "order": 600,
+      "path": "/shop/beans",
+      "compositionId": "ade8dd7a-f5ea-424b-bae1-22ae0a587017",
+      "pathSegment": "beans",
+      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+    }
+  ],
   "components": [
     {
       "id": "addToCart",
@@ -8,8 +103,8 @@
       "useTeamPermissions": true,
       "slots": [],
       "canBeComposition": false,
-      "created": "2023-04-18T22:40:59.148508+00:00",
-      "updated": "2023-04-18T22:40:59.148508+00:00"
+      "created": "2023-04-25T21:42:36.173564+00:00",
+      "updated": "2023-04-25T21:45:02.947103+00:00"
     },
     {
       "id": "callToAction",
@@ -55,8 +150,8 @@
       "slots": [],
       "titleParameter": "title",
       "canBeComposition": false,
-      "created": "2023-04-18T22:41:00.783438+00:00",
-      "updated": "2023-04-18T22:41:00.783438+00:00"
+      "created": "2023-04-25T21:42:35.777873+00:00",
+      "updated": "2023-04-25T21:45:03.025658+00:00"
     },
     {
       "id": "container",
@@ -149,8 +244,8 @@
         }
       ],
       "canBeComposition": false,
-      "created": "2023-04-18T22:41:00.451947+00:00",
-      "updated": "2023-04-18T22:41:00.451947+00:00"
+      "created": "2023-04-25T21:42:36.181971+00:00",
+      "updated": "2023-04-25T21:45:02.764239+00:00"
     },
     {
       "id": "featuredProducts",
@@ -208,8 +303,8 @@
       "slots": [],
       "titleParameter": "title",
       "canBeComposition": false,
-      "created": "2023-04-18T22:40:58.969182+00:00",
-      "updated": "2023-04-25T03:43:56.272769+00:00",
+      "created": "2023-04-25T21:42:35.749712+00:00",
+      "updated": "2023-04-25T21:45:02.905785+00:00",
       "variants": [
         {
           "id": "dark",
@@ -269,8 +364,8 @@
       "slots": [],
       "titleParameter": "title",
       "canBeComposition": false,
-      "created": "2023-04-18T22:40:59.170412+00:00",
-      "updated": "2023-04-20T19:37:09.023493+00:00",
+      "created": "2023-04-25T21:42:34.428853+00:00",
+      "updated": "2023-04-25T21:45:02.714781+00:00",
       "variants": [
         {
           "id": "centered",
@@ -317,6 +412,8 @@
             "productDescription",
             "relatedProducts",
             "productCatalog",
+            "addToCart",
+            "callToAction",
             "$p:e4845bf4-b30b-470e-bd63-02554970bf57",
             "$p:e2569713-5e5d-4fde-ad55-6d2a2625c05e",
             "$p:089246c7-2e4b-48be-a2c3-a95b225ecb34",
@@ -328,8 +425,8 @@
         }
       ],
       "canBeComposition": true,
-      "created": "2023-04-18T22:40:58.856709+00:00",
-      "updated": "2023-04-25T04:21:51.546401+00:00"
+      "created": "2023-04-25T21:42:34.677356+00:00",
+      "updated": "2023-04-25T21:45:03.300828+00:00"
     },
     {
       "id": "productCatalog",
@@ -350,8 +447,8 @@
       "slots": [],
       "titleParameter": "title",
       "canBeComposition": false,
-      "created": "2023-04-18T22:40:59.043398+00:00",
-      "updated": "2023-04-18T22:40:59.043398+00:00"
+      "created": "2023-04-25T21:42:35.899485+00:00",
+      "updated": "2023-04-25T21:45:03.083971+00:00"
     },
     {
       "id": "productDescription",
@@ -372,8 +469,8 @@
       "slots": [],
       "titleParameter": "title",
       "canBeComposition": false,
-      "created": "2023-04-18T22:41:00.48882+00:00",
-      "updated": "2023-04-18T22:41:00.48882+00:00"
+      "created": "2023-04-25T21:42:35.817924+00:00",
+      "updated": "2023-04-25T21:45:02.841805+00:00"
     },
     {
       "id": "productImageGallery",
@@ -410,8 +507,8 @@
       "useTeamPermissions": true,
       "slots": [],
       "canBeComposition": false,
-      "created": "2023-04-18T22:41:00.528084+00:00",
-      "updated": "2023-04-18T22:41:00.528084+00:00"
+      "created": "2023-04-25T21:42:35.233953+00:00",
+      "updated": "2023-04-25T21:45:03.396963+00:00"
     },
     {
       "id": "productInfo",
@@ -421,8 +518,8 @@
       "useTeamPermissions": true,
       "slots": [],
       "canBeComposition": false,
-      "created": "2023-04-18T22:40:59.679873+00:00",
-      "updated": "2023-04-18T22:40:59.679873+00:00"
+      "created": "2023-04-25T21:42:35.052477+00:00",
+      "updated": "2023-04-25T21:45:03.113467+00:00"
     },
     {
       "id": "relatedProducts",
@@ -443,8 +540,8 @@
       "slots": [],
       "titleParameter": "title",
       "canBeComposition": false,
-      "created": "2023-04-18T22:41:00.769793+00:00",
-      "updated": "2023-04-18T22:41:00.769793+00:00"
+      "created": "2023-04-25T21:42:36.500896+00:00",
+      "updated": "2023-04-25T21:45:03.31266+00:00"
     },
     {
       "id": "sectionTwoColumns",
@@ -598,8 +695,8 @@
         }
       ],
       "canBeComposition": false,
-      "created": "2023-04-18T22:40:59.682405+00:00",
-      "updated": "2023-04-18T22:40:59.682405+00:00"
+      "created": "2023-04-25T21:42:35.521794+00:00",
+      "updated": "2023-04-25T21:45:03.178111+00:00"
     }
   ],
   "compositions": [
@@ -649,8 +746,8 @@
           }
         }
       },
-      "created": "2023-04-25T04:17:31.448029+00:00",
-      "modified": "2023-04-25T04:18:50.252389+00:00",
+      "created": "2023-04-25T21:42:39.662579+00:00",
+      "modified": "2023-04-25T21:42:39.662579+00:00",
       "pattern": true
     },
     {
@@ -716,8 +813,8 @@
           }
         }
       },
-      "created": "2023-04-25T04:19:26.362508+00:00",
-      "modified": "2023-04-25T04:20:23.208611+00:00",
+      "created": "2023-04-25T21:42:39.737771+00:00",
+      "modified": "2023-04-25T21:42:39.737771+00:00",
       "pattern": true
     },
     {
@@ -784,8 +881,8 @@
           }
         }
       },
-      "created": "2023-04-20T20:48:58.12991+00:00",
-      "modified": "2023-04-20T21:03:36.318678+00:00",
+      "created": "2023-04-25T21:42:38.522578+00:00",
+      "modified": "2023-04-25T21:42:38.522578+00:00",
       "pattern": false
     },
     {
@@ -801,8 +898,8 @@
           }
         }
       },
-      "created": "2023-04-20T20:54:59.186864+00:00",
-      "modified": "2023-04-20T20:55:09.511382+00:00",
+      "created": "2023-04-25T21:42:39.850817+00:00",
+      "modified": "2023-04-25T21:42:39.850817+00:00",
       "pattern": false
     },
     {
@@ -867,8 +964,8 @@
           ]
         }
       },
-      "created": "2023-04-18T22:41:01.010963+00:00",
-      "modified": "2023-04-20T19:50:22.29329+00:00",
+      "created": "2023-04-25T21:42:39.737471+00:00",
+      "modified": "2023-04-25T21:42:39.737471+00:00",
       "pattern": false
     },
     {
@@ -972,8 +1069,8 @@
           ]
         }
       },
-      "created": "2023-01-24T14:26:59.060788+00:00",
-      "modified": "2023-01-26T08:53:56.641438+00:00",
+      "created": "2023-04-25T21:42:38.331679+00:00",
+      "modified": "2023-04-25T21:42:38.331679+00:00",
       "pattern": false
     },
     {
@@ -1066,7 +1163,7 @@
                     "parameters": {
                       "title": {
                         "type": "text",
-                        "value": "Beans for you"
+                        "value": "Koffee"
                       },
                       "subtitle": {
                         "type": "text",
@@ -1074,7 +1171,7 @@
                       },
                       "buttonCopy": {
                         "type": "text",
-                        "value": "See our beans"
+                        "value": "Learn more"
                       },
                       "buttonLink": {
                         "type": "link",
@@ -1119,43 +1216,131 @@
             {
               "_id": "161ac302-52bf-4a12-90a8-f977b99d74e3",
               "type": "featuredProducts",
-              "_pattern": "35a4f6d8-4ec3-4e8e-96f4-1b4528741377",
-              "_dataResources": {
-                "Product collection": {
-                  "type": "multiProduct",
-                  "variables": {
-                    "ids": "117,140,142"
+              "variant": "dark",
+              "parameters": {
+                "title": {
+                  "type": "text",
+                  "value": "Our staff picks..."
+                },
+                "products": {
+                  "type": "json",
+                  "value": "unresolved",
+                  "connectedData": {
+                    "syntax": "jptr",
+                    "pointer": "/Product collection/products"
                   }
+                },
+                "subTitle": {
+                  "type": "text",
+                  "value": "This April we crave these products"
+                },
+                "buttonCopy": {
+                  "type": "text",
+                  "value": "See more"
+                },
+                "buttonLink": {
+                  "type": "link",
+                  "value": {
+                    "path": "/shop",
+                    "type": "projectMapNode",
+                    "nodeId": "0e320b16-f9ea-442f-8ad4-d679b75b49ca",
+                    "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+                  }
+                },
+                "showAddToCart": {
+                  "type": "checkbox",
+                  "value": true
+                }
+              },
+              "_overridability": {
+                "variants": true,
+                "parameters": {
+                  "title": "yes",
+                  "products": "yes",
+                  "subTitle": "yes",
+                  "buttonCopy": "yes",
+                  "buttonLink": "yes",
+                  "showAddToCart": "yes"
                 }
               }
             },
             {
               "_id": "7c7ac817-a4b2-4c6f-b5c4-7d3a353b8066",
               "type": "featuredProducts",
-              "_pattern": "e2569713-5e5d-4fde-ad55-6d2a2625c05e",
-              "_dataResources": {
-                "Dynamic product list": {
-                  "type": "productQuery",
-                  "variables": {
-                    "sort": "top-sellers",
-                    "count": "3",
-                    "keyword": "",
-                    "category": "beans"
+              "variant": "dark",
+              "parameters": {
+                "title": {
+                  "type": "text",
+                  "value": "It's all about the beans"
+                },
+                "products": {
+                  "type": "json",
+                  "value": "unresolved",
+                  "connectedData": {
+                    "syntax": "jptr",
+                    "pointer": "/Dynamic product list/products"
                   }
+                },
+                "subTitle": {
+                  "type": "text",
+                  "value": "Explore our top sellers"
+                },
+                "buttonCopy": {
+                  "type": "text",
+                  "value": "Learn more"
+                },
+                "buttonLink": {
+                  "type": "link",
+                  "value": {
+                    "path": "/shop",
+                    "type": "projectMapNode",
+                    "nodeId": "0e320b16-f9ea-442f-8ad4-d679b75b49ca",
+                    "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
+                  }
+                }
+              },
+              "_overridability": {
+                "variants": true,
+                "parameters": {
+                  "title": "yes",
+                  "products": "yes",
+                  "subTitle": "yes",
+                  "buttonCopy": "yes",
+                  "buttonLink": "yes",
+                  "showAddToCart": "yes"
                 }
               }
             },
             {
               "_id": "29dff765-095e-40a9-b2d2-4081c17b09d6",
               "type": "featuredProducts",
-              "_pattern": "089246c7-2e4b-48be-a2c3-a95b225ecb34",
-              "_dataResources": {
-                "Target Product": {
-                  "type": "productRecommendations",
-                  "variables": {
-                    "recommender": "products-in-all-categories",
-                    "contextProductIds": "womens-jewelry-bundleM"
+              "parameters": {
+                "title": {
+                  "type": "text",
+                  "value": "Recommended products"
+                },
+                "products": {
+                  "type": "json",
+                  "value": "unresolved",
+                  "connectedData": {
+                    "syntax": "jptr",
+                    "pointer": "/Target Product/products"
                   }
+                },
+                "subTitle": {
+                  "type": "text",
+                  "value": "We think you might be interested in these products"
+                }
+              },
+              "_overridability": {
+                "variants": true,
+                "parameters": {
+                  "title": "yes",
+                  "products": "yes",
+                  "subTitle": "yes",
+                  "buttonCopy": "yes",
+                  "buttonLink": "yes",
+                  "showAddToCart": "yes"
                 }
               }
             }
@@ -1167,6 +1352,13 @@
             "variables": {
               "entryIds": "4DtirdFZHKg7tdgAnzVSMZ",
               "contentTypeId": "callToAction"
+            }
+          },
+          "Target Product": {
+            "type": "productRecommendations",
+            "variables": {
+              "recommender": "products-in-all-categories",
+              "contextProductIds": "womens-jewelry-bundleM"
             }
           },
           "Kosmic top sellers": {
@@ -1184,6 +1376,15 @@
               "ids": "115,120,116"
             }
           },
+          "Dynamic product list": {
+            "type": "productQuery",
+            "variables": {
+              "sort": "top-sellers",
+              "count": "3",
+              "keyword": "",
+              "category": "beans"
+            }
+          },
           "Call to Action Content": {
             "type": "callToAction",
             "variables": {
@@ -1191,59 +1392,10 @@
               "contentTypeId": "callToAction"
             }
           }
-        },
-        "_overrides": {
-          "161ac302-52bf-4a12-90a8-f977b99d74e3": {
-            "variant": "",
-            "parameters": {
-              "title": {
-                "type": "text",
-                "value": "Our staff picks"
-              },
-              "subTitle": {
-                "type": "text",
-                "value": "This April we crave these products"
-              }
-            }
-          },
-          "29dff765-095e-40a9-b2d2-4081c17b09d6": {
-            "variant": "",
-            "parameters": {
-              "title": {
-                "type": "text",
-                "value": "Recommended products"
-              },
-              "subTitle": {
-                "type": "text",
-                "value": "We think you might be interested in these products"
-              },
-              "showAddToCart": {
-                "type": "checkbox",
-                "value": null
-              }
-            }
-          },
-          "7c7ac817-a4b2-4c6f-b5c4-7d3a353b8066": {
-            "variant": "dark",
-            "parameters": {
-              "title": {
-                "type": "text",
-                "value": "It's all about the beans"
-              },
-              "subTitle": {
-                "type": "text",
-                "value": "Explore our top sellers"
-              },
-              "showAddToCart": {
-                "type": "checkbox",
-                "value": null
-              }
-            }
-          }
         }
       },
-      "created": "2023-04-18T22:41:02.620208+00:00",
-      "modified": "2023-04-25T10:31:26.281362+00:00",
+      "created": "2023-04-25T21:42:39.604907+00:00",
+      "modified": "2023-04-25T22:19:13.432823+00:00",
       "pattern": false
     },
     {
@@ -1307,8 +1459,8 @@
           }
         }
       },
-      "created": "2023-04-25T04:12:03.530794+00:00",
-      "modified": "2023-04-25T04:21:35.487324+00:00",
+      "created": "2023-04-25T21:42:39.526633+00:00",
+      "modified": "2023-04-25T21:42:39.526633+00:00",
       "pattern": true
     },
     {
@@ -1354,8 +1506,8 @@
           }
         }
       },
-      "created": "2023-04-21T13:14:15.324506+00:00",
-      "modified": "2023-04-25T04:16:20.164128+00:00",
+      "created": "2023-04-25T21:42:39.042622+00:00",
+      "modified": "2023-04-25T21:42:39.042622+00:00",
       "pattern": true
     },
     {
@@ -1420,8 +1572,8 @@
           ]
         }
       },
-      "created": "2023-04-18T22:41:02.533627+00:00",
-      "modified": "2023-04-20T19:49:48.510623+00:00",
+      "created": "2023-04-25T21:42:39.446595+00:00",
+      "modified": "2023-04-25T21:42:39.446595+00:00",
       "pattern": false
     }
   ],
@@ -1471,62 +1623,6 @@
       "dur": "p",
       "description": "",
       "str": 50
-    }
-  ],
-  "projectMaps": [
-    {
-      "id": "89a0d435-3096-4e77-84f1-eda9ea8bc677",
-      "name": "Website Map",
-      "default": true
-    }
-  ],
-  "projectMapNodes": [
-    {
-      "id": "0065505a-37c8-4a77-a66d-3ae7d414af6f",
-      "name": "Coffee Makers",
-      "type": "composition",
-      "data": {},
-      "order": 500,
-      "path": "/shop/coffee-makers",
-      "compositionId": "f798db7c-ad3c-4689-89d1-f1f9c13655d3",
-      "pathSegment": "coffee-makers",
-      "compositionData": {},
-      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
-    },
-    {
-      "id": "0e320b16-f9ea-442f-8ad4-d679b75b49ca",
-      "name": "Shop",
-      "type": "placeholder",
-      "data": {},
-      "order": 500,
-      "path": "/shop",
-      "pathSegment": "shop",
-      "compositionData": {},
-      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
-    },
-    {
-      "id": "511adbd1-e683-4f17-bd49-52857a962db1",
-      "name": "Home",
-      "type": "composition",
-      "data": {},
-      "order": 500,
-      "path": "/",
-      "compositionId": "c7831905-e8b8-4002-b127-1281326079c4",
-      "pathSegment": "",
-      "compositionData": {},
-      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
-    },
-    {
-      "id": "8cfa6e61-1c65-477f-8b9a-fc3b1c57930b",
-      "name": "Beans",
-      "type": "composition",
-      "data": {},
-      "order": 600,
-      "path": "/shop/beans",
-      "compositionId": "ade8dd7a-f5ea-424b-bae1-22ae0a587017",
-      "pathSegment": "beans",
-      "compositionData": {},
-      "projectMapId": "89a0d435-3096-4e77-84f1-eda9ea8bc677"
     }
   ]
 }
