@@ -246,6 +246,139 @@
       "canBeComposition": false,
       "created": "2023-04-25T21:42:36.181971+00:00",
       "updated": "2023-04-25T21:45:02.764239+00:00"
+    {
+      "id": "featuredCallout",
+      "name": "Featured Callout",
+      "icon": "https://res.cloudinary.com/uniformdev/image/upload/v1675163085/vNext%20Demos/Baseline/canvas-preview/Featured_Callout_kkmv6v.png",
+      "parameters": [
+        {
+          "id": "title",
+          "name": "Title",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": {
+            "required": true
+          }
+        },
+        {
+          "id": "subtitle",
+          "name": "Subtitle",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": {
+            "multiline": true,
+            "linesCount": "3"
+          }
+        },
+        {
+          "id": "description",
+          "name": "Description",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": {
+            "multiline": true,
+            "linesCount": "5"
+          }
+        },
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "image",
+          "helpText": "",
+          "typeConfig": null
+        },
+        {
+          "id": "buttonCopy",
+          "name": "Button Copy",
+          "type": "text",
+          "helpText": "",
+          "typeConfig": null
+        },
+        {
+          "id": "buttonLink",
+          "name": "Button Link",
+          "type": "link",
+          "helpText": "",
+          "typeConfig": {
+            "linkTypes": {
+              "tel": false,
+              "email": false
+            }
+          }
+        },
+        {
+          "id": "paddingTop",
+          "name": "Padding Top",
+          "type": "select",
+          "helpText": "",
+          "typeConfig": {
+            "options": [
+              {
+                "text": "Small",
+                "value": "Small"
+              },
+              {
+                "text": "Medium",
+                "value": "Medium"
+              },
+              {
+                "text": "Large",
+                "value": "Large"
+              },
+              {
+                "text": "None",
+                "value": "None"
+              }
+            ]
+          }
+        },
+        {
+          "id": "paddingBottom",
+          "name": "Padding Bottom",
+          "type": "select",
+          "helpText": "",
+          "typeConfig": {
+            "options": [
+              {
+                "text": "Small",
+                "value": "Small"
+              },
+              {
+                "text": "Medium",
+                "value": "Medium"
+              },
+              {
+                "text": "Large",
+                "value": "Large"
+              },
+              {
+                "text": "None",
+                "value": "None"
+              }
+            ]
+          }
+        }
+      ],
+      "useTeamPermissions": true,
+      "slots": [],
+      "titleParameter": "title",
+      "canBeComposition": false,
+      "created": "2023-04-26T22:52:18.21319+00:00",
+      "updated": "2023-04-26T22:59:05.239749+00:00",
+      "variants": [
+        {
+          "id": "right",
+          "name": "Image Right"
+        },
+        {
+          "id": "Centered",
+          "name": "Image Centered"
+        },
+        {
+          "id": "left",
+          "name": "Image Left"
+        }
+      ]
     },
     {
       "id": "featuredProducts",
@@ -417,7 +550,10 @@
             "$p:e4845bf4-b30b-470e-bd63-02554970bf57",
             "$p:e2569713-5e5d-4fde-ad55-6d2a2625c05e",
             "$p:089246c7-2e4b-48be-a2c3-a95b225ecb34",
-            "$p:35a4f6d8-4ec3-4e8e-96f4-1b4528741377"
+            "$p:35a4f6d8-4ec3-4e8e-96f4-1b4528741377",
+            "$p:8b62f58f-8c04-47fe-a5e2-664f5898d6e2",
+            "featuredCallout",
+            "$p:e2b08e30-98c3-4e1f-8df3-3532d4b10775"
           ],
           "allowAllComponents": false,
           "inheritAllowedComponents": false,

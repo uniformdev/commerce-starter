@@ -9,3 +9,4 @@ import './ProductCatalog';
 import './ProductImageGallery';
 import './FeaturedProducts';
 import './RelatedProducts';
+import './FeaturedCallout';
