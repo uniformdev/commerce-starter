@@ -1,22 +1,12 @@
-import { ProductPagesPrefixes } from '@/constants';
-
-const buildUrl = (urls: string[]) => {
-  const url = urls.join('/');
-  return url.startsWith('/') ? url : `/${url}`;
-};
-
-export const buildSubCategoryUrl = (firstParam: string, secondParam: string) =>
-  buildUrl([ProductPagesPrefixes.ProductListPage, firstParam, secondParam]);
-
 export const getProductSearchResult = (
-  products: Type.Product[],
-  params: Type.SearchParams
+  products: CommerceTypes.Product[],
+  params: CommerceTypes.SearchParams
 ): {
-  data: Type.Product[];
+  data: CommerceTypes.Product[];
   total: number;
 } => {
   let searchResult = products;
-  const { categoryId, keyword, sortField, sortDirection, limit, page } = params;
+  const { categoryId, keyword, sortField, sortDirection, limit, page = 1 } = params;
 
   if (categoryId) {
     searchResult = products.filter(item => item.categories.includes(categoryId));
@@ -31,9 +21,15 @@ export const getProductSearchResult = (
   const length = searchResult.length;
 
   if (sortField) {
-    searchResult = searchResult.sort((a, b) =>
-      sortDirection === 'asc' ? a[sortField] - b[sortField] : b[sortField] - a[sortField]
-    );
+    searchResult = searchResult.sort((a, b) => {
+      const firstValue = a[sortField];
+      const secondValue = b[sortField];
+      if (typeof firstValue === 'string' && typeof secondValue === 'string') {
+        return sortDirection === 'asc' ? firstValue.localeCompare(secondValue) : secondValue.localeCompare(firstValue);
+      } else if (typeof firstValue === 'number' && typeof secondValue === 'number') {
+        return sortDirection === 'asc' ? firstValue - secondValue : secondValue - firstValue;
+      } else return 0;
+    });
   }
 
   if (page && limit) {
@@ -49,27 +45,14 @@ export const getProductSearchResult = (
   };
 };
 
-export const getProductsByIds = (productsHashCache: Type.ProductsHashCache, ids: string[]) =>
+export const getProductsByIds = (productsHashCache: CommerceTypes.ProductsHashCache, ids: string[]) =>
   ids.map(id => productsHashCache[id]).filter(value => Boolean(value));
 
-export const getProductIdByProductSlug = (slug: string) => {
-  const [productId] = slug.split('-').reverse();
-  if (!productId) throw new Error('Unable to find product id in slug');
-  return productId;
-};
-
-export const getAvailableSubCategoriesPaths = (parentCategoriesPaths: string[], categories: Type.Category[]) => {
-  return parentCategoriesPaths.reduce<string[]>((acc, parentCategoryPath) => {
-    const currentCategory = categories.find(category => parentCategoryPath.includes(category.url));
-
-    if (currentCategory) {
-      const subCategories = categories.filter(subCategory => subCategory.parentId === currentCategory.id);
-
-      const categoryWithSubCategory = subCategories.map(subCategory => buildUrl([parentCategoryPath, subCategory.url]));
-
-      return [...acc, ...categoryWithSubCategory];
-    }
-
-    return acc;
-  }, []);
-};
+export const getProductsByField = (
+  productsHashCache: CommerceTypes.ProductsHashCache,
+  fieldName?: string,
+  fieldValue?: string | string[]
+) =>
+  Object.values(productsHashCache).filter(
+    product => fieldName && fieldValue && String(product[fieldName as keyof CommerceTypes.Product]) === fieldValue
+  );

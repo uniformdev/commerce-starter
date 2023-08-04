@@ -1,26 +1,20 @@
-export const prepareSearchParams = (searchParam: object) => {
-  return Object.entries(searchParam).reduce<Record<string, string>>((acc, [key, value]) => {
-    if (value) {
-      acc[key] = String(value);
-    }
-    return acc;
-  }, {});
+export const getImageUrl = (image?: string | Types.CloudinaryImage) => {
+  const imageUrl = typeof image === 'string' ? image : image?.[0]?.url;
+
+  if (!imageUrl || imageUrl === 'unresolved') return '';
+
+  if (imageUrl.startsWith('//')) return imageUrl.replace('//', 'https://');
+
+  return imageUrl;
 };
 
-export const getFormattedSlug = (slug?: string | string[] | null): string => {
-  if (!slug) throw new Error('Composition slug is not provided');
-  const slugString = Array.isArray(slug) ? slug.join('/') : slug;
-  return slugString.startsWith('/') ? slugString : `/${slugString}`;
+export const camelize = (str: string) => {
+  return str
+    .replace(/(?:^\w|[A-Z]|\b\w)/g, (word, index) => (index === 0 ? word.toLowerCase() : word.toUpperCase()))
+    .replace(/\s+/g, '');
 };
 
-export const togglePageScroll = (isHiddenManual?: boolean): void => {
-  const html = document.querySelector('html');
-  if (!html) return;
-  const isHidden = isHiddenManual ?? html.style.overflow === 'hidden';
-  html.style.overflow = isHidden ? 'auto' : 'hidden';
-};
-
-export const getFormattedLink = (link: string): string => {
-  if (!link) return '';
-  return link?.startsWith('http') ? link : `https://${link}`;
+export const fromCamelCaseText = (text?: string) => {
+  const result = text?.replace(/([A-Z])/g, ' $1') || '';
+  return result.charAt(0).toUpperCase() + result.slice(1);
 };

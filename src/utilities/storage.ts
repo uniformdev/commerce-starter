@@ -1,4 +1,4 @@
-const getStorage = () => (typeof window !== 'undefined' ? window.localStorage : null);
+const getStorage = () => (typeof window !== 'undefined' ? window.sessionStorage : null);
 
 export const getStorageItem = <T>(key: string): T | null => {
   const localStorage = getStorage();

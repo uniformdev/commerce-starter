@@ -1,34 +1,31 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
-import { getFakeCommerceEnhancers } from '@/enhancers/commerce';
-import { CommonContainer } from '@/components-library';
-import { getFormattedSlug } from '@/utilities';
-import { getCompositionBySlug, getPathsFromProjectMap } from '@/utilities/canvas';
-import { AppPages, ProductPagesPrefixes } from '@/constants';
-import productsHashCache from '@/data/products.json';
+import { CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from '@uniformdev/canvas';
+import { withUniformGetServerSideProps } from '@uniformdev/canvas-next/route';
+import { Page } from '@/components';
+import { getBreadcrumbs, getRouteClient } from '@/utilities/canvas/canvasClients';
 
-export const getStaticProps: GetStaticProps<{ preview?: boolean }> = async context => {
-  const { preview, params } = context;
-  const { slug: initialSlug = AppPages.Home } = params || {};
+export const getServerSideProps = withUniformGetServerSideProps({
+  requestOptions: context => ({
+    state: Boolean(context.preview) ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE,
+  }),
+  client: getRouteClient(),
+  handleComposition: async (routeResponse, _context) => {
+    const { composition, errors } = routeResponse.compositionApiResponse || {};
 
-  const slug = getFormattedSlug(initialSlug);
-
-  return getCompositionBySlug(slug, context, getFakeCommerceEnhancers(productsHashCache))
-    .then(composition => ({
-      props: {
-        composition,
-        preview: Boolean(preview),
-        revalidate: Number.MAX_SAFE_INTEGER,
-      },
-    }))
-    .catch(e => {
-      console.error('Error fetching composition; returning 404', e);
+    if (errors?.some(e => e.type === 'data' || e.type === 'binding')) {
       return { notFound: true };
-    });
-};
+    }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = await getPathsFromProjectMap({ skipPath: ProductPagesPrefixes.ProductListPage });
-  return { paths, fallback: true };
-};
+    const preview = Boolean(_context.preview);
+    const breadcrumbs = await getBreadcrumbs(
+      composition._id,
+      preview,
+      composition?.parameters?.pageTitle?.value as string
+    );
 
-export default CommonContainer;
+    return {
+      props: { preview, data: composition || null, context: { breadcrumbs } },
+    };
+  },
+});
+
+export default Page;

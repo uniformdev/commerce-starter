@@ -1,11 +1,19 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import NextCors from 'nextjs-cors';
-import { prepareSearchParams } from '@/utilities';
 import { getProductSearchResult } from '@/utilities/products';
 import corsConfig from '../cors-config';
 import productsHashCache from '@/data/products.json';
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+const prepareSearchParams = (searchParam: object) => {
+  return Object.entries(searchParam).reduce<Record<string, string>>((acc, [key, value]) => {
+    if (value) {
+      acc[key] = String(value);
+    }
+    return acc;
+  }, {});
+};
+
+export default async (req: NextApiRequest, res: NextApiResponse) => {
   await NextCors(req, res, corsConfig);
 
   const searchParams = prepareSearchParams(req.query);
@@ -13,5 +21,3 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   return res.status(200).json(searchResult);
 };
-
-export default handler;

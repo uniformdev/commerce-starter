@@ -1,5 +1,5 @@
 import { useEffect, useCallback, useState } from 'react';
-import { getStorageItem, updateStorageItem } from '@/utilities/storage';
+import { getStorageItem, updateStorageItem } from '../utilities/storage';
 
 interface SetItemOptions {
   force?: boolean;
@@ -7,7 +7,7 @@ interface SetItemOptions {
 
 type SetValue<T> = (value: T, options?: SetItemOptions) => void;
 
-// Using localStorage with React reactive hook
+// Cross-Origin Resource Sharing to support Uniform platform Fake Commerce integration
 const useStorage = <T>(key: string, initialValue: T): [T, SetValue<T>] => {
   const [value, setStoredValue] = useState<T>(getStorageItem(key) || initialValue);
 

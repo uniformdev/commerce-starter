@@ -8,13 +8,18 @@
     "node_modules": true
   },
   "cSpell.words": [
-    "bigcommerce",
+    "Callout",
     "cloudinary",
-    "ctfassets",
-    "Gtag",
+    "contentful",
+    "daisyui",
+    "hocs",
     "javadrip",
     "nextjs",
+    "outro",
+    "picocolors",
+    "promts",
     "tailwindcss",
+    "tsup",
     "uniformdev",
     "unoptimized"
   ]

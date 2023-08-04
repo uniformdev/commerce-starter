@@ -1,17 +1,30 @@
-import React from 'react';
-import { Head, Html, Main, NextScript } from 'next/document';
+import { ReactElement } from 'react';
+import Document, { DocumentContext, DocumentInitialProps, Head, Html, Main, NextScript } from 'next/document';
+import { enableNextSsr } from '@uniformdev/context-next';
+import createUniformContext from '@/context/createUniformContext';
 
-const AppDocument = () => (
-  <Html lang="en">
-    <Head>
-      {/* Adobe Fonts connections https://helpx.adobe.com/fonts/using/embed-codes.html */}
-      <link rel="stylesheet" href="https://use.typekit.net/amw0suj.css" />
-    </Head>
-    <body>
-      <Main />
-      <NextScript />
-    </body>
-  </Html>
-);
+type CustomDocumentProps = DocumentInitialProps;
+
+// Docs: https://docs.uniform.app/docs/guides/personalization/activate-personalization#server-side
+class AppDocument extends Document<CustomDocumentProps> {
+  // required to enable SSR personalization
+  static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
+    const serverTracker = createUniformContext(ctx);
+    enableNextSsr(ctx, serverTracker);
+    return await Document.getInitialProps(ctx);
+  }
+
+  render(): ReactElement {
+    return (
+      <Html lang="en">
+        <Head />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
 
 export default AppDocument;
