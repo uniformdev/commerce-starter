@@ -160,6 +160,7 @@ const Hero: FC<Props> = ({
             parameterId="title"
             as={TitleTag}
             className={classNames('font-bold', getTextClass(TitleTag))}
+            data-testid="hero-title"
           />
           <UniformText
             placeholder="Description goes here"
