@@ -1,7 +1,7 @@
 import { FC, ReactNode, createContext, useCallback, useContext, useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
 import useStorage from '../../hooks/useStorage';
-import '.';
+import normalizeProduct from './normalizeProduct';
 
 const ShoppingCartModal = dynamic(() => import('./ShoppingCartModal').then(com => com), {
   ssr: false,
@@ -15,7 +15,7 @@ interface FakeCartContextProps {
   totalFakeCartItemsCount: number;
   isModalFakeCartOpen: boolean;
   setIsModalFakeCartOpen: (isOpen: boolean) => void;
-  addItemToFakeCart: (item: CommerceTypes.FakeCartItem) => void;
+  addItemToFakeCart: (item: CommerceTypes.FakeCartAddItem) => void;
   updateItemQuantity: (productId: string, quantity: number) => void;
   removeItemFromFakeCart: (productId: string) => void;
 }
@@ -31,28 +31,42 @@ export const FakeCartContext = createContext<FakeCartContextProps>({
   removeItemFromFakeCart: () => null,
 });
 
-interface Props {
-  children: ReactNode;
-}
+type Styles = {
+  modal?: {
+    container?: string;
+  };
+};
 
-const FakeCartContextProvider: FC<Props> = ({ children }) => {
+export type FakeCartContextProviderProps = {
+  children: ReactNode;
+  styles?: Styles;
+};
+
+const FakeCartContextProvider: FC<FakeCartContextProviderProps> = ({ styles, children }) => {
   const [cart, setFakeCart] = useStorage<FakeCart>('user-cart', {});
   const [isModalFakeCartOpen, setIsModalFakeCartOpen] = useState<boolean>(false);
 
   const addItemToFakeCart = useCallback(
-    (item: CommerceTypes.FakeCartItem) => {
-      console.log('addItemToFakeCart');
-      const cartItem = cart[item.product.id];
+    (item: CommerceTypes.FakeCartAddItem) => {
+      //TODO: think how to improve normalize process
+      const normalizedProduct = normalizeProduct(item.product);
+
+      const cartItem = cart[normalizedProduct.id];
 
       if (cartItem) {
         setFakeCart({
-          [item.product.id]: {
+          [normalizedProduct.id]: {
             ...cartItem,
             quantity: cartItem.quantity + item.quantity,
           },
         });
       } else {
-        setFakeCart({ [item.product.id]: item });
+        setFakeCart({
+          [normalizedProduct.id]: {
+            quantity: item.quantity,
+            product: normalizedProduct,
+          },
+        });
       }
 
       setIsModalFakeCartOpen(true);
@@ -87,7 +101,11 @@ const FakeCartContextProvider: FC<Props> = ({ children }) => {
   );
 
   const cartAmount = useMemo(
-    () => Object.values(cart).reduce((acc, cartItem) => acc + cartItem.quantity * (cartItem.product.price || 0), 0),
+    () =>
+      Object.values(cart).reduce(
+        (acc, cartItem) => acc + cartItem.quantity * ((cartItem.product.price as number) || 0),
+        0
+      ),
     [cart]
   );
 
@@ -117,7 +135,7 @@ const FakeCartContextProvider: FC<Props> = ({ children }) => {
   return (
     <FakeCartContext.Provider value={value}>
       {children}
-      <ShoppingCartModal />
+      <ShoppingCartModal styles={styles?.modal} />
     </FakeCartContext.Provider>
   );
 };

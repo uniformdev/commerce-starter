@@ -8,6 +8,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 On Uniform, install the Commerce Starter after creating an account then follow the instructions to connect this repository.
 Alternatively, you can start with this repository then push the content to your Uniform project. See the instructions below.
 
+### Prerequisites
+
+- A Uniform account with the ability to create a new empty project. If you don't have a Uniform account, you can request a trial account [here](https://uniform.dev/try?utm_source=commerce-starter).
+
 ### Environment Variables
 
 - `UNIFORM_API_KEY`: your uniform api key
@@ -22,12 +26,12 @@ Alternatively, you can start with this repository then push the content to your 
    npm install && npm run build && npm start
    ```
 
-### Setup own project and start local development
+### Setup own project and start locally
 
 1. In your terminal, from the project root, run the following command and follow the instructions:
 
    ```bash
-   npm install && npm run cli
+   npm run cli
    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

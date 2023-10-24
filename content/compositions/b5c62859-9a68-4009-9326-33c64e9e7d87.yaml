@@ -1,0 +1,267 @@
+composition:
+  _name: Grid (Fake Commerce Coffee Makers)
+  _id: b5c62859-9a68-4009-9326-33c64e9e7d87
+  type: grid
+  parameters:
+    gapX:
+      type: tp-slider-parameter
+      value: small
+    gapY:
+      type: tp-slider-parameter
+      value: small
+    title:
+      type: text
+      value: Algolia Products List
+    columnsCount:
+      type: tp-slider-parameter
+      value: '4'
+  slots:
+    grid-inner:
+      - _id: 2f4c5b3a-b8ee-4968-b145-eb38a2cef32c
+        type: gridItem
+        slots:
+          inner:
+            - _id: 44e81329-e681-4ac7-9183-221f7e226fea
+              type: content
+              parameters:
+                title:
+                  type: text
+                  value: Subcategory
+                titleStyle:
+                  type: tp-title-style-parameter
+                  value: h3
+              _overridability:
+                parameters:
+                  link: 'yes'
+                  text: 'yes'
+                  title: 'yes'
+                  content: 'yes'
+                  titleStyle: 'yes'
+            - _id: d6668d33-a525-4153-bcdb-2d0b31d0ee89
+              type: spacer
+              parameters:
+                thickness:
+                  type: tp-slider-parameter
+                  value: 20px
+              _overridability:
+                variants: true
+                parameters:
+                  thickness: 'yes'
+            - _id: 17a121fe-5e27-4664-a243-31b3e642b598
+              type: content
+              parameters:
+                link:
+                  type: link
+                  value:
+                    path: /shop/26
+                    type: url
+                title:
+                  type: text
+                  value: Pour-Over
+                titleStyle:
+                  type: tp-title-style-parameter
+                  value: h4
+              _overridability:
+                parameters:
+                  link: 'yes'
+                  text: 'yes'
+                  title: 'yes'
+                  content: 'yes'
+                  titleStyle: 'yes'
+            - _id: 4673eec6-0673-45c7-aede-a5c825e7e5e1
+              type: spacer
+              parameters:
+                thickness:
+                  type: tp-slider-parameter
+                  value: 20px
+              _overridability:
+                variants: true
+                parameters:
+                  thickness: 'yes'
+            - _id: 2cb603f6-c8eb-4d55-8a74-5e342d70db52
+              type: content
+              parameters:
+                link:
+                  type: link
+                  value:
+                    path: /shop/24
+                    type: url
+                title:
+                  type: text
+                  value: Espresso
+                titleStyle:
+                  type: tp-title-style-parameter
+                  value: h4
+              _overridability:
+                parameters:
+                  link: 'yes'
+                  text: 'yes'
+                  title: 'yes'
+                  content: 'yes'
+                  titleStyle: 'yes'
+            - _id: f6c1ab44-51da-4813-820f-10e37420a295
+              type: spacer
+              parameters:
+                thickness:
+                  type: tp-slider-parameter
+                  value: 20px
+              _overridability:
+                variants: true
+                parameters:
+                  thickness: 'yes'
+            - _id: 5176e680-bf10-4c49-9b5a-d2dd57d62073
+              type: content
+              parameters:
+                link:
+                  type: link
+                  value:
+                    path: /shop/21
+                    type: url
+                title:
+                  type: text
+                  value: French Press
+                titleStyle:
+                  type: tp-title-style-parameter
+                  value: h4
+              _overridability:
+                parameters:
+                  link: 'yes'
+                  text: 'yes'
+                  title: 'yes'
+                  content: 'yes'
+                  titleStyle: 'yes'
+            - _id: 51220878-0c52-4f22-aaf4-3f22ea3f46bf
+              type: spacer
+              parameters:
+                thickness:
+                  type: tp-slider-parameter
+                  value: 20px
+              _overridability:
+                variants: true
+                parameters:
+                  thickness: 'yes'
+            - _id: d041955d-cdc1-4068-a44b-d42c5338a8a3
+              type: content
+              parameters:
+                link:
+                  type: link
+                  value:
+                    path: /shop/25
+                    type: url
+                title:
+                  type: text
+                  value: Percolators
+                titleStyle:
+                  type: tp-title-style-parameter
+                  value: h4
+              _overridability:
+                parameters:
+                  link: 'yes'
+                  text: 'yes'
+                  title: 'yes'
+                  content: 'yes'
+                  titleStyle: 'yes'
+            - _id: 935d2d2d-1253-4c3e-851d-ff263e0523ac
+              type: spacer
+              parameters:
+                thickness:
+                  type: tp-slider-parameter
+                  value: 20px
+              _overridability:
+                variants: true
+                parameters:
+                  thickness: 'yes'
+            - _id: 5a29a586-695f-4a9a-ad34-145181853496
+              type: content
+              parameters:
+                link:
+                  type: link
+                  value:
+                    path: /shop/22
+                    type: url
+                title:
+                  type: text
+                  value: Turkish
+                titleStyle:
+                  type: tp-title-style-parameter
+                  value: h4
+              _overridability:
+                parameters:
+                  link: 'yes'
+                  text: 'yes'
+                  title: 'yes'
+                  content: 'yes'
+                  titleStyle: 'yes'
+        parameters:
+          title:
+            type: text
+            value: Left Section
+          rowSpan:
+            type: tp-slider-parameter
+            value: '1'
+          rowStart:
+            type: tp-slider-parameter
+            value: None
+          columnSpan:
+            type: tp-slider-parameter
+            value: '1'
+          columnStart:
+            type: tp-slider-parameter
+            value: none
+        _overridability:
+          parameters:
+            title: 'yes'
+            rowSpan: 'yes'
+            rowStart: 'yes'
+            columnSpan: 'yes'
+            columnStart: 'yes'
+      - _id: 57191832-af62-4077-87b2-1daa85fcda16
+        type: gridItem
+        slots:
+          inner:
+            - _id: 6b42059d-6440-4bee-aa11-31117deda00d
+              type: grid
+              _pattern: 4c0b11cf-433a-4a2a-8231-3659797a541f
+              _dataResources:
+                Products Query Content:
+                  type: fakeCommerceProductsQuery
+                  variables:
+                    page: '1'
+                    limit: '100'
+                    keyword: ''
+                    sortField: ''
+                    categoryId: '23'
+                    sortDirection: asc
+        parameters:
+          title:
+            type: text
+            value: Right Section
+          rowSpan:
+            type: tp-slider-parameter
+            value: '1'
+          rowStart:
+            type: tp-slider-parameter
+            value: None
+          columnSpan:
+            type: tp-slider-parameter
+            value: '3'
+          columnStart:
+            type: tp-slider-parameter
+            value: none
+        _overridability:
+          parameters:
+            title: 'yes'
+            rowSpan: 'yes'
+            rowStart: 'yes'
+            columnSpan: 'yes'
+            columnStart: 'yes'
+  _overridability:
+    parameters:
+      gapX: 'yes'
+      gapY: 'yes'
+      title: 'yes'
+      columnsCount: 'yes'
+created: '2023-08-18T09:24:05.993328+00:00'
+modified: '2023-09-12T14:24:59.008436+00:00'
+pattern: true
+categoryId: 2da8c924-14d5-470b-9fe4-1e56521551e5

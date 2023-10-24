@@ -2,13 +2,10 @@ import Head from 'next/head';
 import { UniformAppProps } from '@uniformdev/context-next';
 import { UniformContext } from '@uniformdev/context-react';
 import type { RootComponentInstance } from '@uniformdev/canvas';
-
 import createUniformContext from '@/context/createUniformContext';
-import { ComponentStarterKitContextProvider } from '@/context';
 import '@/canvas';
-import FakeCartContextProvider from '@/modules/fake-cart/FakeCartProvider';
-
-import '@/styles/globals.scss';
+import FakeCartContextProvider from '../modules/fake-cart/FakeCartProvider';
+import '../styles/globals.scss';
 
 const clientContext = createUniformContext();
 
@@ -100,9 +97,7 @@ const App = ({
         {favicon?.value && <link rel="shortcut icon" href={favicon?.value as string} />}
       </Head>
       <UniformContext context={serverUniformContext ?? clientContext}>
-        <ComponentStarterKitContextProvider {...(pageProps?.context || {})}>
-          <Component {...pageProps} providers={FakeCartContextProvider} />
-        </ComponentStarterKitContextProvider>
+        <Component {...pageProps} providers={FakeCartContextProvider} />
       </UniformContext>
     </>
   );

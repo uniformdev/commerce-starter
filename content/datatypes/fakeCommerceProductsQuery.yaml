@@ -1,0 +1,57 @@
+id: fakeCommerceProductsQuery
+displayName: Products Query
+ttl: 30
+path: /api/products/get
+custom:
+  selectedCategoryIds: []
+  selectedDisplayField: name
+method: GET
+purgeKey: 906630a1-2bd1-47bc-975f-1f08a14c2c19
+archetype: queryProducts
+variables:
+  page:
+    type: text
+    default: '1'
+    displayName: Page
+  limit:
+    type: text
+    default: ''
+    displayName: Limit
+  keyword:
+    type: text
+    default: ''
+    displayName: Keyword
+  sortField:
+    type: text
+    default: ''
+    displayName: Sort Field
+  categoryId:
+    type: text
+    default: ''
+    displayName: Category Id
+  productIds:
+    type: text
+    default: ''
+    helpText: Array of product ids
+    displayName: Product Ids
+  sortDirection:
+    type: text
+    default: ''
+    displayName: Sort Direction
+parameters:
+  - key: id
+    value: ${productIds}
+  - key: categoryId
+    value: ${categoryId}
+  - key: keyword
+    value: ${keyword}
+  - key: sortField
+    value: ${sortField}
+  - key: sortDirection
+    value: ${sortDirection}
+  - key: limit
+    value: ${limit}
+  - key: page
+    value: ${page}
+dataSourceId: fakeCommerceDataSource
+allowedOnComponents: []

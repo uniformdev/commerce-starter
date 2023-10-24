@@ -1,0 +1,115 @@
+composition:
+  _name: Subcategory
+  _id: c86db182-12d7-4254-90ba-f3ab90a93d73
+  _slug: ':subcategoryId'
+  type: productCategoryPage
+  parameters:
+    pageTitle:
+      type: text
+      value: ${#jptr:/Products Query Content/data/0/subCategories/0} Subcategory Page
+  slots:
+    pageFooter:
+      - _id: b57d24f1-b0ae-424a-b25f-bedd595910f9
+        type: footer
+        _pattern: 319639e9-4bac-4fb3-8f0b-19088c969fcb
+    pageHeader:
+      - _id: ebb1d32b-2078-4595-b2a4-71f53260b5d2
+        type: header
+        _pattern: e46c8336-acfd-43e8-ac59-8be8f4c33b7d
+    pageContent:
+      - _id: b6b45e71-f142-44a2-bc9b-b724d3dfc8c7
+        type: hero
+        variant: backgroundImage
+        parameters:
+          image:
+            type: image
+            value: >-
+              https://res.cloudinary.com/uniform-demos/image/upload/v1692268646/coffee-marketing/photo-1621112904899-d14ce062bea8_hfmqoo.png
+          title:
+            type: text
+            value: |-
+
+              Engineering goes better...
+          objectFit:
+            type: select
+            value: cover
+          paddingTop:
+            type: select
+            value: None
+          titleStyle:
+            type: tp-title-style-parameter
+            value: h1
+          paddingBottom:
+            type: select
+            value: None
+          containerVariant:
+            type: select
+            value: fluidContent
+          textColorVariant:
+            type: select
+            value: Light
+      - _id: 7d0caf53-41be-48a1-b657-b75cc213891f
+        type: breadcrumbs
+        parameters:
+          separator:
+            type: select
+            value: chevron
+          colorStyle:
+            type: tp-color-style-parameter
+            value: primary
+          displayRootNode:
+            type: checkbox
+            value: true
+          displayPlaceholderNodes:
+            type: checkbox
+            value: true
+      - _id: cb82d36a-5518-4198-a6af-76e439aea99f
+        type: content
+        parameters:
+          title:
+            type: text
+            value: ${#jptr:/Products Query Content/data/0/subCategories/0}
+          titleStyle:
+            type: tp-title-style-parameter
+            value: h1
+      - _id: 983511e7-03df-43ab-9f9b-e59b7c75e388
+        type: grid
+        _pattern: 4c0b11cf-433a-4a2a-8231-3659797a541f
+        _dataResources:
+          Products Query Content:
+            type: fakeCommerceProductsQuery
+            variables:
+              page: '1'
+              limit: '100'
+              keyword: ''
+              sortField: ''
+              categoryId: ${subcategoryId}
+              sortDirection: asc
+  _dataResources:
+    Products Query Content:
+      type: fakeCommerceProductsQuery
+      variables:
+        page: '1'
+        limit: '5'
+        keyword: ''
+        sortField: ''
+        categoryId: ${subcategoryId}
+        sortDirection: asc
+  _overrides:
+    983511e7-03df-43ab-9f9b-e59b7c75e388|9b21a0f9-9a80-43fa-948c-e98ce121ccba:
+      parameters:
+        buttonLink:
+          type: link
+          value:
+            path: /products/:product-slug
+            type: projectMapNode
+            nodeId: fb657541-0488-4c22-bce4-64c9cd71bdde
+            projectMapId: 62588085-7894-4810-84b6-eaaf0cb5213c
+            dynamicInputValues:
+              product-slug: ${#jptr:/Products Query Content data Loop Item/slug}
+        textColorVariant:
+          type: select
+          value: Dark
+created: '2023-10-13T10:09:25.458433+00:00'
+modified: '2023-10-13T10:24:22.169486+00:00'
+pattern: false

@@ -3,9 +3,14 @@ import Link from 'next/link';
 import classNames from 'classnames';
 import { useFakeCartContext } from './FakeCartProvider';
 
-interface Props {
+type Styles = {
+  link?: string;
+};
+
+export type Props = {
   link: Types.ProjectMapLink;
-}
+  styles?: Styles;
+};
 
 const Icon: FC<SVGProps<SVGSVGElement>> = props => (
   <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="currentColor" {...props}>
@@ -16,9 +21,8 @@ const Icon: FC<SVGProps<SVGSVGElement>> = props => (
   </svg>
 );
 
-const CartIcon: FC<Props> = ({ link }) => {
+const CartIcon: FC<Props> = ({ link, styles }) => {
   const { totalFakeCartItemsCount } = useFakeCartContext();
-
   if (!link) {
     return null;
   }
@@ -26,7 +30,7 @@ const CartIcon: FC<Props> = ({ link }) => {
   return (
     <Link
       aria-label="header-cart"
-      className={classNames('flex items-center cursor-pointer justify-end [&:not(:last-child)]:mr-3', {
+      className={classNames('flex items-center cursor-pointer justify-end [&:not(:last-child)]:mr-3', styles?.link, {
         'justify-between': Boolean(totalFakeCartItemsCount),
       })}
       href={link?.path}

@@ -1,0 +1,89 @@
+composition:
+  _name: Product Info (Fake Commerce)
+  _id: f0a81998-50d1-4a24-b0e8-07ae3df85706
+  type: productInfo
+  parameters:
+    image:
+      type: image
+      value: ${#jptr:/Product by Slug Content/0/images/0/url}
+    title:
+      type: text
+      value: ${#jptr:/Product by Slug Content/0/name}
+    product:
+      type: json
+      value: ${#jptr:/Product by Slug Content/0}
+    fullHeight:
+      type: checkbox
+      value: true
+    titleStyle:
+      type: tp-title-style-parameter
+      value: h1
+    description:
+      type: text
+      value: ${#jptr:/Product by Slug Content/0/description}
+    overlayColor:
+      type: tp-color-style-parameter
+      value: base-300
+    highlightText:
+      type: text
+      value: $${#jptr:/Product by Slug Content/0/price}
+    overlayOpacity:
+      type: tp-slider-parameter
+      value: 50%
+    primaryButtonCopy:
+      type: text
+      value: Buy now
+    primaryButtonStyle:
+      type: tp-button-style-parameter
+      value: secondary
+    secondaryButtonCopy:
+      type: text
+      value: Taste the future
+    secondaryButtonLink:
+      type: link
+      value:
+        path: /shop/23
+        type: projectMapNode
+        nodeId: 677b7543-834f-459a-9996-c0368129dfd4
+        projectMapId: 62588085-7894-4810-84b6-eaaf0cb5213c
+        dynamicInputValues:
+          subcategoryId: '23'
+  _dataResources:
+    Product by Slug Content:
+      type: fakeCommerceProductBySlug
+      variables:
+        value: kosmic-coffee-barista-express-espresso-machine-115
+      isPatternParameter: true
+      ignorePatternParameterDefault: true
+  _overridability:
+    parameters:
+      delay: 'yes'
+      image: 'yes'
+      title: 'yes'
+      product: 'yes'
+      duration: 'yes'
+      features: 'yes'
+      subTitle: 'yes'
+      objectFit: 'yes'
+      fullHeight: 'yes'
+      titleStyle: 'yes'
+      description: 'yes'
+      eyebrowText: 'yes'
+      overlayColor: 'yes'
+      animationType: 'yes'
+      highlightText: 'yes'
+      overlayOpacity: 'yes'
+      animationOrder: 'yes'
+      primaryButtonCopy: 'yes'
+      primaryButtonLink: 'yes'
+      primaryButtonStyle: 'yes'
+      secondaryButtonCopy: 'yes'
+      secondaryButtonLink: 'yes'
+      animationPreview: 'yes'
+      secondaryButtonStyle: 'yes'
+      primaryButtonAnimationType: 'yes'
+      secondaryButtonAnimationType: 'yes'
+created: '2023-09-06T16:13:47.923773+00:00'
+modified: '2023-09-28T07:05:26.176698+00:00'
+pattern: true
+categoryId: 2da8c924-14d5-470b-9fe4-1e56521551e5

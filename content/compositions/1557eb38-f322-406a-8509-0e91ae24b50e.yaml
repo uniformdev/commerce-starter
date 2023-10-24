@@ -1,0 +1,98 @@
+composition:
+  _name: Product Gallery (Fake Commerce)
+  _id: 1557eb38-f322-406a-8509-0e91ae24b50e
+  type: productGallery
+  variant: fluidContent
+  parameters:
+    title:
+      type: text
+      value: Product Gallery
+    duration:
+      type: select
+      value: slow
+    paddingTop:
+      type: select
+      value: None
+    titleStyle:
+      type: tp-title-style-parameter
+      value: h4
+    animationType:
+      type: select
+      value: flyIn
+    paddingBottom:
+      type: select
+      value: None
+    backgroundType:
+      type: tp-background-type-parameter
+      value: Light
+  slots:
+    images:
+      - _id: 9f08a98d-d8cc-4e63-8e3f-cc1446e72bcf
+        type: $loop
+        slots:
+          body:
+            - _id: d4e7be36-e275-4611-bea3-5b523a3244a5
+              type: image
+              parameters:
+                alt:
+                  type: text
+                  value: >-
+                    Product image ${#jptr:/Product by Slug Content images Loop
+                    Item/id}
+                src:
+                  type: image
+                  value: ${#jptr:/Product by Slug Content images Loop Item/url}
+                width:
+                  type: number
+                  value: '10000'
+                height:
+                  type: number
+                  value: '10000'
+              _overridability:
+                parameters:
+                  alt: 'yes'
+                  src: 'yes'
+                  fill: 'yes'
+                  width: 'yes'
+                  height: 'yes'
+                  quality: 'yes'
+                  priority: 'yes'
+                  objectFit: 'yes'
+                  borderColor: 'yes'
+                  borderWidth: 'yes'
+                  borderRadius: 'yes'
+                  overlayColor: 'yes'
+                  overlayOpacity: 'yes'
+        _dataResources:
+          Product by Slug Content images Loop Item:
+            type: sys-reserved-loop
+            variables:
+              connectedData: /Product by Slug Content/0/images
+  _dataResources:
+    Product by Slug Content:
+      type: fakeCommerceProductBySlug
+      variables:
+        value: kosmic-coffee-barista-express-espresso-machine-115
+      isPatternParameter: true
+      ignorePatternParameterDefault: true
+  _overridability:
+    variants: true
+    parameters:
+      delay: 'yes'
+      title: 'yes'
+      duration: 'yes'
+      maxItems: 'yes'
+      marginTop: 'yes'
+      paddingTop: 'yes'
+      titleStyle: 'yes'
+      description: 'yes'
+      marginBottom: 'yes'
+      animationType: 'yes'
+      paddingBottom: 'yes'
+      backgroundType: 'yes'
+      animationOrder: 'yes'
+      animationPreview: 'yes'
+created: '2023-09-06T16:20:22.111704+00:00'
+modified: '2023-09-28T07:05:07.128815+00:00'
+pattern: true
+categoryId: 2da8c924-14d5-470b-9fe4-1e56521551e5

@@ -1,7 +1,9 @@
 import { CANVAS_DRAFT_STATE, CANVAS_PUBLISHED_STATE } from '@uniformdev/canvas';
 import { withUniformGetServerSideProps } from '@uniformdev/canvas-next/route';
-import { Page } from '@/components';
-import { getBreadcrumbs, getRouteClient } from '@/utilities/canvas/canvasClients';
+import { getBreadcrumbs, getRouteClient } from '../utilities/canvas/canvasClients';
+export { default } from '../components/BasePage';
+
+// Doc: https://docs.uniform.app/docs/guides/composition/url-management/routing/slug-based-routing
 
 export const getServerSideProps = withUniformGetServerSideProps({
   requestOptions: context => ({
@@ -16,16 +18,15 @@ export const getServerSideProps = withUniformGetServerSideProps({
     }
 
     const preview = Boolean(_context.preview);
-    const breadcrumbs = await getBreadcrumbs(
-      composition._id,
+    const breadcrumbs = await getBreadcrumbs({
+      compositionId: composition._id,
       preview,
-      composition?.parameters?.pageTitle?.value as string
-    );
+      dynamicTitle: composition?.parameters?.pageTitle?.value as string,
+      resolvedUrl: _context.resolvedUrl,
+    });
 
     return {
       props: { preview, data: composition || null, context: { breadcrumbs } },
     };
   },
 });
-
-export default Page;

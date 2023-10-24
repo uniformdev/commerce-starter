@@ -3,8 +3,22 @@ declare namespace CLI {
 
   type AvailableProjects = import('../constants').AvailableProjects;
 
+  type Spinner = {
+    start: (msg?: string | undefined) => void;
+    stop: (msg?: string | undefined, code?: number | undefined) => void;
+    message: (msg?: string | undefined) => void;
+  };
+
+  type AdditionalModulesExecutorProps = {
+    progressSpinner: CLI.Spinner;
+    project: CLI.AvailableProjects;
+    variant: CLI.CommonVariants;
+    projectPath: string;
+  };
+
   type DataSourceConfiguration = {
     integrationDisplayName: string;
+    integrationType?: string;
     dataSourceId: string;
     dataSourceDisplayName: string;
     connectorType: string;
@@ -19,9 +33,17 @@ declare namespace CLI {
     uniformEdgeApiHost: string;
   };
 
+  type ThemePackTheme = {
+    themeName: string;
+    themeLabel: string;
+    colors: [];
+  };
+
   type Integration = {
     name: string;
     data?: Record<string, string>;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    fetchDataFn?: (data: any) => Promise<Record<string, string | object>>;
     link?: string;
     customManifest?: Record<string, unknown>;
   };
@@ -72,7 +94,7 @@ declare namespace UNIFORM_API {
   type InstallIntegrationsParams = {
     projectId: string;
     type: string;
-    data?: Record<string, string>;
+    data?: Record<string, string | object>;
     apiHost?: string;
     headers: Record<string, string>;
   };
@@ -90,6 +112,7 @@ declare namespace UNIFORM_API {
   type AddDataSourceParams = {
     teamId: string;
     projectId: string;
+    integrationType?: string;
     integrationDisplayName: string;
     connectorType: string;
     baseUrl: string;
@@ -172,10 +195,9 @@ declare namespace UNIFORM_API {
     is_prod: boolean;
     limit: number;
     used: number;
-  }
+  };
 
   type ProjectTypesResponse = {
     projectTypes: ProjectType[];
   };
-
 }

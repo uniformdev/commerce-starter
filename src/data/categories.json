@@ -8,5 +8,7 @@
   { "id": "27", "name": "Beans", "url": "beans", "parentId": "0" },
   { "id": "28", "name": "Arabica", "url": "arabica", "parentId": "27" },
   { "id": "29", "name": "Robusta", "url": "robusta", "parentId": "27" },
-  { "id": "30", "name": "Liberica", "url": "liberica", "parentId": "27" }
+  { "id": "30", "name": "Liberica", "url": "liberica", "parentId": "27" },
+  { "id": "31", "name": "Accessories", "url": "accessories", "parentId": "0" },
+  { "id": "32", "name": "Espresso Tools", "url": "espresso-tools", "parentId": "31" }
 ]

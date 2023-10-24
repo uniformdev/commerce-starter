@@ -1,0 +1,20 @@
+# yaml-language-server: $schema=<https://canary.uniform.app/schemas/json-schema/component-definition/v1.json>
+$schema: https://canary.uniform.app/schemas/json-schema/component-definition/v1.json
+id: shoppingCartIcon
+name: Shopping Cart Icon
+icon: shopping-cart
+parameters:
+  - id: link
+    name: Link
+    type: link
+    helpText: ''
+    typeConfig:
+      linkTypes:
+        tel: false
+        email: false
+categoryId: 2da8c924-14d5-470b-9fe4-1e56521551e5
+useTeamPermissions: true
+slots: []
+canBeComposition: false
+created: '2023-09-26T08:46:46.577201+00:00'
+updated: '2023-09-26T08:46:46.577201+00:00'

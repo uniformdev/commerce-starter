@@ -1,13 +1,13 @@
 import { FC, useCallback } from 'react';
 import { registerUniformComponent, ComponentProps } from '@uniformdev/canvas-react';
-import BaseAddToCart from '../../components/BaseAddToCart';
+import BaseAddToCart, { BaseAddToCartProps } from '../../components/BaseAddToCart';
 import { useFakeCartContext } from './FakeCartProvider';
 
-export type Props = ComponentProps<{
-  buttonCopy?: string;
-  buttonStyle: Types.ButtonStyles;
-  product: CommerceTypes.Product;
-}>;
+export type Props = ComponentProps<
+  {
+    product: CommerceTypes.AddToCartItem;
+  } & BaseAddToCartProps
+>;
 
 const AddToCart: FC<Props> = ({ buttonStyle, buttonCopy, product }) => {
   const { addItemToFakeCart } = useFakeCartContext();

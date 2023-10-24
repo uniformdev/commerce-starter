@@ -5,9 +5,8 @@ import createUniformContext from '@/context/createUniformContext';
 
 type CustomDocumentProps = DocumentInitialProps;
 
-// Docs: https://docs.uniform.app/docs/guides/personalization/activate-personalization#server-side
 class AppDocument extends Document<CustomDocumentProps> {
-  // required to enable SSR personalization
+  // Docs: https://docs.uniform.app/docs/guides/personalization/activate-personalization#server-side
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const serverTracker = createUniformContext(ctx);
     enableNextSsr(ctx, serverTracker);

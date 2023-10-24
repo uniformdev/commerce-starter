@@ -44,8 +44,20 @@ export const getProjectMapClient = () => {
 export const getState = (preview: boolean | undefined) =>
   process.env.NODE_ENV === 'development' || preview ? CANVAS_DRAFT_STATE : CANVAS_PUBLISHED_STATE;
 
-export const getBreadcrumbs = async (compositionId: string, preview: boolean, dynamicTitle?: string) => {
+export const getBreadcrumbs = async ({
+  compositionId,
+  preview,
+  dynamicTitle,
+  resolvedUrl,
+}: {
+  compositionId: string;
+  preview: boolean;
+  dynamicTitle?: string;
+  resolvedUrl?: string;
+}) => {
   const projectMapClient = getProjectMapClient();
+
+  const urlSegments = resolvedUrl?.split('/') || [];
 
   const { nodes: projectMapNodes } = await projectMapClient.getNodes({
     compositionId: compositionId,
@@ -53,11 +65,14 @@ export const getBreadcrumbs = async (compositionId: string, preview: boolean, dy
     state: getState(preview),
   });
 
-  return projectMapNodes?.map(node => ({
-    name: node.name,
-    path: node.path,
-    type: node.type,
-    isRoot: node.path === '/',
-    dynamicInputValue: (node.pathSegment?.includes(':') && dynamicTitle) || null,
-  }));
+  return projectMapNodes?.map((node, index) => {
+    const isDynamicPath = Boolean(node.pathSegment?.includes(':'));
+    return {
+      name: node.name,
+      path: isDynamicPath ? urlSegments.slice(0, index + 1).join('/') || '/' : node.path,
+      type: node.type,
+      isRoot: node.path === '/',
+      dynamicInputTitle: (isDynamicPath && dynamicTitle) || null,
+    };
+  });
 };

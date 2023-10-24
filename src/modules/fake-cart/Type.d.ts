@@ -17,6 +17,13 @@ declare namespace CommerceTypes {
     images: ProductImage[];
   }
 
+  interface Category {
+    id: string;
+    name: string;
+    url: string;
+    parentId: string;
+  }
+
   type ProductsHashCache = Record<string, Product>;
 
   interface SearchParams {
@@ -26,6 +33,19 @@ declare namespace CommerceTypes {
     keyword?: string;
     sortField?: 'price' | 'id' | 'name' | 'slug' | 'description';
     sortDirection?: string;
+  }
+
+  interface AddToCartItem {
+    id: string;
+    slug: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    [key: string]: any;
+  }
+
+  //TODO: think how to improve normalize process
+  interface FakeCartAddItem {
+    product: AddToCartItem;
+    quantity: number;
   }
 
   interface FakeCartItem {

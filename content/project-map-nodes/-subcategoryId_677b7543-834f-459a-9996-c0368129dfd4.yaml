@@ -1,0 +1,9 @@
+id: 677b7543-834f-459a-9996-c0368129dfd4
+name: Subcategory
+type: composition
+data: {}
+order: 600
+path: /shop/:subcategoryId
+compositionId: c86db182-12d7-4254-90ba-f3ab90a93d73
+pathSegment: ':subcategoryId'
+projectMapId: 62588085-7894-4810-84b6-eaaf0cb5213c

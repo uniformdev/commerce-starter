@@ -1,0 +1,104 @@
+composition:
+  _name: Custom Product Details Page
+  _id: 6b307589-1b6a-471c-9263-4b1b18c5d48a
+  _slug: cervello-di-caffe-140
+  type: productDetailsPage
+  parameters:
+    pageTitle:
+      type: text
+      value: Cervello di Caffe® - SmartHQ enabled espresso machine
+  slots:
+    pageFooter:
+      - _id: 7ef1109c-2a80-46a5-9dd2-9395992c9fcc
+        type: footer
+        _pattern: 319639e9-4bac-4fb3-8f0b-19088c969fcb
+    pageHeader:
+      - _id: 30d98024-1a77-4584-bcc2-2fad297904cb
+        type: header
+        _pattern: e46c8336-acfd-43e8-ac59-8be8f4c33b7d
+    pageContent:
+      - _id: cb661363-11ac-436c-8025-439d62a96029
+        type: hero
+        variant: backgroundImage
+        parameters:
+          image:
+            type: image
+            value: >-
+              https://res.cloudinary.com/uniform-demos/image/upload/v1692271202/coffee-marketing/Geo_Location_lhcvsr.webp
+          title:
+            type: text
+            value: Custom Product Detail page
+          objectFit:
+            type: select
+            value: cover
+          paddingTop:
+            type: select
+            value: None
+          titleStyle:
+            type: tp-title-style-parameter
+            value: h1
+          paddingBottom:
+            type: select
+            value: None
+          containerVariant:
+            type: select
+            value: fluidContent
+          textColorVariant:
+            type: select
+            value: Light
+      - _id: e9d6edeb-d476-4087-95af-580bbe0d05dd
+        type: breadcrumbs
+        parameters:
+          separator:
+            type: select
+            value: chevron
+          colorStyle:
+            type: tp-color-style-parameter
+            value: primary
+          displayRootNode:
+            type: checkbox
+            value: true
+          displayPlaceholderNodes:
+            type: checkbox
+            value: true
+      - _id: 0c074f29-ee6d-4396-ae2b-c4cc1963cafe
+        type: productDetails
+        _pattern: 4f6e4ec8-439d-4d8f-91ba-155afb898d41
+        _dataResources:
+          Product by Slug Content:
+            type: fakeCommerceProductBySlug
+            variables:
+              value: cervello-di-caffe-140
+      - _id: 493e8cc6-1286-4831-8d1d-d4cf7bc44611
+        type: spacer
+        parameters:
+          thickness:
+            type: tp-slider-parameter
+            value: 10px
+  _dataResources: {}
+  _overrides:
+    0c074f29-ee6d-4396-ae2b-c4cc1963cafe:
+      parameters:
+        paddingTop:
+          type: select
+          value: null
+        paddingBottom:
+          type: select
+          value: null
+    d6852bd5-8e0e-4fe6-ab27-b67c7767772f|1a7427e0-4b67-46b4-8f3d-feba9f105240:
+      parameters:
+        buttonLink:
+          type: link
+          value:
+            path: /products/:product-slug
+            type: projectMapNode
+            nodeId: fb657541-0488-4c22-bce4-64c9cd71bdde
+            projectMapId: 62588085-7894-4810-84b6-eaaf0cb5213c
+            dynamicInputValues:
+              product-slug: ${#jptr:/Products Query Content data Loop Item/slug}
+        textColorVariant:
+          type: select
+          value: Dark
+created: '2023-10-13T10:09:23.350463+00:00'
+modified: '2023-10-13T10:41:07.069211+00:00'
+pattern: false

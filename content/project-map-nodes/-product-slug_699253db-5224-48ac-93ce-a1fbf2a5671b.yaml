@@ -1,0 +1,10 @@
+id: 699253db-5224-48ac-93ce-a1fbf2a5671b
+name: Product Details Page
+type: composition
+data:
+  previewValue: ''
+order: 550
+path: /products/:product-slug
+compositionId: 513aa733-6e09-4d58-8887-02a2a96b0f27
+pathSegment: ':product-slug'
+projectMapId: 62588085-7894-4810-84b6-eaaf0cb5213c

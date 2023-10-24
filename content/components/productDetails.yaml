@@ -1,0 +1,108 @@
+# yaml-language-server: $schema=<https://canary.uniform.app/schemas/json-schema/component-definition/v1.json>
+$schema: https://canary.uniform.app/schemas/json-schema/component-definition/v1.json
+id: productDetails
+name: Product Details
+icon: >-
+  https://res.cloudinary.com/uniform-demos/image/upload/v1692281032/csk-icons/component-icons-v2/CSKicon_container_p810p1_x6zrrm.svg
+parameters:
+  - id: title
+    name: Title
+    type: text
+    helpText: Section title
+    typeConfig: null
+  - id: group_styling
+    name: Styling
+    type: group
+    typeConfig:
+      childrenParams:
+        - paddingBottom
+        - backgroundType
+        - paddingTop
+        - marginTop
+        - marginBottom
+  - id: backgroundType
+    name: Background Type
+    type: tp-background-type-parameter
+    helpText: ''
+    typeConfig: null
+  - id: paddingTop
+    name: Padding Top
+    type: select
+    helpText: ''
+    typeConfig:
+      options:
+        - text: Small
+          value: Small
+        - text: Medium
+          value: Medium
+        - text: Large
+          value: Large
+        - text: None
+          value: None
+  - id: paddingBottom
+    name: Padding Bottom
+    type: select
+    helpText: ''
+    typeConfig:
+      options:
+        - text: Small
+          value: Small
+        - text: Medium
+          value: Medium
+        - text: Large
+          value: Large
+        - text: None
+          value: None
+  - id: marginTop
+    name: Margin Top
+    type: select
+    helpText: ''
+    typeConfig:
+      options:
+        - text: Small
+          value: Small
+        - text: Medium
+          value: Medium
+        - text: Large
+          value: Large
+        - text: None
+          value: None
+  - id: marginBottom
+    name: Margin Bottom
+    type: select
+    helpText: ''
+    typeConfig:
+      options:
+        - text: Small
+          value: Small
+        - text: Medium
+          value: Medium
+        - text: Large
+          value: Large
+        - text: None
+          value: None
+categoryId: 2da8c924-14d5-470b-9fe4-1e56521551e5
+useTeamPermissions: true
+slots:
+  - id: container-inner
+    name: Container Inner
+    allowedComponents:
+      - grid
+      - spacer
+      - divider
+      - content
+      - price
+      - addToCart
+      - carousel
+    allowAllComponents: false
+    inheritAllowedComponents: false
+    patternsInAllowedComponents: true
+titleParameter: title
+canBeComposition: false
+created: '2023-10-13T10:09:20.845941+00:00'
+updated: '2023-10-13T10:28:53.66056+00:00'
+variants:
+  - id: backgroundInContainer
+    name: Background In Container
+  - id: fluidContent
+    name: Fluid Content

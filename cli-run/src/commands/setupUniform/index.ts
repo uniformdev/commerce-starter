@@ -111,6 +111,7 @@ export const setupUniformProject = async (
       teamId,
       projectId,
       integrationParams: integration.data,
+      fetchIntegrationParamsFn: integration.fetchDataFn,
       customManifest: integration.customManifest,
       apiHost: uniformApiHost,
       headers,
@@ -125,6 +126,7 @@ export const setupUniformProject = async (
     await configureDataSource({
       teamId,
       projectId,
+      integrationType: dataSource?.integrationType,
       integrationDisplayName: dataSource.integrationDisplayName,
       connectorType: dataSource.connectorType,
       baseUrl: dataSource.baseUrl,
@@ -138,7 +140,9 @@ export const setupUniformProject = async (
   }
 
   return {
+    uniformTeamId: teamId,
     uniformProjectId: projectId,
     uniformApiKey: writeApiKey,
+    uniformHeaders: headers,
   };
 };

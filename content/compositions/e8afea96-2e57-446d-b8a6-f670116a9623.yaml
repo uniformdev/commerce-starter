@@ -1,0 +1,109 @@
+composition:
+  _name: Coffee Makers
+  _id: e8afea96-2e57-446d-b8a6-f670116a9623
+  _slug: coffee-makers
+  type: productCategoryPage
+  parameters:
+    pageTitle:
+      type: text
+      value: Coffee Makers Page
+  slots:
+    pageFooter:
+      - _id: 02a9b72d-3772-44e0-b4b1-f1aaf9a64de5
+        type: footer
+        _pattern: 319639e9-4bac-4fb3-8f0b-19088c969fcb
+    pageHeader:
+      - _id: 1a68a352-7c8c-43ff-9b8b-030c815b11d7
+        type: header
+        _pattern: e46c8336-acfd-43e8-ac59-8be8f4c33b7d
+    pageContent:
+      - _id: 80fa9ecc-6756-48f0-a8d9-50619d9fd208
+        type: hero
+        variant: backgroundImage
+        parameters:
+          image:
+            type: image
+            value: >-
+              https://res.cloudinary.com/uniform-demos/image/upload/v1692267285/coffee-marketing/hero-coffee-makers_ixoaim_mstl1y.webp
+          title:
+            type: text
+            value: Coffee makers for all your brewing needs
+          objectFit:
+            type: select
+            value: cover
+          paddingTop:
+            type: select
+            value: None
+          titleStyle:
+            type: tp-title-style-parameter
+            value: h1
+          overlayColor:
+            type: tp-color-style-parameter
+            value: base-300
+          paddingBottom:
+            type: select
+            value: None
+          overlayOpacity:
+            type: tp-slider-parameter
+            value: 0%
+          containerVariant:
+            type: select
+            value: fluidContent
+          textColorVariant:
+            type: select
+            value: Light
+      - _id: 37b5db8b-bd1a-46ac-b7a2-77d4438462e4
+        type: breadcrumbs
+        parameters:
+          separator:
+            type: select
+            value: chevron
+          colorStyle:
+            type: tp-color-style-parameter
+            value: primary
+          displayRootNode:
+            type: checkbox
+            value: true
+          displayPlaceholderNodes:
+            type: checkbox
+            value: true
+      - _id: 2fef3655-dae1-4a5e-8759-fed9f145e73d
+        type: grid
+        _pattern: b5c62859-9a68-4009-9326-33c64e9e7d87
+  _overrides:
+    2fef3655-dae1-4a5e-8759-fed9f145e73d:
+      parameters:
+        title:
+          type: text
+          value: Products List
+    2fef3655-dae1-4a5e-8759-fed9f145e73d|6b42059d-6440-4bee-aa11-31117deda00d:
+      parameters:
+        gapX:
+          type: tp-slider-parameter
+          value: small
+        gapY:
+          type: tp-slider-parameter
+          value: small
+    2fef3655-dae1-4a5e-8759-fed9f145e73d|6b42059d-6440-4bee-aa11-31117deda00d|9b21a0f9-9a80-43fa-948c-e98ce121ccba:
+      parameters:
+        objectFit:
+          type: select
+          value: cover
+        buttonLink:
+          type: link
+          value:
+            path: /products/:product-slug
+            type: projectMapNode
+            nodeId: fb657541-0488-4c22-bce4-64c9cd71bdde
+            projectMapId: 62588085-7894-4810-84b6-eaaf0cb5213c
+            dynamicInputValues:
+              product-slug: ${#jptr:/Products Query Content data Loop Item/slug}
+        overlayOpacity:
+          type: tp-slider-parameter
+          value: 0%
+        textColorVariant:
+          type: select
+          value: Dark
+created: '2023-10-13T10:09:25.681325+00:00'
+modified: '2023-10-13T10:38:03.040508+00:00'
+pattern: false

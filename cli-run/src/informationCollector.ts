@@ -1,6 +1,12 @@
+import fs from 'fs';
+import path from 'path';
 import color from 'picocolors';
 import open from 'open';
 import { select, text, intro, confirm } from './promts';
+import { addExamplesCanvasCache, remove } from './utils';
+import { demosRequiredIntegrationsMap, demosVariantsGetEnvsMap } from './mappers';
+import { fixEslint, installPackages } from './commands/run';
+import { CommonVariants } from './constants';
 
 const args = process.argv.slice(2);
 const isDevMode = args.includes('--dev');
@@ -10,7 +16,7 @@ const validate = (value: string) => {
 };
 
 export const showDemoHeader = (project: string, variant: string): void => {
-  intro(color.bgCyan(`demos-run-cli ${project} ${variant}`));
+  intro(color.bgCyan(`demos-run-cli ${project || ''} ${variant || ''}`));
 };
 
 export const askUniformAccessToken = async (apiHost: string) => {
@@ -107,7 +113,10 @@ export const getUniformEnvs = async (
   const uniformCliBaseUrl = (
     await select({
       message: 'Select Uniform host:',
-      options: [{ value: 'https://uniform.app', label: 'https://uniform.app' }],
+      options: [
+        { value: 'https://uniform.app', label: 'https://uniform.app' },
+        { value: 'https://canary.uniform.app', label: 'https://canary.uniform.app' },
+      ],
       initialValue: 'https://uniform.app',
     })
   ).toString();
@@ -129,6 +138,7 @@ export const getUniformAccessTokenEnvs = async (): Promise<{
       message: 'Select Uniform host:',
       options: [
         { value: 'https://uniform.app', label: 'https://uniform.app' },
+        { value: 'https://canary.uniform.app', label: 'https://canary.uniform.app' },
         { value: '', label: 'Other host' },
       ],
       initialValue: process.env.CLI_UNIFORM_CLI_BASE_URL || 'https://uniform.app',
@@ -199,6 +209,38 @@ export const getAlgoliaEnvs = async (
   ).toString();
 
   return { ALGOLIA_APPLICATION_ID, ALGOLIA_SEARCH_KEY };
+};
+
+export const getCoveoEnvs = async (
+  project: string
+): Promise<{
+  NEXT_PUBLIC_COVEO_ORGANIZATION_ID: string;
+  NEXT_PUBLIC_COVEO_API_KEY: string;
+}> => {
+  if (!isDevMode) {
+    return {
+      NEXT_PUBLIC_COVEO_ORGANIZATION_ID: process.env.CLI_COVEO_ORGANIZATION_ID || '',
+      NEXT_PUBLIC_COVEO_API_KEY: process.env.CLI_COVEO_API_KEY || '',
+    };
+  }
+
+  const NEXT_PUBLIC_COVEO_ORGANIZATION_ID = (
+    await text({
+      message: `Your ${project} coveo organization id:`,
+      validate,
+      initialValue: process.env.CLI_COVEO_ORGANIZATION_ID || '',
+    })
+  ).toString();
+
+  const NEXT_PUBLIC_COVEO_API_KEY = (
+    await text({
+      message: `Your ${project} coveo api key:`,
+      validate,
+      initialValue: process.env.CLI_COVEO_API_KEY || '',
+    })
+  ).toString();
+
+  return { NEXT_PUBLIC_COVEO_ORGANIZATION_ID, NEXT_PUBLIC_COVEO_API_KEY };
 };
 
 export const getCommercetoolsEnvs = async (
@@ -362,3 +404,85 @@ export const getSegmentEnvs = async (
 
   return { NEXT_PUBLIC_ANALYTICS_WRITE_KEY, SEGMENT_SPACE_ID, SEGMENT_API_KEY };
 };
+
+export const getGoogleAnalyticsEnvs = async (
+  project: string
+): Promise<{
+  NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: string;
+}> => {
+  if (!isDevMode) {
+    return {
+      NEXT_PUBLIC_GOOGLE_ANALYTICS_ID: process.env.CLI_GOOGLE_ANALYTICS_ID || '',
+    };
+  }
+
+  const NEXT_PUBLIC_GOOGLE_ANALYTICS_ID = (
+    await text({
+      message: `Your ${project} google analytics write key:`,
+      validate,
+      initialValue: process.env.CLI_GOOGLE_ANALYTICS_ID,
+    })
+  ).toString();
+
+  return { NEXT_PUBLIC_GOOGLE_ANALYTICS_ID };
+};
+
+export const additionalModulesForComponentStarterKit =
+  ({ integrationList, packagesList }: { integrationList: CLI.Integration[]; packagesList: string[] }) =>
+  async ({
+    progressSpinner,
+    project,
+    variant = CommonVariants.Default,
+    projectPath,
+  }: CLI.AdditionalModulesExecutorProps) => {
+    const pathToModules = path.resolve(projectPath, 'src', 'modules');
+    const pathToAdditionalCache = path.resolve(projectPath, 'content', 'examples');
+    if (!fs.existsSync(pathToModules) || !fs.existsSync(pathToAdditionalCache)) return;
+
+    const isRunAddingModules = await confirm({
+      message: `Do you want to add additional Examples (Coveo Search)?`,
+    });
+
+    if (!isRunAddingModules) {
+      await remove(pathToModules);
+      await remove(pathToAdditionalCache);
+      return;
+    }
+
+    if (packagesList.length) {
+      progressSpinner.start(`Installing additional packages`);
+      await installPackages(projectPath, packagesList);
+      progressSpinner.stop(`Finished installing additional packages`);
+    }
+
+    progressSpinner.start(`Adding additional canvas cache`);
+    await addExamplesCanvasCache(projectPath);
+    progressSpinner.stop(`Finished adding additional canvas cache`);
+
+    progressSpinner.start(`Adding additional integration`);
+    demosRequiredIntegrationsMap[project][variant]?.push(...integrationList);
+    progressSpinner.stop(`Finished adding additional integration`);
+
+    progressSpinner.start(`Adding additional environment variables`);
+    demosVariantsGetEnvsMap[project][variant] = getCoveoEnvs;
+    progressSpinner.stop(`Finished adding additional environment variables`);
+
+    progressSpinner.start(`Cleaning up module files`);
+    const listOfCoveoFiles = await fs.promises.readdir(path.resolve(projectPath, 'src', 'modules', 'coveo'));
+    await Promise.all(
+      listOfCoveoFiles.map(async fileName => {
+        const pathToCoveoFile = path.resolve(projectPath, 'src', 'modules', 'coveo', fileName);
+        const coveoFile = await fs.promises.readFile(pathToCoveoFile, 'utf-8');
+        await fs.promises.writeFile(
+          pathToCoveoFile,
+          coveoFile
+            .replaceAll('/* eslint-disable @typescript-eslint/ban-ts-comment */', '')
+            .replaceAll(/\/\/ @ts-ignore:.+\n/g, '')
+        );
+      })
+    );
+    await fixEslint(projectPath);
+    progressSpinner.stop(`Finished cleaning up module files`);
+
+    return;
+  };

@@ -1,5 +1,5 @@
 import { FC, useMemo } from 'react';
-import Image from 'next/image';
+import Image from '../../components/Image';
 import { useFakeCartContext } from './FakeCartProvider';
 import Container from '../../components/Container';
 import CurrencyFormatter from './CurrencyFormatter';
@@ -39,7 +39,7 @@ const ShoppingCart: FC = () => {
               text="Products added to the cart will appear here."
               imageComponent={
                 <Image
-                  src="https://res.cloudinary.com/uniformdev/image/upload/v1675775007/vNext%20Demos/icons/icon-cart_zzou3e.svg"
+                  src="https://res.cloudinary.com/uniform-demos/image/upload/v1692282886/csk-icons/icon-cart_zzou3e_yovtho.svg"
                   width={75}
                   height={75}
                   alt="cart icon"

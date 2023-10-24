@@ -1,14 +1,19 @@
 import { FC, useEffect, useCallback, useMemo, useRef } from 'react';
-import Image from 'next/image';
+import Image from '../../components/Image';
+import classNames from 'classnames';
 import { useFakeCartContext } from './FakeCartProvider';
 import ModalLayoutRight from './ModalLayoutRight';
 import CurrencyFormatter from './CurrencyFormatter';
 import ShoppingCartItem from './ShoppingCartItem';
 import ButtonCheckout from './ButtonCheckout';
 
-interface Props {
+type Styles = {
+  container?: string;
+};
+type CartContentProps = {
   onCloseModal: () => void;
-}
+  styles?: Styles;
+};
 
 const togglePageScroll = (isHiddenManual?: boolean): void => {
   const html = document.querySelector('html');
@@ -17,9 +22,8 @@ const togglePageScroll = (isHiddenManual?: boolean): void => {
   html.style.overflow = isHidden ? 'auto' : 'hidden';
 };
 
-const CartContent: FC<Props> = ({ onCloseModal }) => {
+const CartContent: FC<CartContentProps> = ({ onCloseModal, styles }) => {
   const { cart, cartAmount, updateItemQuantity, removeItemFromFakeCart, isModalFakeCartOpen } = useFakeCartContext();
-
   const productsContainerRef = useRef<HTMLDivElement>(null);
 
   const cartItems = useMemo(() => Object.values(cart).map(cartItem => cartItem), [cart]);
@@ -37,15 +41,15 @@ const CartContent: FC<Props> = ({ onCloseModal }) => {
   }, [onCloseModal, cartItems.length]);
 
   return (
-    <div className="flex relative h-full flex-col">
-      <div className="border-b fixed top-0 w-full flex justify-between items-center bg-white z-10 lg:py-0 py-2 px-4 sm:px-14">
+    <div className={classNames('flex relative h-full flex-col', styles?.container)}>
+      <div className="border-b fixed top-0 w-full flex justify-between items-center bg-white z-50 lg:py-0 py-2 px-4 sm:px-14">
         <button className="w-24 h-16 flex group items-center" type="submit" onClick={onCloseModal}>
           <Image
             unoptimized
             width={16}
             height={16}
             alt="icon-cross"
-            src="https://res.cloudinary.com/uniformdev/image/upload/v1675776060/vNext%20Demos/icons/icon-cross-black_c9f098.svg"
+            src="https://res.cloudinary.com/uniform-demos/image/upload/v1692282918/csk-icons/icon-cross-black_c9f098_sqlipa.svg"
             className="fill-black group-hover:stroke-black duration-300 stroke-transparent w-3"
           />
           <p className="pl-2 uppercase text-sm group-hover:underline duration-300  font-bold">Close</p>
@@ -60,7 +64,7 @@ const CartContent: FC<Props> = ({ onCloseModal }) => {
             alt="icon-cart"
             width={30}
             height={30}
-            src="https://res.cloudinary.com/uniformdev/image/upload/v1675775007/vNext%20Demos/icons/icon-cart_zzou3e.svg"
+            src="https://res.cloudinary.com/uniform-demos/image/upload/v1692282886/csk-icons/icon-cart_zzou3e_yovtho.svg"
           />
         </div>
       </div>
@@ -92,14 +96,14 @@ const CartContent: FC<Props> = ({ onCloseModal }) => {
   );
 };
 
-const ShoppingCartModal: FC = () => {
+const ShoppingCartModal: FC<{ styles?: Styles }> = ({ styles }) => {
   const { isModalFakeCartOpen, setIsModalFakeCartOpen } = useFakeCartContext();
 
   const onCloseModal = useCallback((): void => setIsModalFakeCartOpen(false), [setIsModalFakeCartOpen]);
 
   return (
     <ModalLayoutRight isOpen={isModalFakeCartOpen} onCloseModal={onCloseModal}>
-      <CartContent onCloseModal={onCloseModal} />
+      <CartContent onCloseModal={onCloseModal} styles={styles} />
     </ModalLayoutRight>
   );
 };

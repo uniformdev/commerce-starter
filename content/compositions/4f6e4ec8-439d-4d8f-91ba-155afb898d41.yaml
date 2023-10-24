@@ -1,0 +1,293 @@
+composition:
+  _name: Product Details (Fake Commerce)
+  _id: 4f6e4ec8-439d-4d8f-91ba-155afb898d41
+  type: productDetails
+  parameters:
+    title:
+      type: text
+      value: Product details
+  slots:
+    container-inner:
+      - _id: 8753b3c0-8fea-4cec-9a7f-923ecc16c2f5
+        type: grid
+        slots:
+          grid-inner:
+            - _id: 21271565-504a-473a-84a0-935a57602ad1
+              type: gridItem
+              slots:
+                inner:
+                  - _id: 66b1d00c-55d8-4b38-bf97-0ba7ffdc4073
+                    type: content
+                    parameters:
+                      text:
+                        type: text
+                        value: ${#jptr:/Product by Slug Content/0/subCategories/0}
+                      title:
+                        type: text
+                        value: ${#jptr:/Product by Slug Content/0/name}
+                      titleStyle:
+                        type: tp-title-style-parameter
+                        value: h1
+                    _overridability:
+                      parameters:
+                        link: 'yes'
+                        text: 'yes'
+                        title: 'yes'
+                        content: 'yes'
+                        titleStyle: 'yes'
+                  - _id: 2f253059-3929-411c-9a28-2317f5deb346
+                    type: price
+                    parameters:
+                      label:
+                        type: text
+                        value: 'Price:'
+                      price:
+                        type: number
+                        value: ${#jptr:/Product by Slug Content/0/price}
+                      currency:
+                        type: select
+                        value: USD
+                      labelStyle:
+                        type: tp-title-style-parameter
+                        value: h3
+                    _overridability:
+                      parameters:
+                        label: 'yes'
+                        price: 'yes'
+                        currency: 'yes'
+                        labelStyle: 'yes'
+                  - _id: daeeab1b-c103-4d6a-857c-c390ba2d540d
+                    type: divider
+                    parameters:
+                      thickness:
+                        type: tp-slider-parameter
+                        value: 1px
+                      colorStyle:
+                        type: tp-color-style-parameter
+                        value: primary
+                    _overridability:
+                      parameters:
+                        thickness: 'yes'
+                        colorStyle: 'yes'
+                  - _id: 8c09dee6-f011-46d7-a68c-6e3c04d12c6e
+                    type: addToCart
+                    parameters:
+                      product:
+                        type: json
+                        value: ${#jptr:/Product by Slug Content/0}
+                      buttonCopy:
+                        type: text
+                        value: Add to Cart
+                      buttonStyle:
+                        type: tp-button-style-parameter
+                        value: primary
+                    _overridability:
+                      parameters:
+                        product: 'yes'
+                        buttonCopy: 'yes'
+                        buttonStyle: 'yes'
+                        buttonAnimationType: 'yes'
+                  - _id: 36793fb6-d4bc-40cc-a86b-f8ef8c1ddea7
+                    type: divider
+                    parameters:
+                      thickness:
+                        type: tp-slider-parameter
+                        value: 1px
+                      colorStyle:
+                        type: tp-color-style-parameter
+                        value: primary
+                    _overridability:
+                      parameters:
+                        thickness: 'yes'
+                        colorStyle: 'yes'
+              parameters:
+                title:
+                  type: text
+                  value: Left Section
+                rowSpan:
+                  type: tp-slider-parameter
+                  value: '1'
+                rowStart:
+                  type: tp-slider-parameter
+                  value: None
+                columnSpan:
+                  type: tp-slider-parameter
+                  value: '1'
+                columnStart:
+                  type: tp-slider-parameter
+                  value: none
+              _overridability:
+                parameters:
+                  title: 'yes'
+                  rowSpan: 'yes'
+                  rowStart: 'yes'
+                  columnSpan: 'yes'
+                  columnStart: 'yes'
+            - _id: 52e33187-ecf4-44f2-866a-2f40b00ce9ea
+              type: gridItem
+              slots:
+                inner:
+                  - _id: 11b443cb-e6b8-44df-b4f3-db064bb64b13
+                    type: carousel
+                    slots:
+                      carouselItem:
+                        - _id: 734c7af1-1c58-4585-9d4a-0daf9d3caa1b
+                          type: $loop
+                          slots:
+                            body:
+                              - _id: 38f2a332-8330-4b6b-89d8-173d87302c66
+                                type: image
+                                parameters:
+                                  alt:
+                                    type: text
+                                    value: >-
+                                      Product Image ${#jptr:/Product by Slug
+                                      Content images Loop Item/id}
+                                  src:
+                                    type: image
+                                    value: >-
+                                      ${#jptr:/Product by Slug Content images
+                                      Loop Item/url}
+                                  width:
+                                    type: number
+                                    value: '1000'
+                                  height:
+                                    type: number
+                                    value: '1000'
+                                _overridability:
+                                  parameters:
+                                    alt: 'yes'
+                                    src: 'yes'
+                                    fill: 'yes'
+                                    width: 'yes'
+                                    height: 'yes'
+                                    quality: 'yes'
+                                    priority: 'yes'
+                                    objectFit: 'yes'
+                                    borderColor: 'yes'
+                                    borderWidth: 'yes'
+                                    borderRadius: 'yes'
+                                    overlayColor: 'yes'
+                                    overlayOpacity: 'yes'
+                          _dataResources:
+                            Product by Slug Content images Loop Item:
+                              type: sys-reserved-loop
+                              variables:
+                                connectedData: /Product by Slug Content/0/images
+                    variant: imageGallery
+                    _overridability:
+                      variants: true
+              parameters:
+                title:
+                  type: text
+                  value: Right Section
+                rowSpan:
+                  type: tp-slider-parameter
+                  value: '1'
+                rowStart:
+                  type: tp-slider-parameter
+                  value: None
+                columnSpan:
+                  type: tp-slider-parameter
+                  value: '1'
+                columnStart:
+                  type: tp-slider-parameter
+                  value: none
+              _overridability:
+                parameters:
+                  title: 'yes'
+                  rowSpan: 'yes'
+                  rowStart: 'yes'
+                  columnSpan: 'yes'
+                  columnStart: 'yes'
+        parameters:
+          gapX:
+            type: tp-slider-parameter
+            value: small
+          gapY:
+            type: tp-slider-parameter
+            value: none
+          title:
+            type: text
+            value: Product Info
+          columnsCount:
+            type: tp-slider-parameter
+            value: '2'
+        _overridability:
+          parameters:
+            gapX: 'yes'
+            gapY: 'yes'
+            title: 'yes'
+            columnsCount: 'yes'
+      - _id: 925338d5-568a-42f0-bffe-5a70df83ff61
+        type: spacer
+        parameters:
+          thickness:
+            type: tp-slider-parameter
+            value: 40px
+        _overridability:
+          variants: true
+          parameters:
+            thickness: 'yes'
+      - _id: ae30fa03-d4a2-48f7-a6c6-5a9430f457ae
+        type: divider
+        parameters:
+          thickness:
+            type: tp-slider-parameter
+            value: 1px
+          colorStyle:
+            type: tp-color-style-parameter
+            value: primary
+        _overridability:
+          parameters:
+            thickness: 'yes'
+            colorStyle: 'yes'
+      - _id: b4a5a0c2-8a67-4326-a9f7-f4bf98d11324
+        type: spacer
+        parameters:
+          thickness:
+            type: tp-slider-parameter
+            value: 40px
+        _overridability:
+          variants: true
+          parameters:
+            thickness: 'yes'
+      - _id: 8781bd34-43c8-489f-b290-c161fabc826e
+        type: content
+        parameters:
+          text:
+            type: text
+            value: ${#jptr:/Product by Slug Content/0/description}
+          title:
+            type: text
+            value: About this product
+          titleStyle:
+            type: tp-title-style-parameter
+            value: h1
+        _overridability:
+          parameters:
+            link: 'yes'
+            text: 'yes'
+            title: 'yes'
+            content: 'yes'
+            titleStyle: 'yes'
+  _dataResources:
+    Product by Slug Content:
+      type: fakeCommerceProductBySlug
+      variables:
+        value: royale-iq-espresso-machine-117
+      isPatternParameter: true
+      ignorePatternParameterDefault: true
+  _overridability:
+    variants: true
+    parameters:
+      title: 'yes'
+      marginTop: 'yes'
+      paddingTop: 'yes'
+      marginBottom: 'yes'
+      paddingBottom: 'yes'
+      backgroundType: 'yes'
+created: '2023-10-13T10:09:23.545647+00:00'
+modified: '2023-10-13T10:29:06.615722+00:00'
+pattern: true
+categoryId: 2da8c924-14d5-470b-9fe4-1e56521551e5

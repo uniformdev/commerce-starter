@@ -1,0 +1,110 @@
+composition:
+  _name: Card Block (Fake Commerce Products Selector)
+  _id: 7f209571-9934-4219-ba2a-72afd062f04f
+  type: cardBlock
+  variant: carousel
+  parameters:
+    title:
+      type: text
+      value: Fake Commerce Products Selector
+    titleStyle:
+      type: tp-title-style-parameter
+      value: h2
+    buttonStyle:
+      type: tp-button-style-parameter
+      value: primary
+  slots:
+    cardBlockInner:
+      - _id: 15ff333d-d453-464b-b71c-cb9cf483e22e
+        type: $loop
+        slots:
+          body:
+            - _id: 1a7427e0-4b67-46b4-8f3d-feba9f105240
+              type: card
+              parameters:
+                badge:
+                  type: text
+                  value: ${#jptr:/Products Content Loop Item/rootCategories/0}
+                image:
+                  type: image
+                  value: ${#jptr:/Products Content Loop Item/images/0/url}
+                title:
+                  type: text
+                  value: ${#jptr:/Products Content Loop Item/name}
+                badgeSize:
+                  type: select
+                  value: md
+                objectFit:
+                  type: select
+                  value: cover
+                badgeStyle:
+                  type: tp-badge-style-parameter
+                  value: accent
+                buttonCopy:
+                  type: text
+                  value: See Details
+                buttonStyle:
+                  type: tp-button-style-parameter
+                  value: primary
+                description:
+                  type: text
+                  value: ${#jptr:/Products Content Loop Item/description}
+                lineCountRestriction:
+                  type: tp-slider-parameter
+                  value: '5'
+              _overridability:
+                variants: true
+                parameters:
+                  slug: 'yes'
+                  badge: 'yes'
+                  delay: 'yes'
+                  image: 'yes'
+                  title: 'yes'
+                  duration: 'yes'
+                  badgeSize: 'yes'
+                  group_cta: 'yes'
+                  objectFit: 'yes'
+                  textColorVariant: 'yes'
+                  badgeStyle: 'yes'
+                  buttonCopy: 'yes'
+                  buttonLink: 'yes'
+                  buttonStyle: 'yes'
+                  description: 'yes'
+                  group_badge: 'yes'
+                  overlayColor: 'yes'
+                  animationType: 'yes'
+                  group_content: 'yes'
+                  overlayOpacity: 'yes'
+                  group_description: 'yes'
+                  buttonAnimationType: 'yes'
+                  lineCountRestriction: 'yes'
+                  animationPreview: 'yes'
+        _dataResources:
+          Products Content Loop Item:
+            type: sys-reserved-loop
+            variables:
+              connectedData: /Products Content
+  _dataResources:
+    Products Content:
+      type: fakeCommerceProducts
+      variables:
+        productIds: 141,140,115,116,117,118
+      isPatternParameter: true
+      ignorePatternParameterDefault: true
+  _overridability:
+    variants: true
+    parameters:
+      title: 'yes'
+      group_cta: 'yes'
+      textColorVariant: 'yes'
+      buttonCopy: 'yes'
+      buttonLink: 'yes'
+      titleStyle: 'yes'
+      buttonStyle: 'yes'
+      description: 'yes'
+      group_content: 'yes'
+      buttonAnimationType: 'yes'
+created: '2023-08-07T12:53:11.284219+00:00'
+modified: '2023-09-28T07:04:15.483187+00:00'
+pattern: true
+categoryId: ea001653-1f96-4f07-9187-a1626a4965e5

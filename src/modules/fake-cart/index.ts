@@ -1,3 +1,4 @@
 import './AddToCart';
-import './ShoppingCartIcon';
+import './ProductInfo';
 import './ShoppingCartContent';
+import './ShoppingCartIcon';

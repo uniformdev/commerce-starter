@@ -46,7 +46,7 @@ export const getProductSearchResult = (
 };
 
 export const getProductsByIds = (productsHashCache: CommerceTypes.ProductsHashCache, ids: string[]) =>
-  ids.map(id => productsHashCache[id]).filter(value => Boolean(value));
+  ids.map(id => productsHashCache[id]).filter(Boolean);
 
 export const getProductsByField = (
   productsHashCache: CommerceTypes.ProductsHashCache,

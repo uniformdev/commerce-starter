@@ -12,6 +12,7 @@ interface ConfigureIntegration {
   teamId: string;
   projectId: string;
   integrationParams?: Record<string, string>;
+  fetchIntegrationParamsFn?: (data?: object) => Promise<Record<string, string | object>>;
   customManifest?: Record<string, unknown>;
   apiHost: string;
   headers: Record<string, string>;
@@ -20,6 +21,7 @@ interface ConfigureIntegration {
 interface ConfigureDataSource {
   teamId: string;
   projectId: string;
+  integrationType?: string;
   integrationDisplayName: string;
   headers: Record<string, string>;
   connectorType: string;
@@ -35,6 +37,7 @@ export const configureIntegration = async ({
   teamId,
   projectId,
   integrationParams,
+  fetchIntegrationParamsFn,
   customManifest,
   apiHost,
   headers,
@@ -70,10 +73,12 @@ export const configureIntegration = async ({
     return;
   }
 
+  const dynamicIntegrationParams = await fetchIntegrationParamsFn?.({ apiHost });
+
   const newInstalledIntegration = await installIntegration({
     projectId,
     type: integration.type,
-    data: integrationParams,
+    data: dynamicIntegrationParams || integrationParams,
     apiHost,
     headers,
   });
@@ -86,6 +91,7 @@ export const configureIntegration = async ({
 export const configureDataSource = async ({
   teamId,
   projectId,
+  integrationType,
   integrationDisplayName,
   headers,
   connectorType,
@@ -108,6 +114,7 @@ export const configureDataSource = async ({
   await addDataSource({
     teamId,
     projectId,
+    integrationType,
     integrationDisplayName,
     headers,
     connectorType,

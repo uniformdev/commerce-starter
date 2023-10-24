@@ -8,7 +8,7 @@ interface Props {
 }
 
 const ModalLayoutRight: FC<Props> = ({ isOpen, onCloseModal, children }) => (
-  <div className={classNames('fixed inset-0 z-10', { 'pointer-events-none': !isOpen })}>
+  <div className={classNames('fixed inset-0 z-50', { 'pointer-events-none': !isOpen })}>
     <div
       className={classNames(
         'fixed inset-0 bg-slate-500/[.5]',

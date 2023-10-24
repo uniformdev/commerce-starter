@@ -1,0 +1,116 @@
+composition:
+  _name: Main Header
+  _id: e46c8336-acfd-43e8-ac59-8be8f4c33b7d
+  type: header
+  parameters:
+    logo:
+      type: image
+      value: >-
+        https://res.cloudinary.com/uniform-demos/image/upload/v1697192285/coffee-icons/JD-Logo_Commerce-Starter.svg
+    theme:
+      type: tp-set-up-theme-parameter
+      value:
+        colors:
+          - name: primary
+            label: Primary
+            value: '#55493b'
+          - name: primary-content
+            label: Primary Content
+            value: '#FFFFFF'
+          - name: secondary
+            label: Secondary
+            value: '#ffffff'
+          - name: secondary-content
+            label: Secondary Content
+            value: '#000000'
+          - name: accent
+            label: Accent
+            value: '#F8E399'
+          - name: accent-content
+            label: Accent Content
+            value: '#000000'
+          - name: info-content
+            label: Info Content
+            value: '#E4E4E4'
+          - name: base-200
+            label: Base 200
+            value: '#b69066'
+          - name: base-300
+            label: Base 300
+            value: '#372f26'
+        themeName: javadrip
+        themeLabel: Java Drip
+    favicon:
+      type: image
+      value: >-
+        https://res.cloudinary.com/uniform-demos/image/upload/v1692284346/coffee-icons/JD.ico
+    primaryFont:
+      type: select
+      value: inter
+    syntheticGap:
+      type: tp-slider-parameter
+      value: Small
+    linksAlignment:
+      type: tp-horizontal-align-parameter
+      value: center
+  slots:
+    links:
+      - _id: b21a73ef-debd-4217-936f-59c290f1130d
+        type: navigationLink
+        parameters:
+          link:
+            type: link
+            value:
+              path: /
+              type: projectMapNode
+              nodeId: c839863b-c352-4a36-8b0a-96a85de9541c
+              projectMapId: 62588085-7894-4810-84b6-eaaf0cb5213c
+          title:
+            type: text
+            value: Home
+      - _id: 08efc737-c52e-4fa8-b267-b06eb8de0064
+        type: navigationLink
+        variant: header
+        parameters:
+          link:
+            type: link
+            value:
+              path: /coffee-makers
+              type: projectMapNode
+              nodeId: ea684346-109c-4b11-82a5-2a982d2dd795
+              projectMapId: 62588085-7894-4810-84b6-eaaf0cb5213c
+          title:
+            type: text
+            value: Coffee Makers
+      - _id: b4381722-bde4-42a2-b34f-b5fdd4cc07e2
+        type: navigationLink
+        variant: header
+        parameters:
+          link:
+            type: link
+            value:
+              path: /beans
+              type: projectMapNode
+              nodeId: 159b02be-f6b3-4752-8fc7-9689b67236b2
+              projectMapId: 62588085-7894-4810-84b6-eaaf0cb5213c
+          title:
+            type: text
+            value: Beans
+    iconLinks:
+      - _id: ba0e3606-ae4c-418b-b969-d043f3b3bcde
+        type: shoppingCartIcon
+        parameters:
+          link:
+            type: link
+            value:
+              path: /shopping-cart
+              type: projectMapNode
+              nodeId: 8eae3604-6833-4253-9a64-349b6b645742
+              projectMapId: 62588085-7894-4810-84b6-eaaf0cb5213c
+  _overridability:
+    parameters:
+      syntheticGap: 'yes'
+created: '2023-08-07T12:53:11.092501+00:00'
+modified: '2023-10-13T10:19:35.075465+00:00'
+pattern: true
+categoryId: 1bf9504a-07c4-4873-bbca-f235a6da182b

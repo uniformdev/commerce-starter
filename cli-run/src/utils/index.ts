@@ -1,4 +1,9 @@
 import childProcess from 'child_process';
+import fetch from 'node-fetch';
+import fs from 'fs';
+import path from 'path';
+import { AppModes } from '../constants';
+import { JavaDripBlackTheme } from '../customThemes';
 
 export const execPromise = (command: string) => {
   return new Promise(function (resolve, reject) {
@@ -13,7 +18,29 @@ export const execPromise = (command: string) => {
   });
 };
 
-export const formatMessageLine = (message: string) => message.replace(/\s+/g, ' ');
+export const remove = (path: string) => fs.promises.rm(path, { recursive: true, force: true });
+
+export const fetchThemePackThemes = async (selectedThemeName: string, data: Record<string, string>) => {
+  const { apiHost = '' } = data || {};
+
+  const baseUrl = apiHost.includes('canary')
+    ? 'https://canary-theme-pack-mesh-integration.netlify.app'
+    : 'https://theme-pack.mesh.uniform.app';
+
+  const StaticThemes = await fetch(`${baseUrl}/staticThemes.json`).then(res => res.json());
+
+  const uniformTheme = (StaticThemes as CLI.ThemePackTheme[]).find(theme => theme.themeName === 'uniform');
+  const javadripTheme = (StaticThemes as CLI.ThemePackTheme[]).find(theme => theme.themeName === 'javadrip');
+
+  return {
+    selectedThemeName,
+    themes: {
+      uniform: uniformTheme,
+      javadrip: javadripTheme,
+      custom: JavaDripBlackTheme,
+    },
+  };
+};
 
 export const composeGetEnvFns =
   (
@@ -30,3 +57,49 @@ export const composeGetEnvFns =
     }
     return envs;
   };
+
+export const addExamplesCanvasCache = async (projectPath: string) => {
+  const listOfCanvasCache = await fs.promises.readdir(path.resolve(projectPath, 'content', 'examples'));
+  await Promise.all(
+    listOfCanvasCache.map(async cache => {
+      await fs.promises.cp(
+        path.resolve(projectPath, 'content', 'examples', cache),
+        path.resolve(projectPath, 'content', cache),
+        { recursive: true }
+      );
+    })
+  );
+  await remove(path.resolve(projectPath, 'content', 'examples'));
+  const pathToCanvasFile = path.resolve(projectPath, 'src', 'canvas', 'index.ts');
+  const canvas = await fs.promises.readFile(pathToCanvasFile, 'utf-8');
+  await fs.promises.writeFile(pathToCanvasFile, `import '../modules/coveo';\n${canvas}`);
+};
+
+export const scanPageDirectory = async (projectPath: string, mode: AppModes) =>
+  (await findModeOptions(path.resolve(projectPath, 'src', 'pages'), mode)) ||
+  (await findModeOptions(path.resolve(projectPath, 'src', 'pages', 'api'), mode));
+
+const findModeOptions = async (projectPath: string, mode: string): Promise<boolean> =>
+  fs.promises
+    .readdir(projectPath, { withFileTypes: true })
+    .then(r => r.some(node => (node.isFile() ? node.name.endsWith(mode) : false)));
+
+export const switchModeInPageDirectory = async (projectPath: string, mode: AppModes) => {
+  await switchModeTo(path.resolve(projectPath, 'src', 'pages'), mode);
+  await switchModeTo(path.resolve(projectPath, 'src', 'pages', 'api'), mode);
+};
+const switchModeTo = async (projectPath: string, mode: string) => {
+  const listOfFilesNames = (await fs.promises.readdir(projectPath, { withFileTypes: true }))
+    .filter(node => node.isFile())
+    .map(item => item.name);
+  for (const fileName of listOfFilesNames) {
+    if (fileName.endsWith(mode)) {
+      const destinationFileName = fileName.slice(0, -(mode.length + 1));
+      await remove(path.resolve(projectPath, destinationFileName));
+      await fs.promises.cp(path.resolve(projectPath, fileName), path.resolve(projectPath, destinationFileName));
+      await remove(path.resolve(projectPath, fileName));
+    } else if (fileName.endsWith(AppModes.SSR) || fileName.endsWith(AppModes.SSG)) {
+      await remove(path.resolve(projectPath, fileName));
+    }
+  }
+};
