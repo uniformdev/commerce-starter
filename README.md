@@ -1,4 +1,10 @@
-## Uniform Commerce Starter
+## Uniform Commerce Starter - deprecated
+
+## ⚠️ Deprecation notice
+
+This starter is no longer maintained. We recommend looking at either [Component Starter Kit page router version](https://github.com/uniformdev/uniform-component-starter-kit) or [app router version](https://github.com/uniformdev/component-starter-kit-next-approuter) instead.
+
+=====
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It's a Starter repository containing a personalized Uniform-powered e-commerce store.
 
